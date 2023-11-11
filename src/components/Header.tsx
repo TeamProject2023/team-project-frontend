@@ -17,7 +17,7 @@ export const Header: FC = () => {
                 <div className="header__inner">
                     <Link to={Routes.Main} className="link-logo">
                         <div className="logo-box">
-                            <img src={assets.logos.logo} width="50px" className="logo-img" />
+                            <img src={assets.logos.logo} className="logo-img" />
                         </div>
                     </Link>
 
