@@ -1,7 +1,7 @@
-import LogoSbermarket from "../assets/images/logos/logo-sbermarket.svg";
+import Logo from "../assets/images/logos/Logo.png";
 
 export const assets = {
     logos: {
-        sbermarket: LogoSbermarket,
+        logo: Logo,
     },
 };

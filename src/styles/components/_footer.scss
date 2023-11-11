@@ -1,3 +1,9 @@
 .footer {
-    &__inner {}
+  &__inner {
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  min-height: 10vh;
 }

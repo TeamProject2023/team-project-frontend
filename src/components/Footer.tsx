@@ -3,7 +3,7 @@ import { FC } from "react";
 export const Footer: FC = () => {
     return (
         <footer className="footer">
-            Footer
+            CopyRight 2023
         </footer>
     );
 };

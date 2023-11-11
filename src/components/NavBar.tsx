@@ -20,15 +20,15 @@ export const NavBar: FC = () => {
 
 const navLinks = [
     {
-        title: "Правила акции",
+        title: "Predictor",
         link: Routes.Rules,
     },
     {
-        title: "Призы",
+        title: "MyCabinet",
         link: Routes.Prizes,
     },
     {
-        title: "Турнирная таблица",
+        title: "News",
         link: Routes.Table,
     },
 ];
