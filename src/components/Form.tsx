@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// @ts-ignore
 import { Button, Cascader, DatePicker, Form, Input, InputNumber, Radio, Select, Switch, TreeSelect } from "antd";
+import "../styles/components/CustomForm.scss";
 
 type SizeType = Parameters<typeof Form>[0]["size"];
 
@@ -19,7 +19,7 @@ export const CustomForm: React.FC = () => {
             initialValues={{ size: componentSize }}
             onValuesChange={onFormLayoutChange}
             size={componentSize as SizeType}
-            style={{ maxWidth: 600 }}
+            className="form-container"
         >
             <Form.Item label="Form Size" name="size">
                 <Radio.Group>

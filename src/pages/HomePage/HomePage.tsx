@@ -3,7 +3,7 @@ import { FC } from "react";
 import { Header } from "../../components/Header";
 
 import { Footer } from "../../components/Footer";
-import {CustomForm} from "../../components/Form";
+import { CustomForm } from "../../components/Form";
 
 export const HomePage: FC = () => {
     return (
