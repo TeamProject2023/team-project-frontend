@@ -5,7 +5,6 @@
     &__inner {
         display: flex;
         min-width: 100%;
-        justify-content: space-between;
         margin-top: 20px ;
         box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
         background-color: #fff;
@@ -13,19 +12,19 @@
     }
 
     .login-button {
-        background-color: #077c8f;
+        background-color: #1677fe;
         color: #ffffff;
         font-size: large;
         font-weight: bolder;
         margin: 15px;
+        margin-left: auto;
         padding: 5px;
         border: none;
         cursor: pointer;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
         &:hover {
-            background-color: #0b4a60;
+            background-color: #136ae3;
         }
     }
 
@@ -43,13 +42,13 @@
                 font-size: medium;
 
                 a {
-                    color: #077c8f;
+                    color: #1677fe;
                     font-size: large;
                     font-weight: bold;
                 }
 
                 a:hover {
-                    color: #0b4a60;
+                    color: #105fc2;
                     text-decoration: none;
                 }
 

@@ -64,7 +64,7 @@ export const CustomForm: React.FC = () => {
                 <Switch />
             </Form.Item>
             <Form.Item label="Button" name="button">
-                <Button>Button</Button>
+                <Button>ABOBA</Button>
             </Form.Item>
         </Form>
     );

@@ -1,14 +1,48 @@
-.main {
+.content {
     &__inner {}
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    min-height: 120dvh;
+    min-height: 50dvh;
     background-color: white;
     color: black;
     padding: 3rem;
     h1 {
-        margin-bottom: 20px;
+        padding: 20px;
+        font-size: xx-large;
+    }
+    p{
+        color: #1677FEFF;
+        font-size: large;
+    }
+    .main-button {
+        align-items: center;
+        background-color: #1677fe;
+        color: #ffffff;
+        font-size: large;
+        font-weight: bolder;
+
+        margin: 15px;
+        padding: 5px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        &:hover {
+            background-color: #136ae3;
+        }
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        border-radius: 30px;
+
+    }
+    .column{
+        text-align: center;
+        flex: 50%;
     }
 }
