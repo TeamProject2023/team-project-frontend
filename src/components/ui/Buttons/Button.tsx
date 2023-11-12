@@ -9,7 +9,11 @@ interface Props {
 
 export const Button: FC<Props> = ({ text, classes, handleClick, ...rest }) => {
     return (
-        <button className={cn("btn", classes)} onClick={handleClick} {...rest}>
+        <button
+            className={cn("btn", classes)}
+            onClick={handleClick}
+            {...rest}
+        >
             {text}
         </button>
     );

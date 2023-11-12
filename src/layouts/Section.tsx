@@ -13,18 +13,28 @@ interface Props {
 
 export const Section: FC<Props> = ({
     sectionClasses,
-    titleClasses, subtitleClasses,
+    titleClasses,
+    subtitleClasses,
     contentClasses,
-    title, subtitle,
+    title,
+    subtitle,
     children,
 }) => {
     return (
         <section className={cn("section", sectionClasses)}>
-            {title && <h2 className={cn("section__title", titleClasses)}>{title}</h2>}
-            {subtitle && <h3 className={cn("section__subtitle", subtitleClasses)}>{subtitle}</h3>}
-            {children &&
-                <div className={cn("section__content", contentClasses)}>{children}</div>
-            }
+            {title && (
+                <h2 className={cn("section__title", titleClasses)}>{title}</h2>
+            )}
+            {subtitle && (
+                <h3 className={cn("section__subtitle", subtitleClasses)}>
+                    {subtitle}
+                </h3>
+            )}
+            {children && (
+                <div className={cn("section__content", contentClasses)}>
+                    {children}
+                </div>
+            )}
         </section>
     );
 };

@@ -29,8 +29,8 @@ body {
     font-family: $font-primary;
     line-height: 110%;
     min-width: 320px;
-    color: $color-white;
-    background-color: $color-black;
+    color: $color-black;
+    background-color: $color-white;
     touch-action: pan-x pan-y;
     scroll-behavior: smooth;
 
@@ -71,7 +71,7 @@ body {
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
-.wrapper {
+.page-wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -82,7 +82,7 @@ body {
     }
 }
 
-.wrapper-full-height {
+.full-height {
     min-height: 100vh;
     min-height: 100dvh;
 
@@ -103,17 +103,19 @@ body {
     padding: 0 8.6rem;
 
     flex-grow: 1;
+    display: flex;
 
-    // @media screen and (max-width: $bp-l) {
-    //     max-width: $container-tablet;
-    // }
-    // @media screen and (max-width: $bp-m) {
-    //     max-width: 100%;
-    //     padding: 0 3.2rem;
-    // }
-    // @media screen and (max-width: $bp-s) {
-    //     padding: 0 1.6rem;
-    // }
+    @media screen and (max-width: $bp-l) {
+        padding: 0 7.2rem;
+    }
+
+    @media screen and (max-width: $bp-m) {
+        padding: 0 3.6rem;
+    }
+
+    @media screen and (max-width: $bp-s) {
+        padding: 0 1.2rem;
+    }
 }
 
 a {

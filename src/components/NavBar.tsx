@@ -8,8 +8,16 @@ export const NavBar: FC = () => {
             <div className="nav__inner">
                 <ul className="nav-list">
                     {navLinks.map(({ link, title }) => (
-                        <li key={link} className="list__item nav__item">
-                            <Link to={link} className="nav__link">{title}</Link>
+                        <li
+                            key={link}
+                            className="list__item nav__item"
+                        >
+                            <Link
+                                to={link}
+                                className="nav__link"
+                            >
+                                {title}
+                            </Link>
                         </li>
                     ))}
                 </ul>

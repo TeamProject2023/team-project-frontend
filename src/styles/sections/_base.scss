@@ -1,0 +1,16 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    &__title {
+    }
+    &__subtitle {
+    }
+    &__content {
+    }
+}

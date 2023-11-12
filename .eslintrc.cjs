@@ -24,9 +24,15 @@ module.exports = {
         "@typescript-eslint/eslint-plugin",
         "react-hooks",
     ],
-    ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts', 'vite-env.d.ts', 'src/tools/helper.ts'],
+    ignorePatterns: [
+        "dist",
+        ".eslintrc.cjs",
+        "vite.config.ts",
+        "vite-env.d.ts",
+        "src/tools/helper.ts",
+    ],
     rules: {
-        "reportUnusedDisableDirectives": "off",
+        reportUnusedDisableDirectives: "off",
         "linebreak-style": ["error", "windows"],
         "arrow-body-style": "off",
         "arrow-parens": "off",
@@ -50,7 +56,7 @@ module.exports = {
         "no-await-in-loop": "off",
         "no-case-declarations": "off",
         "no-confusing-arrow": "off",
-        "no-console": "warn",
+        "no-console": "off",
         "no-continue": "off",
         "no-empty": ["error", { allowEmptyCatch: true }],
         "no-inner-declarations": "off", // not actual since we target only ES6
@@ -82,7 +88,8 @@ module.exports = {
             {
                 object: "process",
                 property: "env",
-                message: "Use strongly typed BUILD_OPTIONS instead. See MOBREF-1628",
+                message:
+                    "Use strongly typed BUILD_OPTIONS instead. See MOBREF-1628",
             },
             {
                 object: "arguments",
@@ -143,7 +150,10 @@ module.exports = {
         ],
         "@typescript-eslint/ban-tslint-comment": "error",
         "@typescript-eslint/ban-types": "warn",
-        "@typescript-eslint/consistent-indexed-object-style": ["warn", "record"],
+        "@typescript-eslint/consistent-indexed-object-style": [
+            "warn",
+            "record",
+        ],
         "@typescript-eslint/consistent-type-exports": [
             "warn",
             { fixMixedExportsWithInlineTypeSpecifier: true },
@@ -307,7 +317,7 @@ module.exports = {
         "@typescript-eslint/no-loop-func": "off",
         "@typescript-eslint/no-misused-new": "error",
         "@typescript-eslint/no-misused-promises": [
-            "warn",
+            "off",
             {
                 checksConditionals: true,
                 checksVoidReturn: true,
@@ -359,7 +369,10 @@ module.exports = {
         "import/no-default-export": "error",
         "import/no-dynamic-require": "warn",
         "import/no-extraneous-dependencies": "off",
-        "import/no-unassigned-import": ["error", { allow: ["react", "**/*.css", "**/*.scss"] }],
+        "import/no-unassigned-import": [
+            "error",
+            { allow: ["react", "**/*.css", "**/*.scss"] },
+        ],
         "import/no-webpack-loader-syntax": "off",
         "import/prefer-default-export": "off",
         "import/no-unassigned-import": "off",
@@ -443,6 +456,7 @@ module.exports = {
 
         // ****************** custom rules ******************
 
-        "@typescript-eslint/default-param-last": "off"
+        "@typescript-eslint/default-param-last": "off",
     },
 };
+

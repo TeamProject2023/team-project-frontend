@@ -1,5 +1,3 @@
 export class AppController {
-    public static handleFetchUsers(): void {
-
-    }
+    public static handleFetchUsers(): void {}
 }

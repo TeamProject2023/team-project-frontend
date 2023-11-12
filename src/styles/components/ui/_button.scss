@@ -1,0 +1,44 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    width: 100%;
+
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+
+    border-radius: 0.25rem;
+
+    transition: all 0.5s ease;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-primary {
+    padding: 1.4rem 2.8rem;
+
+    color: $color-white;
+    background-color: $color-primary;
+    border-radius: 5px;
+
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: $font-roboto;
+
+    &:enabled:hover {
+        box-shadow: 0 50px $color-white inset;
+        color: $color-black;
+    }
+    &:enabled:active {
+        color: $color-black;
+        background-color: $color-white;
+        border-color: $color-black;
+    }
+}

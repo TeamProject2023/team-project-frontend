@@ -3,6 +3,13 @@ $color-white: #ffffff;
 $color-black: #000000;
 $color-selection-text: $color-black;
 $color-selection-bg: $color-white;
+$color-blue: #2490eb;
+$color-blue-extra-light: rgb(241, 245, 248);
+$color-gray: #666666;
+$color-gray-light: #b6b6b6;
+$color-red: #e31c25;
+
+$color-primary: $color-blue;
 
 /* SIZES */
 $container-desktop: 1920px;
@@ -17,5 +24,8 @@ $bp-m: 1439px;
 $bp-s: 767px;
 
 /* FONTS */
-$font-primary: "Favorit", sans-serif;
-$font-secondary: "Grato", sans-serif;
+$font-roboto: "Roboto", sans-serif;
+$font-inter: "Inter", sans-serif;
+$font-icomoon: "Icomoon", sans-serif;
+
+$font-primary: $font-roboto;
