@@ -3,16 +3,34 @@
 @import "./base";
 @import "./mixins";
 
+/* UI */
+@import "./components/ui/button";
+@import "./components/ui/link";
+
 /* COMPONENTS */
+@import "./components/loader";
+@import "./components/card";
+@import "./components/sidebar";
+@import "./components/form";
 @import "./components/header";
 @import "./components/navbar";
 @import "./components/main";
 @import "./components/intro";
 @import "./components/footer";
 
+/* SECTIONS */
+@import "./sections/base";
+
 /* LAYOUTS */
-@import "./layouts/section";
+@import "./layouts/base";
+@import "./layouts/authLayout";
 @import "./layouts/baseLayout";
+@import "./layouts/accountLayout";
 
 /* SCENES */
 @import "./scenes/main";
+
+/* PAGES */
+@import "./pages/base";
+@import "./pages/auth";
+@import "./pages/login";

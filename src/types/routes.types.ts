@@ -3,4 +3,9 @@ export enum Routes {
     Rules = "/",
     Prizes = "/",
     Table = "/",
+    Login = "/login",
+    SignUp = "/signup",
+    Account = "account",
+    Dashboard = "dashboard",
+    Book = "book-an-appointment",
 }

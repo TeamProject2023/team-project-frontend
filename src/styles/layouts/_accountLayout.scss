@@ -1,0 +1,13 @@
+.layout-account {
+    .main__inner {
+        display: flex;
+        flex-grow: 1;
+        gap: 3rem;
+    }
+    .sidebar {
+        flex: 0 0 30rem;
+    }
+    .page {
+        flex-grow: 1;
+    }
+}

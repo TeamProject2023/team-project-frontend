@@ -1,22 +1,24 @@
-import { AxiosError, AxiosResponse } from "axios";
+import { AxiosResponse } from "axios";
 import { useState, useCallback } from "react";
 
-export function useFetch<TResponse>(initLoading?: boolean) {
+export function useFetch<TResponse>(initLoading?: boolean): {
+    makeRequest: (
+        request: () => Promise<AxiosResponse<TResponse>>,
+    ) => Promise<TResponse>;
+    isLoading: boolean;
+} {
     const [isLoading, setIsLoading] = useState<boolean>(!!initLoading);
 
-    const makeRequest = useCallback(
-        async function fn (request: () => Promise<AxiosResponse<TResponse>>) {
+    const makeRequest = useCallback(async function fn(
+        request: () => Promise<AxiosResponse<TResponse>>,
+    ) {
         try {
             setIsLoading(true);
             const response = await request();
             return response.data;
         } catch (error) {
-            console.log(error);           
-            if (error instanceof AxiosError || error instanceof Error) {
-                throw error.message;
-            } else {
-                throw new Error("Network error");
-            }
+            console.error(error);
+            throw error;
         } finally {
             console.log("finally");
             setIsLoading(false);
@@ -25,6 +27,6 @@ export function useFetch<TResponse>(initLoading?: boolean) {
 
     return {
         isLoading,
-        makeRequest
-    }
+        makeRequest,
+    };
 }
