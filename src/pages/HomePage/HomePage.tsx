@@ -20,8 +20,8 @@ export const HomePage: FC = () => {
                 </div>
                 <div className="column"> <img src={gif} /></div>
             </div>
-            <div className="content">test</div>
-
+            <div className="separator">Separator</div>
+            <div className="content">Content</div>
             <Footer />
         </>
     );
