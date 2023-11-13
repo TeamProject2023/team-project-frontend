@@ -1,4 +1,4 @@
-import Logo from "../assets/images/logos/010love_114136.png";
+import Logo from "../assets/images/logos/logo-medai.svg";
 
 export const assets = {
     logos: {
