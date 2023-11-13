@@ -2,23 +2,80 @@
     display: flex;
     flex-grow: 1;
     flex-direction: column;
+    align-items: center;
     background-color: $color-blue-extra-light;
     box-shadow: 5px 0 3px -3px rgba(0, 0, 0, 0.09);
 
     &__inner {
         padding: 3rem;
+        width: 100%;
+
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
     }
 
     .logo {
         width: 10rem;
     }
-    .icon-grid::before {
-        content: "\e900";
+
+    .nav {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
     }
-    .icon-book-open::before {
-        content: "\e00b";
+    .nav-list {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
-    .icon-calendar::before {
-        content: "\e00d";
+
+    .nav__item {
+        color: $color-gray;
+        font-size: 1.6rem;
+    }
+    .nav__link {
+        padding: 0.8rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .nav__link,
+    .nav__icon,
+    .nav__text {
+        color: inherit;
+        font-size: inherit;
+    }
+
+    .nav__text {
+        position: relative;
+        will-change: transform;
+        transition: all 0.4s ease;
+    }
+
+    .nav__item:hover {
+        color: $color-primary;
+        .nav__text {
+            transform: translateX(1rem);
+        }
+    }
+
+    .nav__item-back {
+        align-self: flex-start;
+        text-transform: capitalize;
+        color: $color-blue-dark;
+
+        &:hover {
+            .nav__text {
+                transform: none;
+            }
+        }
     }
 }

@@ -1,13 +1,68 @@
 .layout-account {
+    background-color: $color-blue-extra-light;
+
     .main__inner {
         display: flex;
         flex-grow: 1;
         gap: 3rem;
+
+        position: relative;
     }
     .sidebar {
         flex: 0 0 30rem;
     }
     .page {
         flex-grow: 1;
+    }
+
+    .account-header {
+        .account-header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 2rem 0;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .btn-burger {
+            display: none;
+        }
+        .logo {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: calc($bp-ms + 1px)) {
+    .layout-account {
+        .main {
+            & > .container {
+                padding-left: 0;
+            }
+        }
+    }
+}
+@media screen and (max-width: $bp-ms) {
+    .layout-account {
+        .sidebar {
+            display: none;
+        }
+
+        .account-header {
+            .logo {
+                display: flex;
+                width: 10rem;
+            }
+            .btn-burger {
+                display: flex;
+            }
+        }
     }
 }

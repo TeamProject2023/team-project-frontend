@@ -15,16 +15,27 @@ export const SideBar: FC = () => {
                                 key={link}
                                 className="list__item nav__item"
                             >
-                                <div className={`icon-${icon}`} />
                                 <Link
                                     to={link}
                                     className="nav__link"
                                 >
-                                    {title}
+                                    <div className={`nav__icon icon-${icon}`} />
+                                    <div className="nav__text">{title}</div>
                                 </Link>
                             </li>
                         ))}
                     </ul>
+                    <div className="nav__item nav__item-back">
+                        <Link
+                            to={backLink.link}
+                            className="nav__link"
+                        >
+                            <div
+                                className={`nav__icon icon-${backLink.icon}`}
+                            />
+                            <div className="nav__text">{backLink.title}</div>
+                        </Link>
+                    </div>
                 </nav>
             </div>
         </aside>
@@ -38,8 +49,24 @@ const navLinks = [
         icon: "grid",
     },
     {
+        title: "AI tool",
+        link: Routes.AITool,
+        icon: "aid-kit",
+    },
+    {
         title: "Book an appointment",
         link: Routes.Book,
-        icon: "calendar",
+        icon: "book",
+    },
+    {
+        title: "History",
+        link: Routes.History,
+        icon: "calendar_today",
     },
 ];
+
+const backLink = {
+    title: "Back to home page",
+    link: Routes.Main,
+    icon: "arrow-back",
+};

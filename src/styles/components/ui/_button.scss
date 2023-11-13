@@ -42,3 +42,37 @@
         border-color: $color-black;
     }
 }
+
+.btn-burger {
+    width: max-content;
+    .burger-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+
+        width: 4rem;
+        height: 4rem;
+        border-radius: 62% 38% 46% 54% / 60% 63% 37% 40%;
+        background-color: $color-primary;
+
+        transition: all 0.3s ease-out;
+        will-change: transform;
+    }
+    .line {
+        display: block;
+        height: 3px;
+        width: 60%;
+        border-radius: 10px;
+        background: $color-white;
+    }
+
+    .burger-box:hover {
+        box-shadow: 0px 8px 12px -7px rgba(66, 68, 90, 1);
+    }
+    .burger-box:active {
+        box-shadow: 0px 8px 12px -11px rgba(66, 68, 90, 1);
+    }
+}

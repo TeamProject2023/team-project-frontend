@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Outlet } from "react-router-dom";
 import { SideBar } from "../../components/SideBar";
+import { AccountHeader } from "./AccountHeader/AccountHeader";
 
 export const AccountLayout: FC = () => {
     return (
@@ -9,7 +10,12 @@ export const AccountLayout: FC = () => {
                 <div className="container">
                     <div className="main__inner">
                         <SideBar />
-                        <Outlet />
+                        <div className="page">
+                            <div className="page__inner">
+                                <AccountHeader />
+                                <Outlet />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
