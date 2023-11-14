@@ -103,3 +103,28 @@
     text-transform: none;
     line-height: 1;
 }
+
+.icon-grid::before {
+    content: "\e900";
+}
+.icon-book::before {
+    content: "\e902";
+}
+.icon-pil::before {
+    content: "\e903";
+}
+.icon-calendar_today::before {
+    content: "\e904";
+}
+.icon-aid-kit::before {
+    content: "\e998";
+}
+.icon-log-out::before {
+    content: "\e907";
+}
+.icon-arrow-back::before {
+    content: "\e906";
+}
+.icon-settings::before {
+    content: "\e905";
+}
