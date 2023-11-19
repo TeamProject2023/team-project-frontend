@@ -1,44 +1,33 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import { observer } from "mobx-react-lite";
 import { useLocation, Outlet, Navigate } from "react-router-dom";
 import { Loader } from "../../components/Loader";
-// import { appService } from "../services";
-// import { appController } from "../controllers";
-// import { selectIsAuth } from "../store/selector";
+import { appStore } from "../../store";
+import { useCheckAuth } from "../../hooks/useCheckAuth";
 
-export const PrivateOutlet: FC = () => {
-    const isAuth = true;
+export const PrivateOutlet: FC = observer(() => {
     const location = useLocation();
-    // const { isLoading, makeRequest } = useFetch<AuthResponse>(true);
-    // useEffect(() => {
-    //     console.log("PrivateOutlet useEffect");
-    //     const checkAuth = async () => {
-    //         try {
-    //             // const response = await makeRequest(async () => {
-    //             //     return appService.auth.refresh();
-    //             // });
-    //             // appController.auth.handleLogin(response);
-    //         } catch (error) {
-    //             console.log(`Error - PrivateOutlet - ${error}`);
-    //             // appController.auth.handleLogout();
-    //         }
-    //     };
+    const { isLoading, isAuth, token } = useCheckAuth();
 
-    //     checkAuth();
-    // }, [makeRequest]);
-
-    // console.log({ isLoading, isAuth });
+    useEffect(() => {
+        appStore.setIsAuth(isAuth);
+        appStore.setToken(token);
+    }, [
+        isAuth, token,
+    ]);
     return (
         <div className="page-wrapper layout layout-private">
-            {false ? (
+            {isLoading ? (
                 <Loader />
             ) : isAuth ? (
                 <Outlet />
             ) : (
                 <Navigate
                     to="/login"
-                    state={{ from: location }}
+                    state={{ from: location, omitCheckAuth: true }}
                 />
             )}
+
         </div>
     );
-};
+});

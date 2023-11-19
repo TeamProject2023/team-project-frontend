@@ -9,7 +9,7 @@ export const Loader: FC = () => {
                     <div className="loader-rotate">
                         <Pill
                             width="100"
-                            height="auto"
+                            height="100%"
                             fill="#2490EB"
                             className="loader"
                         />
