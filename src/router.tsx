@@ -3,7 +3,7 @@ import { NotFound } from "./pages/NotFound";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { PrivateOutlet } from "./layouts/PrivateOutlet/PrivateOutlet";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
-import { SigUpPage } from "./pages/SignUpPage/SignUpPage";
+import { SignUpPage } from "./pages/SignUpPage/SignUpPage";
 import { Routes } from "./types/routes.types";
 import { AccountLayout } from "./layouts/AccountLayout";
 import { BookingPage } from "./pages/BookingPage/BookingPage";
@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: Routes.SignUp,
-                        element: <SigUpPage />,
+                        element: <SignUpPage />,
                     },
                 ],
             },

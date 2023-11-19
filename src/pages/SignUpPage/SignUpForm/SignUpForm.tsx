@@ -1,184 +1,122 @@
-import { FC, forwardRef } from "react";
-import { Link } from "react-router-dom";
-import { Controller, useForm } from "react-hook-form";
+import { FC, useState } from "react";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import PhoneInput from "react-phone-number-input";
-import { Routes } from "../../../types/routes.types";
+import { useNavigate } from "react-router-dom";
 import {
     ISignUpFormValues,
     signupFormSchema,
 } from "../../../schemas/signup.schema";
 import "react-phone-number-input/style.css";
+import { useFetch } from "../../../hooks/useFetch";
+import { IRegisterResponse } from "../../../models/response/IRegisterResponse";
+import { AppService } from "../../../services/app/app.service";
+import { appStore } from "../../../store";
+import { ILoginResponse } from "../../../models/response/ILoginResponse";
+import { LocalStorageRefreshToken } from "../../../utils/constants.util";
+import { CustomError } from "../../../services/error/error.service";
+import { Loader } from "../../../components/Loader";
+import { FormInput } from "./components/FormInput";
+import { FormPhoneInput } from "./components/FormPhoneInput";
+import { FormActions } from "./components/FormActions";
+import { Routes } from "../../../types/routes.types";
 
 export const SignUpForm: FC = () => {
+    const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false);
+    const { makeRequest: signup } = useFetch<IRegisterResponse>();
+    const { makeRequest: login } = useFetch<ILoginResponse>();
     const {
         register,
         handleSubmit,
         formState: { errors },
+        setError,
         control,
     } = useForm<ISignUpFormValues>({
         resolver: yupResolver(signupFormSchema),
     });
-    const onSubmit = handleSubmit((data) => console.log(data));
-
+    const onSubmit = handleSubmit(async ({ email, password }) => {
+        try {
+            setIsLoading(true);
+            await signup(() => AppService.register({ email, password }));
+            const loginResponse = await login(() => AppService.login({ email, password }));
+            appStore.setIsAuth(true);
+            appStore.setToken(loginResponse.token);
+            localStorage.setItem(LocalStorageRefreshToken, loginResponse.refreshToken);
+            navigate(Routes.Dashboard);
+        } catch (error) {
+            let customError;
+            if (error instanceof CustomError) {
+                customError = error;
+            } else {
+                customError = new CustomError(error);
+            }
+            setError("root", { message: `Error! ${customError.message}. You haven't been registered. Please try again` });
+        } finally {
+            setIsLoading(false);
+        }
+    });
     return (
-        <div className="form-wrapper">
-            <form
-                className="form form-signup"
-                autoComplete="off"
-                onSubmit={onSubmit}
-            >
-                <div className="form__inner">
-                    <div className="form__header" />
+        <>{isLoading && <Loader />}
+            <div className="form-wrapper">
+                <form
+                    className="form form-signup"
+                    autoComplete="off"
+                    onSubmit={onSubmit}
+                >
+                    <div className="form__inner">
+                        <div className="form__header">
+                            {errors.root?.message && (
+                                <p className="form-error">
+                                    {errors.root?.message}
+                                </p>
+                            )}
+                        </div>
 
-                    <div className="form__body">
-                        <div className="input-group">
-                            <label
-                                htmlFor="firstName"
-                                className="label"
-                            >
-                                First Name
-                            </label>
-                            <div className="input-box">
-                                <input
-                                    type="text"
-                                    className="input"
-                                    placeholder="John"
-                                    autoComplete="off"
-                                    id="firstName"
-                                    {...register("firstName")}
-                                />
-                                <p className="input-error">
-                                    {errors.firstName?.message}
-                                </p>
-                            </div>
+                        <div className="form__body">
+                            <FormInput
+                                id="firstName"
+                                label="First Name"
+                                placeholder="John"
+                                type="text"
+                                register={register}
+                                error={errors.firstName?.message}
+                            />
+                            <FormInput
+                                id="lastName"
+                                label="Last Name"
+                                placeholder="Smith"
+                                type="text"
+                                register={register}
+                                error={errors.lastName?.message}
+                            />
+                            <FormInput
+                                id="email"
+                                label="Last Name"
+                                placeholder="email@email.com"
+                                type="text"
+                                register={register}
+                                error={errors.email?.message}
+                            />
+                            <FormPhoneInput
+                                control={control}
+                                error={errors.phone?.message}
+                            />
+                            <FormInput
+                                id="password"
+                                label="Password"
+                                placeholder="Password"
+                                type="password"
+                                register={register}
+                                error={errors.password?.message}
+                            />
                         </div>
-                        <div className="input-group">
-                            <label
-                                htmlFor="lastName"
-                                className="label"
-                            >
-                                Last Name
-                            </label>
-                            <div className="input-box">
-                                <input
-                                    type="text"
-                                    className="input"
-                                    placeholder="Smith"
-                                    autoComplete="off"
-                                    id="lastName"
-                                    {...register("lastName")}
-                                />
-                                <p className="input-error">
-                                    {errors.lastName?.message}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="input-group">
-                            <label
-                                htmlFor="email"
-                                className="label"
-                            >
-                                Email
-                            </label>
-                            <div className="input-box">
-                                <input
-                                    type="text"
-                                    className="input"
-                                    placeholder="email@email.com"
-                                    autoComplete="off"
-                                    id="email"
-                                    {...register("email")}
-                                />
-                                <p className="input-error">
-                                    {errors.email?.message}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="input-group">
-                            <label
-                                htmlFor="phone"
-                                className="label"
-                            >
-                                Phone
-                            </label>
-                            <div className="input-box">
-                                <Controller
-                                    control={control}
-                                    name="phone"
-                                    render={({
-                                        field: { onChange, value },
-                                    }) => (
-                                        <PhoneInput
-                                            placeholder="Enter phone number"
-                                            value={value}
-                                            onChange={onChange}
-                                            international={true}
-                                            defaultCountry="PL"
-                                            inputComponent={AppPhoneInput}
-                                        />
-                                    )}
-                                />
-                                <p className="input-error">
-                                    {errors.phone?.message}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="input-group">
-                            <label
-                                htmlFor="password"
-                                className="label"
-                            >
-                                Password
-                            </label>
-                            <div className="input-box">
-                                <input
-                                    type="password"
-                                    className="input"
-                                    placeholder="Password"
-                                    autoComplete="off"
-                                    id="password"
-                                    {...register("password")}
-                                />
-                                <p className="input-error">
-                                    {errors.password?.message}
-                                </p>
-                            </div>
+
+                        <div className="form__footer">
+                            <FormActions />
                         </div>
                     </div>
-
-                    <div className="form__footer">
-                        <button
-                            className="btn btn-primary"
-                            type="submit"
-                        >
-                            Sign up
-                        </button>
-                        <p className="form__info">
-                            Already have an account?{" "}
-                            <Link
-                                to={Routes.Login}
-                                className="link link-underline"
-                            >
-                                Login
-                            </Link>
-                        </p>
-                    </div>
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        </>
     );
 };
-
-const AppPhoneInput = forwardRef<HTMLInputElement>(
-    function AppInput(props, ref) {
-        return (
-            <input
-                {...props}
-                id="phone"
-                ref={ref}
-                className="input"
-            />
-        );
-    },
-);

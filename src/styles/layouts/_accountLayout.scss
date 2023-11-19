@@ -19,9 +19,13 @@
         .account-header__inner {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
 
             padding: 2rem 0;
+        }
+
+        .account-greetings {
+            font-size: 1.6rem;
         }
 
         .user-actions {

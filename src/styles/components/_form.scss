@@ -5,6 +5,7 @@
         gap: 2.5rem;
     }
     &__header {
+        padding: 0.4rem 0;
     }
     &__body {
         display: flex;
@@ -55,11 +56,13 @@
         text-transform: none;
     }
 
-    .input-error {
+    .input-error,
+    .form-error {
         font-family: $font-roboto;
         font-weight: 400;
         font-size: 1.5rem;
         color: $color-red;
+        line-height: 120%;
     }
 
     &__info {

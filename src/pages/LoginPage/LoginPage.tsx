@@ -1,26 +1,25 @@
-import { FC } from "react";
-import { LoginForm } from "./LoginForm/LoginForm";
+import { FC, useEffect } from "react";
+import { observer } from "mobx-react-lite";
+import { Navigate } from "react-router-dom";
+import { useCheckAuth } from "../../hooks/useCheckAuth";
+import { appStore } from "../../store";
+import { Loader } from "../../components/Loader";
+import { LoginPageContent } from "./LoginPageContent";
+import { Routes } from "../../types/routes.types";
 
-export const LoginPage: FC = () => {
+export const LoginPage: FC = observer(() => {
+    const { isLoading, isAuth, token } = useCheckAuth();
+
+    useEffect(() => {
+        appStore.setIsAuth(isAuth);
+        appStore.setToken(token);
+    }, [
+        isAuth, token,
+    ]);
     return (
-        <div className="page page-auth page-login">
-            <section className="section">
-                <div className="container">
-                    <div className="section__inner">
-                        <div className="card">
-                            <div className="card__inner">
-                                <h3 className="card__title">
-                                    Welcome to MedAI
-                                </h3>
-                                {/* <h4 className="card__subtitle">Transforming Healthcare with Intelligence</h4> */}
-                                <div className="card__content">
-                                    <LoginForm />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+        <>
+            {isLoading ? <Loader /> :
+                isAuth ? <Navigate to={Routes.Dashboard} /> : <LoginPageContent />}
+        </>
     );
-};
+});
