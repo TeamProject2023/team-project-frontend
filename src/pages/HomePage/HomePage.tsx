@@ -23,11 +23,7 @@ export const HomePage: FC = () => {
                 <div className="column"> <img src={gif} /></div>
             </div>
             <Separator />
-            <div className="content">
-                <div className="promo-content">
-                    <Promo />
-                </div>
-            </div>
+            <div className="content"><Promo /></div>
             <Footer />
         </>
     );
