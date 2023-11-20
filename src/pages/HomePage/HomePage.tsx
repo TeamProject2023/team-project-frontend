@@ -5,6 +5,8 @@ import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 
 import gif from "../../assets/images/look-into-microscope-love-death-and-robots.gif";
+import { Separator } from "../../components/Separator";
+import {Promo} from "../../components/Promo";
 
 export const HomePage: FC = () => {
     return (
@@ -20,8 +22,12 @@ export const HomePage: FC = () => {
                 </div>
                 <div className="column"> <img src={gif} /></div>
             </div>
-            <div className="separator">Separator</div>
-            <div className="content">Content</div>
+            <Separator />
+            <div className="content">
+                <div className="promo-content">
+                    <Promo />
+                </div>
+            </div>
             <Footer />
         </>
     );
