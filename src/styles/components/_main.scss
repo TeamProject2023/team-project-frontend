@@ -1,9 +1,16 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main {
+    padding-top: 80px;
+}
+
 .content {
     &__inner {}
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50dvh;
     background-color: #efeaea;
     color: black;
     padding: 3rem;
@@ -17,58 +24,6 @@
         padding: 0.5rem;
     }
 
-    h1 {
-        padding: 10px;
-        font-size: large;
-
-        @media only screen and (max-width: 600px) {
-            font-size: medium;
-        }
-
-        @media only screen and (max-width: 300px) {
-            font-size: small;
-        }
-    }
-
-    p {
-        color: #1677FEFF;
-        font-size: large;
-        margin-bottom: 10px;
-
-        @media only screen and (max-width: 600px) {
-            font-size: medium;
-        }
-
-        @media only screen and (max-width: 300px) {
-            font-size: small;
-        }
-    }
-
-    .main-button {
-        align-items: center;
-        background-color: #1677fe;
-        color: #ffffff;
-        font-size: large;
-        font-weight: bolder;
-        margin: 10px;
-        padding: 5px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-        &:hover {
-            background-color: #136ae3;
-        }
-
-        @media only screen and (max-width: 600px) {
-            font-size: medium;
-        }
-
-        @media only screen and (max-width: 300px) {
-            font-size: small;
-        }
-    }
 
     img {
         display: block;
@@ -85,8 +40,43 @@
         text-align: center;
         flex: 50%;
 
+        &__suptitle {
+            font-size: 24px;
+            font-weight: 500;
+            color: #1677FEFF;
+        }
+        &__title {
+            margin: 20px 0 10px 0;
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        &__subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            color: #1677FEFF;
+        }
+        &__button {
+            font-size: 24px;
+            font-weight: bolder;
+            text-transform: uppercase;
+            color: #fff;
+            background: #1677FEFF;
+            border: 2px solid #1677FEFF;
+            border-radius: 15px;
+            padding: 20px 30px;
+            margin-top: 30px;
+            transition: all 0.3s linear;
+            cursor: pointer;
+            &:hover {
+                background: transparent;
+                color: #1677fe;
+            }
+        }
+
         @media only screen and (max-width: 600px) {
             flex: 100%;
+            padding-top: 30px;
         }
     }
 }

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import {FC, useEffect, useState} from "react";
 
 import { Header } from "../../components/Header";
 
@@ -8,23 +8,28 @@ import gif from "../../assets/images/look-into-microscope-love-death-and-robots.
 import { Separator } from "../../components/Separator";
 import {Promo} from "../../components/Promo";
 
+
+
 export const HomePage: FC = () => {
     return (
         <>
             <Header />
 
-            <div className="content">
-                <div className="column">
-                    <p>We afford</p>
-                    <h1>Most accurate prediction</h1>
-                    <p>95% accuracy of our AI model</p>
-                    <button className="main-button">Try now</button>
+            <main className="main">
+                <div className="content">
+                    <div className="column">
+                        <p className="column__suptitle">We afford</p>
+                        <h1 className="column__title">Most accurate prediction</h1>
+                        <p className="column__subtitle">95% accuracy of our AI model</p>
+                        <button className="column__button">Try now</button>
+                    </div>
+                    <div className="column__gif"> <img src={gif} /></div>
                 </div>
-                <div className="column"> <img src={gif} /></div>
-            </div>
-            <Separator />
-            <div className="content"><Promo /></div>
-            <Footer />
+                <Separator />
+                <div className="content"><Promo /></div>
+                <Footer />
+            </main>
         </>
     );
 };
+

@@ -20,20 +20,16 @@
 
     --swiper-navigation-sides-offset: 0px;
 }
-html {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    font-size: 62.5%;
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
 }
+
 body {
     margin: 0;
     padding: 0;
-    font-family: $font-primary;
-    line-height: 110%;
     min-width: 320px;
     color: $color-white;
-    background-color: $color-black;
-    touch-action: pan-x pan-y;
     scroll-behavior: smooth;
 
     -webkit-tap-highlight-color: transparent;
@@ -43,79 +39,17 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
-    font-feature-settings: "ss06";
 }
 
-*:focus {
-    outline: none;
-}
-*::-moz-selection {
-    color: $color-selection-text;
-    background: $color-selection-bg;
-}
-*::selection {
-    color: $color-selection-text;
-    background: $color-selection-bg;
-}
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
 
-.noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
-}
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow: hidden;
-
-    @supports (height: 100lvh) {
-        min-height: 100lvh;
-    }
-}
-
-.wrapper-full-height {
-    min-height: 100vh;
-    min-height: 100dvh;
-
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-
-    @supports (height: 100lvh) {
-        min-height: 100lvh;
-    }
-}
 
 .container {
     width: 100%;
-    max-width: $container-desktop;
 
     margin: 0 auto;
     padding: 0 8.6rem;
 
-    flex-grow: 1;
-    @media screen and (max-width: $bp-l) {
-        max-width: $container-tablet;
-        padding: 0 3.2rem;
-    }
-    @media screen and (max-width: $bp-m) {
-        max-width: 100%;
-        padding: 0 1.6rem;
-    }
-    @media screen and (max-width: $bp-s) {
-        padding: 0 1rem;
-    }
 }
 
 a {
