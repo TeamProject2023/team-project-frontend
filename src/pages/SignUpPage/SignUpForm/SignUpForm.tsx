@@ -38,10 +38,15 @@ export const SignUpForm: FC = () => {
         try {
             setIsLoading(true);
             await signup(() => AppService.register({ email, password }));
-            const loginResponse = await login(() => AppService.login({ email, password }));
+            const loginResponse = await login(() =>
+                AppService.login({ email, password }),
+            );
             appStore.setIsAuth(true);
             appStore.setToken(loginResponse.token);
-            localStorage.setItem(LocalStorageRefreshToken, loginResponse.refreshToken);
+            localStorage.setItem(
+                LocalStorageRefreshToken,
+                loginResponse.refreshToken,
+            );
             navigate(Routes.Dashboard);
         } catch (error) {
             let customError;
@@ -50,13 +55,16 @@ export const SignUpForm: FC = () => {
             } else {
                 customError = new CustomError(error);
             }
-            setError("root", { message: `Error! ${customError.message}. You haven't been registered. Please try again` });
+            setError("root", {
+                message: `Error! ${customError.message}. You haven't been registered. Please try again`,
+            });
         } finally {
             setIsLoading(false);
         }
     });
     return (
-        <>{isLoading && <Loader />}
+        <>
+            {isLoading && <Loader />}
             <div className="form-wrapper">
                 <form
                     className="form form-signup"

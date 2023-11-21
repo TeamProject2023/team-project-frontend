@@ -4,8 +4,8 @@ import { Routes } from "../../types/routes.types";
 
 export const HomePage: FC = () => {
     return (
-        <div>HomePage
-
+        <div>
+            HomePage
             <Link to={Routes.Dashboard}>Dashboard</Link>
         </div>
     );

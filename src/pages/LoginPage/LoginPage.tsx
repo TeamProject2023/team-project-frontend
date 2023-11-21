@@ -13,13 +13,16 @@ export const LoginPage: FC = observer(() => {
     useEffect(() => {
         appStore.setIsAuth(isAuth);
         appStore.setToken(token);
-    }, [
-        isAuth, token,
-    ]);
+    }, [isAuth, token]);
     return (
         <>
-            {isLoading ? <Loader /> :
-                isAuth ? <Navigate to={Routes.Dashboard} /> : <LoginPageContent />}
+            {isLoading ? (
+                <Loader />
+            ) : isAuth ? (
+                <Navigate to={Routes.Dashboard} />
+            ) : (
+                <LoginPageContent />
+            )}
         </>
     );
 });

@@ -12,9 +12,7 @@ export const PrivateOutlet: FC = observer(() => {
     useEffect(() => {
         appStore.setIsAuth(isAuth);
         appStore.setToken(token);
-    }, [
-        isAuth, token,
-    ]);
+    }, [isAuth, token]);
     return (
         <div className="page-wrapper layout layout-private">
             {isLoading ? (
@@ -27,7 +25,6 @@ export const PrivateOutlet: FC = observer(() => {
                     state={{ from: location, omitCheckAuth: true }}
                 />
             )}
-
         </div>
     );
 });

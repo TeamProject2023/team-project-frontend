@@ -11,7 +11,14 @@ interface Props {
     error: string | undefined;
 }
 
-export const FormInput: FC<Props> = ({ id, label, type, placeholder, register, error }) => {
+export const FormInput: FC<Props> = ({
+    id,
+    label,
+    type,
+    placeholder,
+    register,
+    error,
+}) => {
     return (
         <div className="input-group">
             <label
@@ -29,11 +36,7 @@ export const FormInput: FC<Props> = ({ id, label, type, placeholder, register, e
                     id={id}
                     {...register(id)}
                 />
-                {error && (
-                    <p className="input-error">
-                        {error}
-                    </p>
-                )}
+                {error && <p className="input-error">{error}</p>}
             </div>
         </div>
     );
