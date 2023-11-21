@@ -5,7 +5,11 @@ import { appStore } from "../store";
 import { LocalStorageRefreshToken } from "../utils/constants.util";
 import { useFetch } from "./useFetch";
 
-interface UseCheckAuthResponse { isLoading: boolean; isAuth: boolean; token: string; }
+interface UseCheckAuthResponse {
+    isLoading: boolean;
+    isAuth: boolean;
+    token: string;
+}
 
 export const useCheckAuth = (): UseCheckAuthResponse => {
     const [token, setToken] = useState("");
@@ -17,14 +21,18 @@ export const useCheckAuth = (): UseCheckAuthResponse => {
         const checkAuth = async () => {
             try {
                 setIsLoading(true);
-                const refreshToken = localStorage.getItem(LocalStorageRefreshToken);
+                const refreshToken = localStorage.getItem(
+                    LocalStorageRefreshToken,
+                );
                 if (!refreshToken) {
                     appStore.setToken("");
                     appStore.setIsAuth(false);
                     setIsLoading(false);
                     return;
                 }
-                const response = await makeRequest(() => AppService.refresh({ refreshToken }));
+                const response = await makeRequest(() =>
+                    AppService.refresh({ refreshToken }),
+                );
                 setToken(response.token);
                 setIsAuth(true);
             } catch (error) {

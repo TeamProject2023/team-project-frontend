@@ -13,7 +13,6 @@ export const ErrorModal: FC<Props> = ({ handleCloseModal, isActive }) => {
             <div className="modal__shadow" />
             <div className="modal__outer">
                 <div className="modal__inner">
-
                     <button onClick={() => handleCloseModal()}>Close</button>
                 </div>
             </div>

@@ -28,10 +28,15 @@ export const LoginForm: FC = observer(() => {
     const { isLoading, makeRequest } = useFetch<ILoginResponse>();
     const onSubmit = handleSubmit(async ({ email, password }) => {
         try {
-            const response = await makeRequest(() => AppService.login({ email, password }));
+            const response = await makeRequest(() =>
+                AppService.login({ email, password }),
+            );
             appStore.setIsAuth(true);
             appStore.setToken(response.token);
-            localStorage.setItem(LocalStorageRefreshToken, response.refreshToken);
+            localStorage.setItem(
+                LocalStorageRefreshToken,
+                response.refreshToken,
+            );
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             navigate(location.state?.from?.path ?? Routes.Dashboard);
         } catch (error) {

@@ -21,9 +21,5 @@ export const DropDown: FC<Props> = ({ children }) => {
     );
 };
 export const DropDownBox: FC<Props> = ({ children }) => {
-    return (
-        <div className="dropdown-box">
-            {children}
-        </div>
-    );
+    return <div className="dropdown-box">{children}</div>;
 };

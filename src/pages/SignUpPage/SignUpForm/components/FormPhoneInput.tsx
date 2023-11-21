@@ -10,7 +10,6 @@ interface Props {
 
 export const FormPhoneInput: FC<Props> = ({ control, error }) => {
     return (
-
         <div className="input-group">
             <label
                 htmlFor="phone"
@@ -22,9 +21,7 @@ export const FormPhoneInput: FC<Props> = ({ control, error }) => {
                 <Controller
                     control={control}
                     name="phone"
-                    render={({
-                        field: { onChange, value },
-                    }) => (
+                    render={({ field: { onChange, value } }) => (
                         <PhoneInput
                             placeholder="Enter phone number"
                             value={value}
@@ -35,11 +32,7 @@ export const FormPhoneInput: FC<Props> = ({ control, error }) => {
                         />
                     )}
                 />
-                {error && (
-                    <p className="input-error">
-                        {error}
-                    </p>
-                )}
+                {error && <p className="input-error">{error}</p>}
             </div>
         </div>
     );

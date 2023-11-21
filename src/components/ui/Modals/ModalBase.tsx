@@ -8,12 +8,5 @@ interface Props {
 }
 
 export const ModalBase: FC<Props> = ({ children }) => {
-    return (
-        <>
-            {createPortal(
-                <>{children}</>,
-                modalEl,
-            )}
-        </>
-    );
+    return <>{createPortal(<>{children}</>, modalEl)}</>;
 };

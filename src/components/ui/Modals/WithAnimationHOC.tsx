@@ -9,7 +9,9 @@ export interface ComponentProps {
     handleCloseModal: () => void;
 }
 
-export function withAnimation<P extends WithAnimationProps = WithAnimationProps>(Component: FC<ComponentProps>): React.FC<P> {
+export function withAnimation<
+    P extends WithAnimationProps = WithAnimationProps,
+>(Component: FC<ComponentProps>): React.FC<P> {
     const ModalWithAnimation: FC<P> = ({ closeModal, ...props }) => {
         const [isActive, setIsActive] = useState(false);
 
@@ -27,9 +29,12 @@ export function withAnimation<P extends WithAnimationProps = WithAnimationProps>
         };
         return (
             <ModalBase>
-                <Component isActive={isActive} handleCloseModal={handleCloseModal} {...props as P} />
+                <Component
+                    isActive={isActive}
+                    handleCloseModal={handleCloseModal}
+                    {...(props as P)}
+                />
             </ModalBase>
-
         );
     };
 
