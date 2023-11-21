@@ -26,13 +26,12 @@
 
     .login-button {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         right: 30px;
         background: #1677fe;
         color: #ffffff;
-        font-size: large;
-        padding: 10px 20px;
+        font-size: 28px;
+        font-weight: bold;
+        padding: 15px 30px;
         border: none;
         cursor: pointer;
         border: 2px solid #1677fe;
@@ -67,7 +66,7 @@
             }
             &__item {
                 position: relative;
-                font-size: 20px;
+                font-size: 24px;
                 font-weight: bold;
                 color: #1677fe;
                 &::after {
@@ -92,9 +91,9 @@
     }
 
     .logo-img {
-        width: 70px;
+        width: 100px;
         height: auto;
-        margin: 10px 10px 10px 0px;
+        margin: 10px;
         z-index: 10;
     }
 }
@@ -107,7 +106,7 @@
     span {
         display: block;
         width: 30px;
-        height: 4px;
+        height: 5px;
         background-color: #1677fe;
     }
     &::before {
@@ -117,7 +116,7 @@
         right: 0;
         display: block;
         width: 40px;
-        height: 4px;
+        height: 5px;
         background-color: #1677fe;
         transition: all 0.2s linear;
     }
@@ -128,7 +127,7 @@
         right: 0;
         display: block;
         width: 20px;
-        height: 4px;
+        height: 5px;
         background-color: #1677fe;
         transition: all 0.2s linear;
     }
@@ -151,15 +150,18 @@
 @media (max-width: 767px) {
     .burger {
         display: flex;
-        margin-top: 20px;
+        margin-top: 30px;
     }
     .header {
         .container {
+            .header__inner {
+                padding: 0 10px;
+            }
             .nav {
                 position: fixed;
                 top: 50%;
-                transform: translateY(-133%);
-                width: 100vw;
+                transform: translateY(-130%);
+                width: 110vw;
                 height: 100vh;
                 background-color: #fff;
                 margin-left: -30px;
@@ -184,13 +186,15 @@
             }
         }
         .login-button {
-            transform: translateY(0);
-            right: 100px;
+            top: 50%;
+            right: 90px;
+            padding: 10px 15px;
+            font-size: 24px;
         }
+        .logo-img {
+             top: 20px;
+             position: absolute;
+             margin: 0;
+         }
     }
-    .logo-img {
-        top: 20px;
-        position: absolute;
-    }
-
 }

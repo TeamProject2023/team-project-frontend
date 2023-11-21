@@ -1,4 +1,5 @@
 import { FC } from "react";
+import tooth from "../assets/images/tooth-solid.svg";
 import "../styles/components/_separator.scss";
 
 interface SeparatorProps {
@@ -8,25 +9,33 @@ interface SeparatorProps {
 export const Separator: FC<SeparatorProps> = () => {
     return (
         <div className="separator">
-            <div className="separator-content">
-                <div className="separator-item">
-                    <img src="icon1.png" alt="Icon 1" />
-                    <p>Text 1</p>
-                </div>
-                <div className="separator-item">
-                    <img src="icon2.png" alt="Icon 2" />
-                    <p>Text 2</p>
-                </div>
-                <div className="separator-item">
-                    <img src="icon3.png" alt="Icon 3" />
-                    <p>Text 3</p>
-                </div>
-                <div className="separator-item">
-                    <img src="icon4.png" alt="Icon 4" />
-                    <p>Text 4</p>
+            <div className="separator__container">
+                <div className="separator__item">
+                    <img src={tooth} alt="Icon 1" />
+                    <div className="separator__item-text">
+                        <div className="separator__item-title">60+</div>
+                        <div className="separator__item-subtitle">Project Completed</div>
+                    </div>
+                </div><div className="separator__item">
+                    <img src={tooth} alt="Icon 1" />
+                    <div className="separator__item-text">
+                        <div className="separator__item-title">60+</div>
+                        <div className="separator__item-subtitle">Project Completed</div>
+                    </div>
+                </div><div className="separator__item">
+                    <img src={tooth} alt="Icon 1" />
+                    <div className="separator__item-text">
+                        <div className="separator__item-title">60+</div>
+                        <div className="separator__item-subtitle">Project Completed</div>
+                    </div>
+                </div><div className="separator__item">
+                    <img src={tooth} alt="Icon 1" />
+                    <div className="separator__item-text">
+                        <div className="separator__item-title">60+</div>
+                        <div className="separator__item-subtitle">Project Completed</div>
+                    </div>
                 </div>
             </div>
         </div>
     );
 };
-

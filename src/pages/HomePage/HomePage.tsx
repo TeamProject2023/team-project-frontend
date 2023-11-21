@@ -16,17 +16,19 @@ export const HomePage: FC = () => {
             <Header />
 
             <main className="main">
-                <div className="content">
-                    <div className="column">
-                        <p className="column__suptitle">We afford</p>
-                        <h1 className="column__title">Most accurate prediction</h1>
-                        <p className="column__subtitle">95% accuracy of our AI model</p>
-                        <button className="column__button">Try now</button>
+                <div className="first">
+                    <div className="first__container">
+                        <div className="first__text">
+                            <p className="first__suptitle">We afford</p>
+                            <h1 className="first__title">Most accurate prediction</h1>
+                            <p className="first__subtitle">95% accuracy of our AI model</p>
+                            <button className="first__button">Try now</button>
+                        </div>
+                        <div className="first__gif"> <img src={gif} /></div>
                     </div>
-                    <div className="column__gif"> <img src={gif} /></div>
                 </div>
                 <Separator />
-                <div className="content"><Promo /></div>
+                <div className="promo"><Promo /></div>
                 <Footer />
             </main>
         </>

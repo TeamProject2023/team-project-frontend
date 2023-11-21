@@ -1,43 +1,51 @@
-/* Promo.scss */
+
+@import "adaptive";
+
 .promo {
-  background-color: transparent; /* Adjust as needed */
   position: relative;
   z-index: 2; /* Ensure it's above the separator */
-  margin-top: -100px;
+  margin-top: -20px;
+  background-color: transparent;
 
-  &-container {
+  &__container {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
-    max-width: 1200px; /* Adjust this as needed */
-    margin: 0 auto;
-    padding: 20px; /* Adjust padding as per design */
   }
 
-  &-segment {
+  &__segment {
+    display: flex;
+    gap: 10px;
     max-width: 350px;
     background-color: white;
     border-radius: 15px; /* Add rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add bottom shadow */
     padding: 20px; /* Adjust padding as per design */
-    margin-bottom: 20px; /* Add spacing between segments */
     min-width: 250px;
+    transition: all 0.3s linear;
 
     img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px; /* Increase or decrease space between image and text */
+      width: 70px; /* Adjust icon size */
+      height: 70px; /* Adjust icon size */
     }
-
-    p {
-      font-size: 16px;
-      color: #333;
-      margin-top: 10px; /* Adjust space between text and image */
-    }
-
-    @media only screen and (max-width: 600px) {
-      width: calc(100% - 20px); /* Adjust width for single column */
+    &:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add bottom shadow */
     }
   }
+  
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #000;
+  }
+  &__title {
+    @include adaptive-value('font-size', 24, 20, 1);
+    font-weight: bold;
+  }
+  &__subtitle {
+    @include adaptive-value('font-size', 20, 16, 1);
+  }
+
 }

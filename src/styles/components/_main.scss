@@ -1,82 +1,86 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+[class*=container] {
+    max-width: 1400px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    [class*=container] {
+        padding: 0 10px;
+    }
+}
 
 .main {
     padding-top: 80px;
+    background-color: #efeaea;
 }
 
-.content {
-    &__inner {}
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.first {
     background-color: #efeaea;
-    color: black;
-    padding: 3rem;
-
-    @media only screen and (max-width: 600px) {
-        flex-direction: column;
-        padding: 1rem;
+    padding: 100px 0 30px 0;
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include adaptive-value('gap', 100, 20, 1);
     }
-
-    @media only screen and (max-width: 300px) {
-        padding: 0.5rem;
-    }
-
-
-    img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-        height: auto;
-        border-radius: 30px;
-        box-shadow: 0 10px 8px rgba(0, 0, 0, 0.24);
-        border: 10px solid #1677fe;
-    }
-
-    .column {
+    &__text {
         text-align: center;
-        flex: 50%;
-
-        &__suptitle {
-            font-size: 24px;
-            font-weight: 500;
-            color: #1677FEFF;
+    }
+    &__suptitle {
+        @include adaptive-value('font-size', 28, 20, 1);
+        font-weight: 500;
+        color: #1677FEFF;
+    }
+    &__title {
+        color: #000;
+        margin: 20px 0 10px 0;
+        @include adaptive-value('font-size', 40, 32, 1);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__subtitle {
+        @include adaptive-value('font-size', 24, 18, 1);
+        font-weight: 500;
+        color: #1677FEFF;
+    }
+    &__button {
+        font-size: 24px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: #fff;
+        background: #1677FEFF;
+        border: 2px solid #1677FEFF;
+        border-radius: 15px;
+        padding: 20px 50px;
+        margin-top: 30px;
+        transition: all 0.3s linear;
+        cursor: pointer;
+        &:hover {
+            background: transparent;
+            color: #1677fe;
         }
-        &__title {
-            margin: 20px 0 10px 0;
-            font-size: 32px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        &__subtitle {
-            font-size: 20px;
-            font-weight: 500;
-            color: #1677FEFF;
-        }
-        &__button {
-            font-size: 24px;
-            font-weight: bolder;
-            text-transform: uppercase;
-            color: #fff;
-            background: #1677FEFF;
-            border: 2px solid #1677FEFF;
+    }
+    &__gif {
+        img {
+            width: auto;
+            border: 5px solid #1677fe;
             border-radius: 15px;
-            padding: 20px 30px;
-            margin-top: 30px;
-            transition: all 0.3s linear;
-            cursor: pointer;
-            &:hover {
-                background: transparent;
-                color: #1677fe;
-            }
-        }
+            box-shadow: 0 10px 8px rgba(0, 0, 0, 0.24);
+            max-width: 90vw;
 
-        @media only screen and (max-width: 600px) {
-            flex: 100%;
-            padding-top: 30px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .first {
+        &__container {
+            text-align: center;
+            flex-direction: column;
         }
     }
 }
