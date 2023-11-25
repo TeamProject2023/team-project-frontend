@@ -1,4 +1,4 @@
-import {FC, useEffect, useState} from "react";
+import { FC } from "react";
 
 import { Header } from "../../components/Header";
 
@@ -6,9 +6,7 @@ import { Footer } from "../../components/Footer";
 
 import gif from "../../assets/images/look-into-microscope-love-death-and-robots.gif";
 import { Separator } from "../../components/Separator";
-import {Promo} from "../../components/Promo";
-
-
+import { Promo } from "../../components/Promo";
 
 export const HomePage: FC = () => {
     return (
@@ -29,9 +27,17 @@ export const HomePage: FC = () => {
                 </div>
                 <Separator />
                 <div className="promo"><Promo /></div>
+                <div className="first">
+                    <div className="first__container">
+                        <div className="first__text">
+                            <p className="first__suptitle">We have</p>
+                            <h1 className="first__title">Content</h1>
+                            <p className="first__subtitle">here</p>
+                        </div>
+                    </div>
+                </div>
                 <Footer />
             </main>
         </>
     );
 };
-
