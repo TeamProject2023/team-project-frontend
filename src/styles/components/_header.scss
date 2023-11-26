@@ -1,5 +1,7 @@
 @import "adaptive";
 
+$blue: #248fea;
+
 .header {
     position: fixed;
     width: 100%;
@@ -27,18 +29,18 @@
     .login-button {
         position: absolute;
         right: 30px;
-        background: #1677fe;
+        background: $blue;
         color: #ffffff;
         font-size: 28px;
         font-weight: bold;
         padding: 15px 30px;
         border: none;
         cursor: pointer;
-        border: 2px solid #1677fe;
+        border: 2px solid $blue;
         border-radius: 15px;
         transition: all 0.3s linear;
         &:hover {
-            color: #1677fe;
+            color: $blue;
             background: transparent;
         }
     }
@@ -68,14 +70,14 @@
                 position: relative;
                 font-size: 24px;
                 font-weight: bold;
-                color: #1677fe;
+                color: $blue;
                 &::after {
                     content: '';
                     display: block;
                     position: absolute;
                     width: 100%;
                     height: 2px;
-                    background-color: #1677fe;
+                    background-color: $blue;
                     transform: scaleX(0);
                     transition: transform 0.3s linear;
                     transform-origin: bottom right;
@@ -107,7 +109,7 @@
         display: block;
         width: 30px;
         height: 5px;
-        background-color: #1677fe;
+        background-color: $blue;
     }
     &::before {
         content: '';
@@ -117,7 +119,7 @@
         display: block;
         width: 40px;
         height: 5px;
-        background-color: #1677fe;
+        background-color: $blue;
         transition: all 0.2s linear;
     }
     &::after {
@@ -128,7 +130,7 @@
         display: block;
         width: 20px;
         height: 5px;
-        background-color: #1677fe;
+        background-color: $blue;
         transition: all 0.2s linear;
     }
     &._active {
@@ -159,7 +161,7 @@
             }
             .nav {
                 position: fixed;
-                top: 53%;
+                top: 58%;
                 transform: translateY(-130%);
                 width: 110vw;
                 height: 130vh;

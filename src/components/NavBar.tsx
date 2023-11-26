@@ -21,7 +21,7 @@ export const NavBar: FC = () => {
 const navLinks = [
     {
         title: "Predictor",
-        link: Routes.Rules,
+        link: Routes.Predictor,
     },
     {
         title: "MyCabinet",

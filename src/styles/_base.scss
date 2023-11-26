@@ -9,9 +9,6 @@
     box-sizing: border-box;
 }
 :root {
-    color: $color-white;
-    background-color: $color-black;
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -29,7 +26,6 @@ body {
     margin: 0;
     padding: 0;
     min-width: 320px;
-    color: $color-white;
     scroll-behavior: smooth;
 
     -webkit-tap-highlight-color: transparent;

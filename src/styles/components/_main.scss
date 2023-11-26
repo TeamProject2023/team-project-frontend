@@ -7,20 +7,23 @@ body {
     margin: 0 auto;
 }
 
+$blue: #248fea;
+
 @media (max-width: 767px) {
     [class*=container] {
         padding: 0 10px;
     }
 }
 
-.main {
-    padding-top: 80px;
-    background-color: #efeaea;
+main {
+    padding-top: 200px;
+    background-color: #fff;
+    min-height: 80vh;
 }
 
 .first {
-    background-color: #efeaea;
-    padding: 100px 0 30px 0;
+    background-color: #fff;
+    padding: 0px 0 30px 0;
     &__container {
         display: flex;
         justify-content: center;
@@ -33,7 +36,7 @@ body {
     &__suptitle {
         @include adaptive-value('font-size', 28, 20, 1);
         font-weight: 500;
-        color: #1677FEFF;
+        color: $blue;
     }
     &__title {
         color: #000;
@@ -45,15 +48,15 @@ body {
     &__subtitle {
         @include adaptive-value('font-size', 24, 18, 1);
         font-weight: 500;
-        color: #1677FEFF;
+        color: $blue;
     }
     &__button {
         font-size: 24px;
         font-weight: bolder;
         text-transform: uppercase;
         color: #fff;
-        background: #1677FEFF;
-        border: 2px solid #1677FEFF;
+        background: $blue;
+        border: 2px solid $blue;
         border-radius: 15px;
         padding: 20px 50px;
         margin-top: 30px;
@@ -61,13 +64,13 @@ body {
         cursor: pointer;
         &:hover {
             background: transparent;
-            color: #1677fe;
+            color: $blue;
         }
     }
     &__gif {
         img {
             width: auto;
-            border: 5px solid #1677fe;
+            border: 5px solid $blue;
             border-radius: 15px;
             box-shadow: 0 10px 8px rgba(0, 0, 0, 0.24);
             max-width: 90vw;
@@ -77,6 +80,9 @@ body {
 }
 
 @media (max-width: 991px) {
+    .main {
+        padding-top: 150px;
+    }
     .first {
         &__container {
             text-align: center;

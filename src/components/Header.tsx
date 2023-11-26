@@ -12,11 +12,11 @@ import { Button } from "./ui/Buttons/Button";
 
 
 export const Header: FC = () => {
-    const [kartyz, setKartyz] = useState(false);
-    const [mcwin, setMcwin] = useState(false);
+    const [burger, setBurger] = useState(false);
+    const [header, setHeader] = useState(false);
 
     return (
-        <header className={`header ${kartyz ? "_active" : ""}`}>
+        <header className={`header ${burger ? "_active" : ""}`}>
             <div className="container">
                 <div className="header__inner">
                     <div className="header__left">
@@ -31,7 +31,7 @@ export const Header: FC = () => {
 
 
                     <Button text="LogIn" classes="login-button" handleClick={() => {}} />
-                    <div className={`burger ${kartyz ? "_active" : ""}`} onClick={() => {setKartyz(!kartyz); setMcwin(!mcwin)}}><span></span></div>
+                    <div className={`burger ${burger ? "_active" : ""}`} onClick={() => {setBurger(!burger); setHeader(!header)}}><span></span></div>
                 </div>
             </div>
         </header>

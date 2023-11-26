@@ -1,6 +1,6 @@
 export enum Routes {
     Main = "/",
-    Rules = "/",
+    Predictor = "/predictor",
     Prizes = "/",
     Table = "/",
 }
