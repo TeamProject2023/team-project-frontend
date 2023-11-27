@@ -1,5 +1,4 @@
 @import "./vars";
-@import "./typography";
 @import "./base";
 @import "./mixins";
 
@@ -18,8 +17,8 @@
 @import "./components/header";
 @import "./components/navbar";
 @import "./components/main";
-@import "./components/intro";
 @import "./components/footer";
+@import "./components/predictor";
 
 /* SECTIONS */
 @import "./sections/base";

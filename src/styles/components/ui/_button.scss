@@ -1,3 +1,5 @@
+a.btn:visited,
+a.btn:link,
 .btn {
     display: flex;
     align-items: center;
@@ -8,38 +10,89 @@
 
     width: 100%;
 
-    font-family: inherit;
-    font-weight: 700;
-    line-height: 1.5;
     text-decoration: none;
-
-    border-radius: 0.25rem;
 
     transition: all 0.5s ease;
 
     cursor: pointer;
     user-select: none;
 }
-
-.btn-primary {
+.btn-primary,
+a.btn-primary:link,
+a.btn-primary:visited {
+    position: relative;
     padding: 1.4rem 2.8rem;
 
-    color: $color-white;
-    background-color: $color-primary;
-    border-radius: 5px;
+    color: $btn-primary-color;
+    background-color: $btn-primary-bg;
 
+    border-radius: 5px;
+    border: 1px solid $btn-primary-border;
+
+    font-family: $font-roboto;
     font-size: 1.6rem;
     font-weight: 400;
-    font-family: $font-roboto;
+    line-height: 1.5;
 
-    &:enabled:hover {
-        box-shadow: 0 50px $color-white inset;
-        color: $color-black;
+    transition: all 0.7s ease-in-out;
+
+    z-index: 1;
+    padding: 14px 28px 14px;
+    overflow: hidden;
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 50%;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+        border-radius: 0 50% 50% 0;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
     }
-    &:enabled:active {
-        color: $color-black;
-        background-color: $color-white;
-        border-color: $color-black;
+
+    &:after {
+        border-radius: 50% 0 0 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        content: "";
+        width: 50%;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -1;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+    }
+}
+
+a.btn-primary:active,
+.btn-primary:enabled:active {
+    color: $btn-primary-color-active;
+    background-color: $btn-primary-bg-active;
+    border-color: $btn-primary-border-active;
+}
+
+a.btn-primary:hover,
+.btn-primary:enabled:hover {
+    color: $btn-primary-color-hover;
+    background-color: $btn-primary-bg-hover;
+    border-color: $btn-primary-border-hover;
+
+    box-shadow: none;
+
+    &:after,
+    &:before {
+        width: 100%;
+        height: 100%;
+        visibility: visible;
+        opacity: 1;
+
+        background: #14467b;
     }
 }
 

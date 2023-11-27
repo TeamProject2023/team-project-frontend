@@ -1,7 +1,7 @@
-import LogoMedAI from "../assets/images/logos/logo-medai.svg";
+import Logo from "../assets/images/logos/logo-medai.svg";
 
 export const assets = {
     logos: {
-        transparent: LogoMedAI,
+        logo: Logo,
     },
 };

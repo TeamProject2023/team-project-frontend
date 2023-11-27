@@ -1,0 +1,70 @@
+$blue: #248fea;
+
+.predictor {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  &__title {
+    @include adaptive-value('font-size', 24, 18, 1);
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  &__input {
+    border: 2px solid $blue;
+    border-radius: 15px;
+    padding: 15px 25px;
+    @include adaptive-value('font-size', 20, 16, 1);
+    outline: none;
+  }
+  &__btn {
+    border: 2px solid $blue;
+    background: transparent;
+    border-radius: 15px;
+    color: $blue;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    &:hover {
+      background-color: $blue;
+      color: #fff;
+    }
+  }
+  &__answer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border: 5px solid $blue;
+    border-radius: 25px;
+    background-color: #fff;
+    @include adaptive-value('font-size', 36, 28, 1);
+    z-index: 11;
+    &._active {
+      display: block;
+    }
+  }
+  &__bg {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    opacity: 0.9;
+    z-index: 10;
+    &._active {
+      display: block;
+    }
+  }
+}

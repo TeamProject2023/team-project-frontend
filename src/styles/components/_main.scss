@@ -1,4 +1,92 @@
-.main {
-    &__inner {
+body {
+    font-family: 'Roboto', sans-serif;
+}
+[class*=container] {
+    max-width: 1400px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+$blue: #248fea;
+
+@media (max-width: 767px) {
+    [class*=container] {
+        padding: 0 10px;
+    }
+}
+
+main {
+    padding-top: 200px;
+    background-color: #fff;
+    min-height: 80vh;
+}
+
+.first {
+    background-color: #fff;
+    padding: 0px 0 30px 0;
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include adaptive-value('gap', 100, 20, 1);
+    }
+    &__text {
+        text-align: center;
+    }
+    &__suptitle {
+        @include adaptive-value('font-size', 28, 20, 1);
+        font-weight: 500;
+        color: $blue;
+    }
+    &__title {
+        color: #000;
+        margin: 20px 0 10px 0;
+        @include adaptive-value('font-size', 40, 32, 1);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__subtitle {
+        @include adaptive-value('font-size', 24, 18, 1);
+        font-weight: 500;
+        color: $blue;
+    }
+    &__button {
+        font-size: 24px;
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: #fff;
+        background: $blue;
+        border: 2px solid $blue;
+        border-radius: 15px;
+        padding: 20px 50px;
+        margin-top: 30px;
+        transition: all 0.3s linear;
+        cursor: pointer;
+        &:hover {
+            background: transparent;
+            color: $blue;
+        }
+    }
+    &__gif {
+        img {
+            width: auto;
+            border: 5px solid $blue;
+            border-radius: 15px;
+            box-shadow: 0 10px 8px rgba(0, 0, 0, 0.24);
+            max-width: 90vw;
+
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .main {
+        padding-top: 150px;
+    }
+    .first {
+        &__container {
+            text-align: center;
+            flex-direction: column;
+        }
     }
 }

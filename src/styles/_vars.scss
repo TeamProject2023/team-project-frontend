@@ -13,6 +13,18 @@ $color-red: #e31c25;
 
 $color-primary: $color-blue;
 
+$btn-primary-color: $color-white;
+$btn-primary-bg: $color-primary;
+$btn-primary-border: transparent;
+
+$btn-primary-color-hover: $color-white;
+$btn-primary-bg-hover: #2490eb;
+$btn-primary-border-hover: transparent;
+
+$btn-primary-color-active: #666666;
+$btn-primary-bg-active: transparent;
+$btn-primary-border-active: #666666;
+
 /* SIZES */
 $container-desktop: 1920px;
 $container-tablet: 1440px;
@@ -32,3 +44,7 @@ $font-inter: "Inter", sans-serif;
 $font-icomoon: "Icomoon", sans-serif;
 
 $font-primary: $font-roboto;
+
+/* FONTS */
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Grato", sans-serif;

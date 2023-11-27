@@ -1,8 +1,6 @@
 export enum Routes {
     Main = "/",
-    Rules = "/",
-    Prizes = "/",
-    Table = "/",
+    Predictor = "/predictor",
     Login = "/login",
     SignUp = "/signup",
     Dashboard = "/dashboard",

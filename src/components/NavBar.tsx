@@ -6,7 +6,7 @@ export const NavBar: FC = () => {
     return (
         <nav className="nav">
             <div className="nav__inner">
-                <ul className="nav-list">
+                <ul className="nav__list">
                     {navLinks.map(({ link, title }) => (
                         <li
                             key={link}
@@ -28,15 +28,11 @@ export const NavBar: FC = () => {
 
 const navLinks = [
     {
-        title: "Правила акции",
-        link: Routes.Rules,
+        title: "Predictor",
+        link: Routes.Predictor,
     },
     {
-        title: "Призы",
-        link: Routes.Prizes,
-    },
-    {
-        title: "Турнирная таблица",
-        link: Routes.Table,
+        title: "My Account",
+        link: Routes.Dashboard,
     },
 ];
