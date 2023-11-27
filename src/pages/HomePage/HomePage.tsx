@@ -7,7 +7,6 @@ import { Promo } from "../../components/Promo";
 
 export const HomePage: FC = () => {
     return (
-
         <>
             <Header />
             <main className="main">
@@ -15,15 +14,24 @@ export const HomePage: FC = () => {
                     <div className="first__container">
                         <div className="first__text">
                             <p className="first__suptitle">We afford</p>
-                            <h1 className="first__title">Most accurate prediction</h1>
-                            <p className="first__subtitle">95% accuracy of our AI model</p>
+                            <h1 className="first__title">
+                                Most accurate prediction
+                            </h1>
+                            <p className="first__subtitle">
+                                95% accuracy of our AI model
+                            </p>
                             <button className="first__button">Try now</button>
                         </div>
-                        <div className="first__gif"> <img src={gif} /></div>
+                        <div className="first__gif">
+                            {" "}
+                            <img src={gif} />
+                        </div>
                     </div>
                 </div>
                 <Separator />
-                <div className="promo"><Promo /></div>
+                <div className="promo">
+                    <Promo />
+                </div>
                 <div className="first">
                     <div className="first__container">
                         <div className="first__text">

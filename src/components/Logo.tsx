@@ -11,7 +11,7 @@ export const Logo: FC = () => {
         >
             <div className="logo__img-box">
                 <img
-                    src={assets.logos.transparent}
+                    src={assets.logos.logo}
                     alt="MedAI logotype"
                     className="logo__img"
                 />

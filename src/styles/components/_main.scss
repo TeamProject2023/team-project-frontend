@@ -1,7 +1,7 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
-[class*=container] {
+[class*="container"] {
     max-width: 1400px;
     padding: 0 30px;
     margin: 0 auto;
@@ -10,7 +10,7 @@ body {
 $blue: #248fea;
 
 @media (max-width: 767px) {
-    [class*=container] {
+    [class*="container"] {
         padding: 0 10px;
     }
 }
@@ -28,25 +28,25 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        @include adaptive-value('gap', 100, 20, 1);
+        @include adaptive-value("gap", 100, 20, 1);
     }
     &__text {
         text-align: center;
     }
     &__suptitle {
-        @include adaptive-value('font-size', 28, 20, 1);
+        @include adaptive-value("font-size", 28, 20, 1);
         font-weight: 500;
         color: $blue;
     }
     &__title {
         color: #000;
         margin: 20px 0 10px 0;
-        @include adaptive-value('font-size', 40, 32, 1);
+        @include adaptive-value("font-size", 40, 32, 1);
         font-weight: 700;
         text-transform: uppercase;
     }
     &__subtitle {
-        @include adaptive-value('font-size', 24, 18, 1);
+        @include adaptive-value("font-size", 24, 18, 1);
         font-weight: 500;
         color: $blue;
     }
@@ -74,7 +74,6 @@ main {
             border-radius: 15px;
             box-shadow: 0 10px 8px rgba(0, 0, 0, 0.24);
             max-width: 90vw;
-
         }
     }
 }

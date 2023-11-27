@@ -9,7 +9,7 @@ import { AccountLayout } from "./layouts/AccountLayout";
 import { BookingPage } from "./pages/BookingPage/BookingPage";
 import { AuthLayout } from "./layouts/AuthLayout/AuthLayout";
 import { DashboardPage } from "./pages/DashboardPage/DashboardPage";
-import {PredictorPage} from "./pages/Predictor/PredictorPage";
+import { PredictorPage } from "./pages/Predictor/PredictorPage";
 
 export const router = createBrowserRouter([
     {
