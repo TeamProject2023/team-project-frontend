@@ -1,9 +1,5 @@
 import { FC } from "react";
-
 import { Header } from "../../components/Header";
-
-import { Footer } from "../../components/Footer";
-
 import gif from "../../assets/images/look-into-microscope-love-death-and-robots.gif";
 import { Separator } from "../../components/Separator";
 import { Promo } from "../../components/Promo";
@@ -36,7 +32,6 @@ export const HomePage: FC = () => {
                         </div>
                     </div>
                 </div>
-                <Footer />
             </main>
         </>
     );

@@ -1,0 +1,42 @@
+@import "adaptive";
+
+$blue: #248fea;
+
+.history {
+  &__container {
+    text-align: center;
+  }
+  &__title {
+    @include adaptive-value('font-size', 40, 32, 1);
+    font-weight: bold;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    border: 2px solid $blue;
+    border-radius: 15px;
+  }
+  &__text {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  &__name {
+    @include adaptive-value('font-size', 24, 18, 1);
+  }
+  &__result {
+    @include adaptive-value('font-size', 28, 24, 1);
+    font-weight: bold;
+  }
+  &__date {
+    @include adaptive-value('font-size', 16, 14, 1);
+  }
+}

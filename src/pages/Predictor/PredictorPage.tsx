@@ -1,8 +1,6 @@
-import {FC, useState} from "react";
+import { FC, useState } from "react";
 
 import { Header } from "../../components/Header";
-
-import { Footer } from "../../components/Footer";
 
 export const PredictorPage: FC = () => {
     const [result, setResult] = useState(false);
@@ -16,13 +14,12 @@ export const PredictorPage: FC = () => {
                             <div className="predictor__title">Znachennya 1</div>
                             <input type="text" className="predictor__input" />
                         </div>
-                        <button className="predictor__btn" onClick={() => setResult(!result)}>send</button>
+                        <button type="button" className="predictor__btn" onClick={() => setResult(true)}>send</button>
                     </form>
                 </div>
                 <div className={`predictor__answer ${result ? "_active" : ""}`}>prosto blyat text</div>
             </main>
-            <div className={`predictor__bg ${result ? "_active" : ""}`} onClick={() => setResult(!result)}></div>
-            <Footer />
+            <div className={`predictor__bg ${result ? "_active" : ""}`} onClick={() => setResult(false)}></div>
         </>
     );
 };
