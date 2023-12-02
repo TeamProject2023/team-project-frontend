@@ -5,165 +5,134 @@ $blue: #248fea;
 .header {
     position: fixed;
     width: 100%;
-    z-index: 9;
+    height: $header-height-xl;
+
     background: #ffffff;
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
 
+    z-index: 9;
+
+    .container {
+        height: 100%;
+    }
+
     &__inner {
+        height: 100%;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         min-width: 100%;
         background-color: #fff;
         width: 100%;
-        margin-top: 20px;
+
         padding: 0 30px;
-        a.login-button {
-            position: absolute;
-            right: 30px;
-
-            width: min-content;
-        }
     }
 
-    &__left {
+    .col {
         display: flex;
-        gap: 50px;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .container {
-        position: relative;
-        display: flex;
-        background-color: white;
-        padding: 0;
-        max-width: 1400px;
+    .col-left {
+        height: 100%;
+    }
 
-        .nav {
-            display: flex;
-            align-items: center;
+    .link-logo {
+        display: block;
+    }
 
-            &__inner {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-            &__list {
-                display: flex;
-                gap: 50px;
-            }
-            &__item {
-                position: relative;
-                font-size: 24px;
-                font-weight: bold;
-                color: $blue;
-                &::after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    background-color: $blue;
-                    transform: scaleX(0);
-                    transition: transform 0.3s linear;
-                    transform-origin: bottom right;
+    .logo-box {
+        height: 6rem;
+    }
+
+    .logo-img {
+        display: block;
+        height: 100%;
+        width: auto;
+    }
+
+    .col-right {
+    }
+    a.btn-login {
+        padding: 0.6rem 1.5rem;
+
+        .btn-login__img {
+            display: none;
+            width: 2rem;
+            height: 2rem;
+
+            overflow: hidden;
+
+            svg {
+                width: 100%;
+                height: 100%;
+
+                path {
+                    color: rgb(99, 109, 115);
+                    fill: rgb(99, 109, 115);
+
+                    transition: all 0.3s ease-in;
                 }
-                &:hover {
-                    &:after {
-                        transform: scale(1);
-                        transform-origin: bottom left;
+            }
+        }
+
+        &:hover {
+            background-color: $color-white;
+            .btn-login__img {
+                svg {
+                    path {
+                        color: $color-primary;
+                        fill: $color-primary;
                     }
                 }
             }
         }
     }
-
-    .logo-img {
-        width: 100px;
-        height: auto;
-        margin: 10px;
-        z-index: 10;
-    }
 }
 
-.burger {
-    display: none;
-    position: relative;
-    height: 25px;
-    align-items: center;
-    span {
-        display: block;
-        width: 30px;
-        height: 5px;
-        background-color: $blue;
-    }
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: block;
-        width: 40px;
-        height: 5px;
-        background-color: $blue;
-        transition: all 0.2s linear;
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        display: block;
-        width: 20px;
-        height: 5px;
-        background-color: $blue;
-        transition: all 0.2s linear;
-    }
-    &._active {
-        span {
-            display: none;
-        }
-        &::before {
-            transform: rotate(45deg);
-            top: 50%;
-        }
-        &::after {
-            transform: rotate(-45deg);
-            top: 50%;
-            width: 40px;
-        }
-    }
-}
-
-@media (max-width: 767px) {
-    .burger {
-        display: flex;
-        margin-top: 30px;
-    }
+@media screen and (max-width: $bp-l) {
     .header {
-        .container {
-            .header__inner {
-                padding: 0 10px;
+        height: $header-height-l;
+    }
+}
+@media screen and (max-width: $bp-m) {
+    .header {
+        height: $header-height-m;
+        .logo-box {
+            height: 5rem;
+        }
+    }
+}
+@media (max-width: $bp-s) {
+    .header {
+        height: $header-height-s;
+
+        .header__inner {
+            padding: 0 10px;
+        }
+        .nav {
+            position: fixed;
+            top: 58%;
+            transform: translateY(-130%);
+            width: 110vw;
+            height: 130vh;
+            background-color: #fff;
+            margin-left: -30px;
+            transition: all 0.2s linear;
+
+            &__list {
+                flex-direction: column;
+                padding-left: 40px;
             }
-            .nav {
-                position: fixed;
-                top: 58%;
-                transform: translateY(-130%);
-                width: 110vw;
-                height: 130vh;
-                background-color: #fff;
-                margin-left: -30px;
-                transition: all 0.2s linear;
 
-                &__list {
-                    flex-direction: column;
-                    padding-left: 40px;
-                }
-
-                &__item {
-                    font-size: 32px;
-                }
+            &__item {
+                font-size: 32px;
             }
         }
+
         &._active {
             .container {
                 .nav {
@@ -171,15 +140,19 @@ $blue: #248fea;
                 }
             }
         }
-        .login-button {
-            top: 50%;
-            right: 90px;
-            padding: 10px 15px;
-        }
-        .logo-img {
-            top: 20px;
-            position: absolute;
-            margin: 0;
+
+        a.btn-login {
+            background-color: $color-white;
+            .btn-login__img {
+                display: inline-block;
+            }
+            .btn-login__text {
+                display: none;
+            }
+            &:before,
+            &:after {
+                display: none;
+            }
         }
     }
 }

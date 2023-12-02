@@ -1,11 +1,27 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
+import cn from "classnames";
 import { Link } from "react-router-dom";
-import { Routes } from "../types/routes.types";
+import { navLinks } from "./NavBar";
 
-export const NavBar: FC = () => {
+interface Props {
+    toggleBurger: () => void;
+}
+
+export const BurgerMenu: FC<Props> = ({ toggleBurger }) => {
+    const [isAnimated, setIsAnimated] = useState(false);
+    useEffect(() => {
+        setTimeout(() => setIsAnimated(true), 10);
+    }, []);
+
+    const handleClose = () => {
+        setIsAnimated(false);
+        setTimeout(() => toggleBurger(), 300);
+    };
+
     return (
-        <nav className="nav">
+        <nav className={cn("nav-burger", { __animated: isAnimated })}>
             <div className="nav__inner">
+                <button className="btn btn-close" type="button" onClick={handleClose} />
                 <ul className="nav__list">
                     {navLinks.map(({ link, title }) => (
                         <li
@@ -25,14 +41,3 @@ export const NavBar: FC = () => {
         </nav>
     );
 };
-
-export const navLinks = [
-    {
-        title: "Predictor",
-        link: Routes.Predictor,
-    },
-    {
-        title: "My Account",
-        link: Routes.Dashboard,
-    },
-];

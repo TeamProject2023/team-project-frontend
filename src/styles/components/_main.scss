@@ -1,18 +1,18 @@
 body {
     font-family: "Roboto", sans-serif;
 }
-[class*="container"] {
-    max-width: 1400px;
-    padding: 0 30px;
-    margin: 0 auto;
-}
+// [class*="container"] {
+//     max-width: 1400px;
+//     padding: 0 30px;
+//     margin: 0 auto;
+// }
 
 $blue: #248fea;
 
 @media (max-width: 767px) {
-    [class*="container"] {
-        padding: 0 10px;
-    }
+    // [class*="container"] {
+    //     padding: 0 10px;
+    // }
 }
 
 main {

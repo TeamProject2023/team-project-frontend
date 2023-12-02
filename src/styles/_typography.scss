@@ -94,6 +94,18 @@
     font-weight: 400;
 }
 
+@font-face {
+    font-family: "Icomoon-Socials";
+    src: url("../assets/fonts/icomoon-socials.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Icomoon-Contacts";
+    src: url("../assets/fonts/icomoon-contacts.ttf") format("truetype");
+    font-weight: 400;
+}
+
 [class^="icon-"],
 [class*=" icon-"] {
     font-family: $font-icomoon;
@@ -130,4 +142,50 @@
 }
 .icon-log-out::before {
     content: "\e907";
+}
+
+[class^="icon-social"],
+[class*=" icon-social"] {
+    font-family: "Icomoon-Socials";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+.icon-social-instagram::before {
+    content: "\e904";
+}
+
+.icon-social-linkedin::before {
+    content: "\e900";
+}
+
+.icon-social-twitter::before {
+    content: "\e901";
+}
+
+.icon-social-facebook::before {
+    content: "\e902";
+}
+
+.icon-contacts {
+    font-family: "Icomoon-Contacts";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    &.icon-email::before {
+        content: "\e906";
+    }
+
+    &.icon-call::before {
+        content: "\e903";
+    }
+
+    &.icon-location::before {
+        content: "\e905";
+    }
 }

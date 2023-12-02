@@ -98,6 +98,7 @@ a.btn-primary:hover,
 
 .btn-burger {
     width: max-content;
+    display: none;
     .burger-box {
         position: relative;
         display: flex;
@@ -127,5 +128,41 @@ a.btn-primary:hover,
     }
     .burger-box:active {
         box-shadow: 0px 8px 12px -11px rgba(66, 68, 90, 1);
+    }
+    @media screen and (max-width: $bp-s) {
+        display: flex;
+    }
+}
+
+.btn-close {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+
+    transition: all 0.3s ease-in;
+
+    &:before,
+    &:after {
+        position: absolute;
+        left: 15px;
+        content: " ";
+        height: 1.5rem;
+        width: 2px;
+        background-color: $color-black;
+        transition: all 0.3s ease-in;
+
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+
+    &:hover {
+        &:before,
+        &:after {
+            background-color: $color-primary;
+        }
     }
 }
