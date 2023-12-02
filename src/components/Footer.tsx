@@ -12,9 +12,18 @@ export const Footer: FC = () => {
                         <div className="col col-1">
                             <div className="col__inner">
                                 <div className="logo-box">
-                                    <img src={assets.logos.light} alt="Logo" className="logo" />
+                                    <img
+                                        src={assets.logos.light}
+                                        alt="Logo"
+                                        className="logo"
+                                    />
                                 </div>
-                                <p className="footer__text">Lorem ipsum dolor sit amet consc tetur adicing elit. Dolor emque dicta molest enim beatae ame consequ atur tempo pretium auctor nam.</p>
+                                <p className="footer__text">
+                                    Lorem ipsum dolor sit amet consc tetur
+                                    adicing elit. Dolor emque dicta molest enim
+                                    beatae ame consequ atur tempo pretium auctor
+                                    nam.
+                                </p>
                                 <div className="social-box">
                                     <Socials />
                                 </div>
@@ -33,7 +42,9 @@ export const Footer: FC = () => {
                 </div>
             </div>
             <div className="copyright">
-                <span className="copyright__text">© 2023 All rights reserved</span>
+                <span className="copyright__text">
+                    © 2023 All rights reserved
+                </span>
             </div>
         </footer>
     );
@@ -48,12 +59,28 @@ const FooterMenu: FC<FooterMenuProps> = ({ menu }) => {
             <h3 className="list-title">{menu.title}</h3>
             <ul className="footer-menu">
                 {menu.links.map(({ id, link, title, subtitle, icon }) => (
-                    <li key={id} className="list__item">
-                        <Link to={link} className="item__link" target="_blank" rel="noopener noreferrer">
+                    <li
+                        key={id}
+                        className="list__item"
+                    >
+                        <Link
+                            to={link}
+                            className="item__link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <span className="link__inner">
-                                {icon && <span className={`link__icon icon-contacts ${icon}`} />}
+                                {icon && (
+                                    <span
+                                        className={`link__icon icon-contacts ${icon}`}
+                                    />
+                                )}
                                 <span className="link__title">{title}</span>
-                                {subtitle && <span className="link__subtitle">{subtitle}</span>}
+                                {subtitle && (
+                                    <span className="link__subtitle">
+                                        {subtitle}
+                                    </span>
+                                )}
                             </span>
                         </Link>
                     </li>
@@ -120,8 +147,7 @@ const footerLinks: Record<string, IFooterMenu> = {
             },
         ],
     },
-    contact:
-    {
+    contact: {
         id: 2,
         title: "Contact",
         links: [

@@ -39,7 +39,9 @@ export const Header: FC = () => {
                             to={Routes.Login}
                             className="btn btn-primary btn-login"
                         >
-                            <span className="btn-login__img"><Avatar /></span>
+                            <span className="btn-login__img">
+                                <Avatar />
+                            </span>
                             <span className="btn-login__text">Login</span>
                         </Link>
                         <Burger onBtnClick={toggleBurger} />

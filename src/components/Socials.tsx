@@ -5,8 +5,14 @@ export const Socials: FC = () => {
     return (
         <ul className="social-list">
             {socials.map(({ id, icon, link }) => (
-                <li key={id} className="list__item">
-                    <Link to={link} className="list__link">
+                <li
+                    key={id}
+                    className="list__item"
+                >
+                    <Link
+                        to={link}
+                        className="list__link"
+                    >
                         <span className={`link__icon ${icon}`} />
                     </Link>
                 </li>
