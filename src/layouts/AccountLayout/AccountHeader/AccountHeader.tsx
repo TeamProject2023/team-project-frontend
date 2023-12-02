@@ -60,7 +60,7 @@ export const AccountHeader: FC = () => {
                                 </ul>
                             </div>
                         </DropDown>
-                        <Burger />
+                        <Burger onBtnClick={() => {}} />
                     </div>
                 </div>
             </div>
