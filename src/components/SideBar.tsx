@@ -7,7 +7,11 @@ export const SideBar: FC = () => {
     return (
         <aside className="sidebar">
             <div className="sidebar__inner">
-                <Logo />
+                <div className="account-header">
+                    <div className="logo-box">
+                        <Logo />
+                    </div>
+                </div>
                 <nav className="nav">
                     <ul className="nav-list">
                         {navLinks.map(({ link, title, icon }) => (

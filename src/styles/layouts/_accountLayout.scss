@@ -9,19 +9,30 @@
         position: relative;
     }
     .sidebar {
-        flex: 0 0 30rem;
+        // flex: 0 0 30rem;
     }
     .page {
         flex-grow: 1;
+        margin-left: 30rem;
     }
 
     .account-header {
+        height: $account-header-height-xl;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        margin-bottom: 3rem;
+
+        // background-color: red;
         .account-header__inner {
+            height: 100%;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: flex-end;
 
-            padding: 2rem 0;
+            // padding: 2rem 0;
         }
 
         .account-greetings {
@@ -39,7 +50,7 @@
             display: none;
         }
         .logo {
-            display: none;
+            // display: none;
         }
     }
 }

@@ -10,6 +10,7 @@ import { BookingPage } from "./pages/BookingPage/BookingPage";
 import { AuthLayout } from "./layouts/AuthLayout/AuthLayout";
 import { DashboardPage } from "./pages/DashboardPage/DashboardPage";
 import { PredictorPage } from "./pages/Predictor/PredictorPage";
+import { HistoryPage } from "./pages/HistoryPage/HistoryPage";
 
 export const router = createBrowserRouter([
     {
@@ -49,7 +50,7 @@ export const router = createBrowserRouter([
                             },
                             {
                                 path: Routes.History,
-                                element: <BookingPage />,
+                                element: <HistoryPage />,
                             },
                             {
                                 path: Routes.AITool,

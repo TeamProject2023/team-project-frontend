@@ -8,6 +8,7 @@
 @import "./components/ui/link";
 @import "./components/ui/dropdown";
 @import "./components/ui/modal";
+@import "./components/ui/spinner";
 
 /* COMPONENTS */
 @import "./components/logo";
@@ -24,6 +25,8 @@
 
 /* SECTIONS */
 @import "./sections/base";
+@import "./sections/history";
+@import "./sections/book";
 
 /* LAYOUTS */
 @import "./layouts/base";
