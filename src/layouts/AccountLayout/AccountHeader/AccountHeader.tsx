@@ -36,7 +36,7 @@ export const AccountHeader: FC = () => {
             {isLoading && <Loader />}
             <div className="account-header">
                 <div className="account-header__inner">
-                    <Logo />
+                    {/* <Logo /> */}
                     <div className="user-actions">
                         <DropDown>
                             <DropDownBox>
@@ -47,15 +47,16 @@ export const AccountHeader: FC = () => {
                             <div className="dropdown-menu">
                                 <ul className="dropdown-menu-list">
                                     <li className="dropdown-menu__item">
-                                        <button
+                                        <div
                                             className="btn dropdown-menu__link"
+                                            role="button"
                                             onClick={() => handleLogout()}
                                         >
                                             <div className="link__icon icon-log-out" />
                                             <span className="link__title">
                                                 Logout
                                             </span>
-                                        </button>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>

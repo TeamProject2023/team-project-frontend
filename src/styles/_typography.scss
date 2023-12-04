@@ -106,6 +106,10 @@
     font-weight: 400;
 }
 
+body {
+    font-family: $font-primary;
+}
+
 [class^="icon-"],
 [class*=" icon-"] {
     font-family: $font-icomoon;

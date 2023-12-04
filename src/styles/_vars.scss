@@ -38,6 +38,11 @@ $header-height-l: 8.5rem;
 $header-height-m: 7.6rem;
 $header-height-s: 7.6rem;
 
+$account-header-height-xl: 8rem;
+$account-header-height-l: 8rem;
+$account-header-height-m: 8rem;
+$account-header-height-s: 6.8rem;
+
 /* BREAKPOINTS */
 $bp-xl: 2039px;
 $bp-l: 1919px;
@@ -53,5 +58,4 @@ $font-icomoon: "Icomoon", sans-serif;
 $font-primary: $font-roboto;
 
 /* FONTS */
-$font-primary: "Poppins", sans-serif;
-$font-secondary: "Grato", sans-serif;
+$font-primary: $font-roboto;

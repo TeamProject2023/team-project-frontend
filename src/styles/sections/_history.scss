@@ -1,0 +1,16 @@
+.section-history {
+    .ant-tabs {
+        height: 100%;
+    }
+    .ant-tabs-content-holder {
+        height: 100%;
+        &  div {
+            height: 100%;
+        }
+    }
+
+    .ant-spin-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

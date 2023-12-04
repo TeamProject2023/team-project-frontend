@@ -8,6 +8,15 @@ import { IRefreshPayload } from "../../models/request/IRefreshToken";
 import { IRegisterResponse } from "../../models/response/IRegisterResponse";
 import { IRefreshResponse } from "../../models/response/IRefreshTokenResponse";
 import { IRegisterPayload } from "../../models/request/IRegisterPayload";
+import { IGetAppointmentsResponse } from "../../models/response/IGetAppointmentsResponse";
+import { IGetFieldsResponse } from "../../models/response/IGetFieldsResponse";
+import { IGetTypesResponse } from "../../models/response/IGetTypesResponse";
+import { IGetSymptomsResponse } from "../../models/response/IGetSymptomsResponse";
+import { IGetSymptomsToDisease } from "../../models/response/IGetSymptomsToDiseaseResponse";
+import { IGetDiseaseToSpecialty } from "../../models/response/IGetDiseaseToSpecialtyResponse";
+import { IGetDoctorsResponse } from "../../models/response/IGetDoctors";
+import { ICheckSlotsResponse } from "../../models/response/ICheckSlotsResponse";
+import { ICheckSlotsPayload } from "../../models/request/ICheckSlotsPayload";
 
 export class AppService {
     public static async login(
@@ -34,5 +43,37 @@ export class AppService {
         return axios.post<IRefreshResponse>("/refresh_token", payload, {
             baseURL,
         });
+    }
+
+    public static async getAppointments(): Promise<AxiosResponse<IGetAppointmentsResponse>> {
+        return $api.get<IGetAppointmentsResponse>("/getAppointments");
+    }
+
+    public static async getFields(): Promise<AxiosResponse<IGetFieldsResponse>> {
+        return $api.get<IGetFieldsResponse>("/getPracticeFields");
+    }
+
+    public static async getTypes(): Promise<AxiosResponse<IGetTypesResponse>> {
+        return $api.get<IGetTypesResponse>("/getAppointmentTypes");
+    }
+
+    public static async getSymptoms(): Promise<AxiosResponse<IGetSymptomsResponse>> {
+        return $api.get("/getSymptoms");
+    }
+
+    public static async getSymptomsToDisease(): Promise<AxiosResponse<IGetSymptomsToDisease>> {
+        return $api.get("/getSymptomsToDisease");
+    }
+
+    public static async getDiseaseToSpecialty(): Promise<AxiosResponse<IGetDiseaseToSpecialty>> {
+        return $api.get("/getDiseaseToSpecialty");
+    }
+
+    public static async getDoctors(): Promise<AxiosResponse<IGetDoctorsResponse>> {
+        return $api.get("/getDoctors");
+    }
+
+    public static async checkSlots(payload: ICheckSlotsPayload): Promise<AxiosResponse<ICheckSlotsResponse>> {
+        return $api.get("/checkAppointmentSlots", { params: payload });
     }
 }

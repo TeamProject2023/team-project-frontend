@@ -13,6 +13,7 @@ export const PrivateOutlet: FC = observer(() => {
         appStore.setIsAuth(isAuth);
         appStore.setToken(token);
     }, [isAuth, token]);
+    console.log(appStore.token);
     return (
         <div className="page-wrapper layout layout-private">
             {isLoading ? (
