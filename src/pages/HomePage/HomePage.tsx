@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import gif from "../../assets/images/look-into-microscope-love-death-and-robots.gif";
+import gif from "../../assets/images/hero-img-1.jpg";
 import { Separator } from "../../components/Separator";
 import { Promo } from "../../components/Promo";
 
