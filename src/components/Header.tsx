@@ -12,7 +12,7 @@ export const Header: FC = () => {
     // const [header, setHeader] = useState(false);
 
     const toggleBurger = () => {
-        setShowBurger((prev) => !prev);
+        setShowBurger(!showBurger);
     };
 
     return (
