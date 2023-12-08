@@ -1,5 +1,5 @@
 import { FC } from "react";
-import tooth from "../assets/images/tooth-solid.svg";
+import tooth from "../assets/images/icons/tooth-solid.svg";
 import "../styles/components/_separator.scss";
 
 interface SeparatorProps {
