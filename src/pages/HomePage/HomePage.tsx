@@ -2,9 +2,9 @@ import { FC } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import gif from "../../assets/images/hero-img-1.jpg";
-import img2 from "../../assets/images/about-img-1.jpeg";
 import { Separator } from "../../components/Separator";
 import { Promo } from "../../components/Promo";
+import { About } from "../../components/About";
 
 export const HomePage: FC = () => {
     return (
@@ -33,19 +33,7 @@ export const HomePage: FC = () => {
                 <div className="promo">
                     <Promo />
                 </div>
-                <div className="second">
-                    <div className="first">
-                        <div className="first__container">
-                            <div className="first__gif"><img src={img2} /></div>
-                            <div className="first__img"><img src={img2} /></div>
-                            <div className="first__text">
-                                <p className="first__suptitle">We have</p>
-                                <h1 className="first__title">Content</h1>
-                                <p className="first__subtitle">here</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <About />
                 <Footer />
             </main>
         </>
