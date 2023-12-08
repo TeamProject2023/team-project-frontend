@@ -62,10 +62,14 @@
                 padding-left: 0;
             }
         }
+
     }
 }
 @media screen and (max-width: $bp-ms) {
     .layout-account {
+        .page{
+            margin-left: 0;
+        }
         .sidebar {
             display: none;
         }

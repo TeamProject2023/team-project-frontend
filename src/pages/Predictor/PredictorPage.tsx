@@ -79,7 +79,7 @@ console.log(inputData)
                 </div>
                 <div className={`predictor__answer ${result ? "_active" : ""}`}>
                     {
-                        `Negative chance: ` + result?.negativeChance.toString().split('.')[1].slice(0,2) + `% Positive chance: ` + result?.positiveChance.toString().split('.')[1].slice(0,2) + "%"
+                        `Negative chance: ` + result?.negativeChance.toString().split('.')[1]?.slice(0,2) + `% Positive chance: ` + result?.positiveChance.toString().split('.')[1]?.slice(0,2) + "%"
                     }
                 </div>
             </main>
