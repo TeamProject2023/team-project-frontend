@@ -6,7 +6,6 @@ import dayjs from "dayjs";
 import { IUpcomingAppointment } from '../../../models/response/IUpcomingAppointment';
 import { FourthStep } from '../../BookingPage/components/FourthStep/FourthStep';
 import { AppService } from '../../../services/app/app.service';
-import { Loader } from '../../../components/Loader';
 import { Spinner } from '../../../components/Spinner';
 
 type ReschedulePopupProps = {
