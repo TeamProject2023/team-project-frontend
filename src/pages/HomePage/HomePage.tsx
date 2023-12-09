@@ -5,6 +5,7 @@ import gif from "../../assets/images/hero-img-1.jpg";
 import { Separator } from "../../components/Separator";
 import { Promo } from "../../components/Promo";
 import { About } from "../../components/About";
+import { Info } from "../../components/Info";
 
 export const HomePage: FC = () => {
     return (
@@ -34,6 +35,7 @@ export const HomePage: FC = () => {
                     <Promo />
                 </div>
                 <About />
+                <Info />
                 <Footer />
             </main>
         </>
