@@ -36,7 +36,9 @@ export const Info = () => {
     }, []);
 
     return (
+        
         <div className="info">
+            <div className="container">
             <div className="swiper-container info__container">
                 <div className="swiper-wrapper info__wrapper">
                     <div className="swiper-slide info__slide">
@@ -77,6 +79,7 @@ export const Info = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
