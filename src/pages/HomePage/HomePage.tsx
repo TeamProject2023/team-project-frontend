@@ -4,6 +4,7 @@ import { Footer } from "../../components/Footer";
 import { Promo } from "../../components/Promo";
 import { Hero } from "./sections/Hero";
 import { Statistics } from "./sections/Statistics";
+import { About } from "./sections/About";
 
 export const HomePage: FC = () => {
     return (
@@ -12,18 +13,7 @@ export const HomePage: FC = () => {
             <main className="main">
                 <Hero />
                 <Statistics />
-                <div className="promo">
-                    <Promo />
-                </div>
-                <div className="first">
-                    <div className="first__container">
-                        <div className="first__text">
-                            <p className="first__suptitle">We have</p>
-                            <h1 className="first__title">Content</h1>
-                            <p className="first__subtitle">here</p>
-                        </div>
-                    </div>
-                </div>
+                <About />
                 <Footer />
             </main>
         </div>

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import "../styles/components/_promo.scss";
-import wheelchair from "../assets/images/wheelchair.svg";
+import wheelchair from "../assets/images/icons/wheelchair.svg";
 
 interface PromoSegmentProps {
     image: string;
