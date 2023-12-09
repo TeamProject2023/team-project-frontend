@@ -1,4 +1,5 @@
 import { FC } from "react";
+import UpcommingAppointment from "./components/UpcommingAppointment";
 
 export const DashboardPage: FC = () => {
     return (
@@ -7,7 +8,10 @@ export const DashboardPage: FC = () => {
                 <h2 className="section__title">Dashboard Page</h2>
                 <div className="section__content">
                     <div className="card">
-                        <div className="card__inner">DashboardPage Content</div>
+                        <div className="card__inner">
+                        <UpcommingAppointment/>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

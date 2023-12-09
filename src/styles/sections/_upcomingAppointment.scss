@@ -1,0 +1,89 @@
+.appointmentBox {
+    display: flex; 
+    flex-direction: row;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #f1f5f8;
+    box-shadow: rgba(20, 46, 110, 0.1) 0px 1px 8px;
+    color: rgb(65, 77, 85);
+
+    .appointmentData {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+
+        .appointmentType {
+            font-size: 18px;
+        }
+
+        .appointmentDate {
+            display: flex;
+            color: #03B2CB;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .appointmentTime {
+            display: flex;
+            flex-grow: 1;
+            font-size: 24px;
+            font-weight: 300    ;
+            
+        }
+        .divider {
+            width: clamp(120px, 20%,200px );
+            border-color: #2490eb;
+            margin: 5px 0;
+        }
+    }
+
+    .appointmentBox__column-1 {
+        flex-basis: 75%;
+        display: flex;
+        flex-direction: column;
+        height: 120px;
+        justify-content: space-between ;
+    }
+
+    .appointmentBox__column-2 {
+        flex: 1;
+        flex-direction: column;
+        height: 120px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .buttonContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-direction: column !important;
+    }
+
+    .cancelButton {
+        height: 32px;
+        width: 120px;
+        background-color: #ff715b;
+        border-radius: 8px;
+        border: none;
+        color: #ffffff;
+    }
+
+    .rescheduleButton {
+        height: 32px;
+        width: 120px;
+        background-color: #0496ff;
+        color: #ffffff;
+        border-radius: 8px;
+        border: none;
+    }
+
+    
+}

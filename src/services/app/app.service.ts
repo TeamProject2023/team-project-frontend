@@ -20,6 +20,7 @@ import { ICheckSlotsPayload } from "../../models/request/ICheckSlotsPayload";
 import { ICreateAppointment } from "../../models/request/ICreateAppointment";
 import { IPredictHeartDiseasePayload } from "../../models/request/IPredictHeartDiseasePayload";
 import { IPredictHeartDiseaseResponse } from "../../models/response/IPredictHeartDiseaseResponse";
+import { IUpcomingAppointment } from "../../models/response/IUpcomingAppointment";
 
 export class AppService {
     public static async login(
@@ -64,7 +65,11 @@ export class AppService {
     public static async getTypes(): Promise<AxiosResponse<IGetTypesResponse>> {
         return $api.get<IGetTypesResponse>("/getAppointmentTypes");
     }
-
+    
+    public static async getUpcomingAppointment(): Promise<AxiosResponse<IUpcomingAppointment>> {
+        return $api.get("/upcomingAppointment");
+    }
+    
     public static async getSymptoms(): Promise<AxiosResponse<IGetSymptomsResponse>> {
         return $api.get("/getSymptoms");
     }
@@ -88,4 +93,5 @@ export class AppService {
     public static async createAppointment(payload: ICreateAppointment): Promise<AxiosResponse<void>> {
         return $api.post("/createAppointment", payload);
     }
+
 }
