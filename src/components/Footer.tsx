@@ -127,7 +127,7 @@ const footerLinks: Record<string, IFooterMenu> = {
             {
                 id: 0,
                 title: "Our Team",
-                link: "/",
+                link: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/Me-and-the-boys-feature-image-1.jpg",
             },
         ],
     },
@@ -138,7 +138,7 @@ const footerLinks: Record<string, IFooterMenu> = {
             {
                 id: 0,
                 title: "AI Predictor",
-                link: "/",
+                link: "/predictor",
             },
             {
                 id: 1,

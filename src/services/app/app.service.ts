@@ -18,6 +18,8 @@ import { IGetDoctorsResponse } from "../../models/response/IGetDoctors";
 import { ICheckSlotsResponse } from "../../models/response/ICheckSlotsResponse";
 import { ICheckSlotsPayload } from "../../models/request/ICheckSlotsPayload";
 import { ICreateAppointment } from "../../models/request/ICreateAppointment";
+import { IPredictHeartDiseasePayload } from "../../models/request/IPredictHeartDiseasePayload";
+import { IPredictHeartDiseaseResponse } from "../../models/response/IPredictHeartDiseaseResponse";
 
 export class AppService {
     public static async login(
@@ -44,6 +46,11 @@ export class AppService {
         return axios.post<IRefreshResponse>("/refresh_token", payload, {
             baseURL,
         });
+    }
+
+    public static async predictHeartDisease(
+        payload: IPredictHeartDiseasePayload): Promise<AxiosResponse<IPredictHeartDiseaseResponse>> {
+        return $api.post("/predictHeartDisease", payload);
     }
 
     public static async getAppointments(): Promise<AxiosResponse<IGetAppointmentsResponse>> {

@@ -3,7 +3,8 @@
 $blue: #248fea;
 
 .header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     height: $header-height-xl;
 
@@ -13,7 +14,8 @@ $blue: #248fea;
     z-index: 9;
 
     .container {
-        height: 100%;
+     //   height: 100%;
+     padding-top: 10px;
     }
 
     &__inner {

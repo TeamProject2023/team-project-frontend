@@ -10,9 +10,9 @@ import { Avatar } from "./vectors/Avatar";
 export const Header: FC = () => {
     const [showBurger, setShowBurger] = useState(false);
     // const [header, setHeader] = useState(false);
-
+    const [isLoggedIn] = useState(!!localStorage.getItem('medai_refresh_token'));
     const toggleBurger = () => {
-        setShowBurger((prev) => !prev);
+        setShowBurger(!showBurger);
     };
 
     return (
@@ -42,7 +42,7 @@ export const Header: FC = () => {
                             <span className="btn-login__img">
                                 <Avatar />
                             </span>
-                            <span className="btn-login__text">Login</span>
+                            <span className="btn-login__text">{isLoggedIn ? 'LogOut' : 'LogIn'}</span>
                         </Link>
                         <Burger onBtnClick={toggleBurger} />
                     </div>

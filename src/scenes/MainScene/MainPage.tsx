@@ -4,7 +4,7 @@ import { Header } from "../../components/Header";
 export const MainScene: FC = () => {
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
         </div>
     );
 };
