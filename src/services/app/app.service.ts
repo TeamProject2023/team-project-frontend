@@ -17,6 +17,7 @@ import { IGetDiseaseToSpecialty } from "../../models/response/IGetDiseaseToSpeci
 import { IGetDoctorsResponse } from "../../models/response/IGetDoctors";
 import { ICheckSlotsResponse } from "../../models/response/ICheckSlotsResponse";
 import { ICheckSlotsPayload } from "../../models/request/ICheckSlotsPayload";
+import { ICreateAppointment } from "../../models/request/ICreateAppointment";
 
 export class AppService {
     public static async login(
@@ -75,5 +76,9 @@ export class AppService {
 
     public static async checkSlots(payload: ICheckSlotsPayload): Promise<AxiosResponse<ICheckSlotsResponse>> {
         return $api.get("/checkAppointmentSlots", { params: payload });
+    }
+
+    public static async createAppointment(payload: ICreateAppointment): Promise<AxiosResponse<void>> {
+        return $api.post("/createAppointment", payload);
     }
 }

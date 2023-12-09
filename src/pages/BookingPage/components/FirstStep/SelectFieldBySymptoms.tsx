@@ -7,7 +7,6 @@ import { AppService } from "../../../../services/app/app.service";
 import { IDoctor, IGetDoctorsResponse } from "../../../../models/response/IGetDoctors";
 import { IGetSymptomsResponse, ISymptom } from "../../../../models/response/IGetSymptomsResponse";
 import {
-    IDisease,
     IDiseaseToSpecialty,
     IGetDiseaseToSpecialty,
 } from "../../../../models/response/IGetDiseaseToSpecialtyResponse";
@@ -21,14 +20,12 @@ interface Props {
 }
 
 export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField }) => {
-    const [optionValues, setOptionsValues] = useState<string[]>([]);
     const [symptomsToDisease, setSymptomsToDisease] = useState<ISymptomToDisease[]>([]);
     const [diseaseToSpecialty, setDiseaseToSpecialty] = useState<IDiseaseToSpecialty[]>([]);
     const [doctorList, setDoctorList] = useState<IDoctor[]>([]);
-    const [allSymptoms, setAllSymptoms] = useState<ISymptom[]>([]);
     const [possibleSymptoms, setPossibleSymptoms] = useState<ISymptom[]>([]);
     const [selectedSymptoms, setSelectedSymptoms] = useState<ISymptom[]>([]);
-    const [selectedDisease, setSelectedDisease] = useState<ISymptomToDisease[]>([]);
+    const [selectedDiseases, setSelectedDiseases] = useState<ISymptomToDisease[]>([]);
     const [selectedDoctor, setSelectedDoctor] = useState<IDoctor[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -39,7 +36,6 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
                 const pendingDoctor = AppService.getDoctors();
                 const pendingSymptomsToDisease = AppService.getSymptomsToDisease();
                 const pendingDiseaseToSpecialty = AppService.getDiseaseToSpecialty();
-                // const pendingData = [pendingSymptoms, pendingDoctor, pendingSymptomsToDisease, pendingDiseaseToSpecialty];
                 const pendingData: [
                     symptoms: Promise<AxiosResponse<IGetSymptomsResponse, any>>,
                     doctors: Promise<AxiosResponse<IGetDoctorsResponse, any>>,
@@ -47,9 +43,8 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
                     pToS: Promise<AxiosResponse<IGetDiseaseToSpecialty, any>>,
                 ] = [pendingSymptoms, pendingDoctor, pendingSymptomsToDisease, pendingDiseaseToSpecialty];
                 const responses = await Promise.all(pendingData);
-                // responses.forEach((item) => console.log(item));
                 setPossibleSymptoms(responses[0].data);
-                setSelectedDoctor(responses[1].data);
+                setDoctorList(responses[1].data);
                 setSymptomsToDisease(responses[2].data);
                 setDiseaseToSpecialty(responses[3].data);
             } catch (error) {
@@ -62,23 +57,16 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
         fetchData();
     }, []);
 
-    // useEffect(() => {
-    //     const PossibleDiseases = getDiseasesBySymptoms(symptomsToDisease, selectedSymptoms);
-    //     const diseaseSymptoms = new Set(PossibleDiseases.flatMap(disease => disease.symptoms));
-    //     setPossibleSymptoms([...diseaseSymptoms]);
-    //     setSelectedDisease(PossibleDiseases);
-    // }, [selectedSymptoms]);
-
-    // useEffect(() => {
-    //     const possibleSpecialty = getSpecialtyByDisease();
-    //     console.log(possibleSpecialty);
-    //     setSelectedDoctor(processDetermineDoctor(possibleSpecialty));
-    // }, [selectedDisease]);
+    useEffect(() => {
+        const possibleSpecialty = getSpecialtyByDisease(selectedDiseases, diseaseToSpecialty);
+        console.log(possibleSpecialty);
+        setSelectedDoctor(processDetermineDoctor(possibleSpecialty, doctorList));
+    }, [selectedDiseases]);
     useEffect(() => {
         const PossibleDiseases = getDiseasesBySymptoms(symptomsToDisease, selectedSymptoms);
-        // const diseaseSymptoms = new Set(PossibleDiseases.flatMap(disease => disease.symptoms));
-        // setSelectedDisease(PossibleDiseases);
-        // setPossibleSymptoms([...diseaseSymptoms]);
+        const diseaseSymptoms = new Set(PossibleDiseases.flatMap(disease => disease.symptoms));
+        setSelectedDiseases(PossibleDiseases);
+        setPossibleSymptoms([...diseaseSymptoms]);
 
         console.log("PossibleDiseases: ", [...PossibleDiseases]);
         // console.log("diseaseSymptoms: ", [...diseaseSymptoms]);
@@ -111,22 +99,7 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
                                 // filterDiseases();
                             }}
                             options={possibleSymptoms.map((item) => ({ label: item, value: item }))}
-                            filterSort={(optionA, optionB) =>
-                                (optionA?.label ?? "").toLowerCase().localeCompare((optionB?.label ?? "").toLowerCase())}
                         />
-
-                        {/* {possibleSymptoms.length &&
-                            possibleSymptoms.map(item => (
-                                <div key={item}>
-                                    <input
-                                        type="checkbox"
-                                        value={item}
-                                        onChange={handleCheckboxChange}
-                                    />
-                                    {item}
-                                </div>
-                            ))
-                        } */}
                     </div>
                     <p className="info">Already know which field to select?<br />
                         Click{" "}
@@ -146,19 +119,7 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
     );
 };
 
-const filterOptions = (symptomsToDisease: ISymptomToDisease[], selectedSymptoms: ISymptom[]) => {
-    const PossibleDiseases = getDiseasesBySymptoms(symptomsToDisease, selectedSymptoms);
-    const diseaseSymptoms = new Set(PossibleDiseases.flatMap(disease => disease.symptoms));
-    console.log([...PossibleDiseases]);
-    return PossibleDiseases;
-    // setPossibleSymptoms([...diseaseSymptoms]);
-    // setSelectedDisease(PossibleDiseases);
-};
-
 const getDiseasesBySymptoms = (symptomsToDisease: ISymptomToDisease[], selectedSymptoms: ISymptom[]): ISymptomToDisease[] => {
-    console.log("getDiseasesBySymptoms symptomsToDisease: ", [...symptomsToDisease]);
-    console.log("getDiseasesBySymptoms selectedSymptoms: ", [...selectedSymptoms]);
-    debugger;
     const result = symptomsToDisease.filter(disease =>
         selectedSymptoms.every(symptom => disease.symptoms.includes(symptom)),
     );
@@ -166,13 +127,13 @@ const getDiseasesBySymptoms = (symptomsToDisease: ISymptomToDisease[], selectedS
     return result;
 };
 
-const getSpecialtyByDisease = () => {
-    const selectedDiseaseNames = selectedDiseaseNames.map(disease => disease.nameOfDisease);
-    return diseaseToSpecialty.filter(specialty =>
+const getSpecialtyByDisease = (diseases: ISymptomToDisease[], specialties: IDiseaseToSpecialty[]): string[] => {
+    const selectedDiseaseNames = diseases.map(disease => disease.nameOfDisease);
+    return specialties.filter(specialty =>
         specialty.diseases.some(disease => selectedDiseaseNames.includes(disease)),
     ).map(specialty => specialty.specialty);
 };
 
-const processDetermineDoctor = (specialties) => {
+const processDetermineDoctor = (specialties: string[], doctorList: IDoctor[]) => {
     return doctorList.filter(doctor => specialties.includes(doctor.specialty));
 };
