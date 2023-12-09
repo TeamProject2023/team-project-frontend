@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { Promo } from "../../components/Promo";
 import { Hero } from "./sections/Hero";
 import { Statistics } from "./sections/Statistics";
 import { About } from "./sections/About";

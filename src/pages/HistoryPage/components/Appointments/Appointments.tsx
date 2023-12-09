@@ -17,6 +17,7 @@ export const Appointments: FC = () => {
                 const response = await makeRequest(() => {
                     return AppService.getAppointments();
                 });
+                console.log(response);
             } catch (error) {
                 console.error(error);
             } finally {

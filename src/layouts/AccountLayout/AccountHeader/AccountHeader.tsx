@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Burger } from "../../../components/ui/Burger";
-import { Logo } from "../../../components/Logo";
 import {
     DropDown,
     DropDownBox,
