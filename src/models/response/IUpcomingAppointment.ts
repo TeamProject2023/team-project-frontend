@@ -1,5 +1,5 @@
 export interface IUpcomingAppointment {
-    _id: string,
+  _id: string,
   patientRef: string,
   doctorRef: string,
   date: string,

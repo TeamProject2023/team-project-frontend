@@ -21,6 +21,8 @@ import { ICreateAppointment } from "../../models/request/ICreateAppointment";
 import { IPredictHeartDiseasePayload } from "../../models/request/IPredictHeartDiseasePayload";
 import { IPredictHeartDiseaseResponse } from "../../models/response/IPredictHeartDiseaseResponse";
 import { IUpcomingAppointment } from "../../models/response/IUpcomingAppointment";
+import { IChangeAppointmentStatusPayload } from "../../models/request/IChangeAppointmentStatusPayload";
+import { IRescheduleAppointmentPayload } from "../../models/request/IRescheduleAppointmentPayload";
 
 export class AppService {
     public static async login(
@@ -47,6 +49,17 @@ export class AppService {
         return axios.post<IRefreshResponse>("/refresh_token", payload, {
             baseURL,
         });
+    }
+
+    public static async changeAppointmentStatus(payload: IChangeAppointmentStatusPayload): Promise<AxiosResponse<IUpcomingAppointment>> {
+        return $api.put(`/changeStatus/${payload.appointmentId}`, { newStatus: payload.newStatus });
+    }
+    
+    public static async rescheduleAppointment(payload: IRescheduleAppointmentPayload): Promise<AxiosResponse<IUpcomingAppointment>> {
+        return $api.put(`/rescheduleAppointment/${payload.appointmentId}`, {
+             newDate: payload.newDate,
+             newTime: payload.newTime
+            });
     }
 
     public static async predictHeartDisease(
