@@ -1,12 +1,11 @@
 @import "adaptive";
 
-$blue: #248fea;
 
 .separator {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $blue;
+    // background-color: $color-primary;
     color: #ffffff;
     padding-top: 50px;
     padding-bottom: 80px;

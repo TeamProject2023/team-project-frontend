@@ -1,12 +1,7 @@
 import { FC } from "react";
-import tooth from "../assets/images/tooth-solid.svg";
-import "../styles/components/_separator.scss";
+import tooth from "../../assets/images/tooth-solid.svg";
 
-interface SeparatorProps {
-    // Define props here if needed
-}
-
-export const Separator: FC<SeparatorProps> = () => {
+export const Separator: FC = () => {
     return (
         <div className="separator">
             <div className="separator__container">
