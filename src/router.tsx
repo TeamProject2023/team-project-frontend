@@ -12,6 +12,7 @@ import { DashboardPage } from "./pages/DashboardPage/DashboardPage";
 import { HistoryPage } from "./pages/HistoryPage/HistoryPage";
 import { TeamPage } from "./pages/TeamPage/TeamPage";
 import { BaseLayout } from "./layouts/BaseLayout";
+import { PredictorPage } from "./pages/Predictor/PredictorPage";
 import { FaqPage } from "./pages/FaqPage/FaqPage";
 
 export const router = createBrowserRouter([
@@ -67,7 +68,7 @@ export const router = createBrowserRouter([
                             },
                             {
                                 path: Routes.AITool,
-                                element: <></>,
+                                element: <PredictorPage/>,
                             },
                         ],
                     },

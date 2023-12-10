@@ -3,8 +3,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AppService } from "../../../services/app/app.service";
 import { IUpcomingAppointment } from "../../../models/response/IUpcomingAppointment";
 import { ReschedulePopup } from "./ReschedulePopup";
+import { CloseOutlined, CalendarOutlined } from '@ant-design/icons'
+
+const useIsMobile = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 450);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 500);
+        };
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    return isMobile;
+};
 
 export const UpcommingAppointment: FC = () => {
+    const isMobile = useIsMobile();
     const [appointmentData, setAppointmentData] = useState<IUpcomingAppointment | null >(null);
     const [showCancelPopup, setShowCancelPopup] = useState(false);
     const [showReschedulePopup, setShowReschedulePopup] = useState(false);
@@ -53,8 +72,8 @@ export const UpcommingAppointment: FC = () => {
             </div>
             <div
                 className="appointmentBox__column-2"
-            />
-            <div className="buttonContainer">
+            >
+                <div className="buttonContainer">
                 <AnimatePresence>
                     {showCancelPopup && (
                         <motion.div
@@ -74,9 +93,14 @@ export const UpcommingAppointment: FC = () => {
                         </motion.div>
                     )}
                 </AnimatePresence>
-                <button className="cancelButton" onClick={toggleCancelPopup}>
-                    Cancel
-                </button>
+                {isMobile ? 
+                    <CloseOutlined onClick={toggleCancelPopup} className="cancelButton"/> :
+                    <button className="cancelButton" onClick={toggleCancelPopup}>
+                        Cancel
+                    </button>
+
+                }
+                
                 {
                     appointmentData && (
                         <ReschedulePopup
@@ -87,10 +111,17 @@ export const UpcommingAppointment: FC = () => {
                     )
                 }
 
-                <button className="rescheduleButton" onClick={toggleReschedulePopup}>
-                    Reschedule
-                </button>
+                {isMobile ? 
+                        <CalendarOutlined className="rescheduleButton" onClick={toggleCancelPopup} />:
+                    <button className="rescheduleButton" onClick={toggleReschedulePopup}>
+                        Reschedule
+                    </button>
+                }
+
+                
             </div>
+            </div>
+            
 
         </div>
 

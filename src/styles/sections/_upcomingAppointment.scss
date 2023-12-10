@@ -1,8 +1,9 @@
 .appointmentBox {
     display: flex; 
     flex-direction: row;
+    justify-content: space-between;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 25px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     background-color: #f1f5f8;
     box-shadow: rgba(20, 46, 110, 0.1) 0px 1px 8px;
@@ -49,8 +50,11 @@
     }
 
     .appointmentBox__column-2 {
-        flex: 1;
+        flex-basis: 25%;
         flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
         height: 120px;
     }
 
@@ -159,4 +163,29 @@
     
 
     
+}
+
+@media screen and (max-width: 500px) {
+    .appointmentBox {
+
+        .appointmentBox__column-2 {
+            flex-basis: 15%;
+            align-items: flex-end;
+        }
+    
+
+        .buttonContainer {
+            justify-content: center;
+            align-items: center;
+            .cancelButton, .rescheduleButton {
+                height: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 32px;
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+    }
 }

@@ -24,6 +24,7 @@ import { IUpcomingAppointment } from "../../models/response/IUpcomingAppointment
 import { IGetUserData } from "../../models/response/IGetUSerData";
 import { IChangeAppointmentStatus } from "../../models/request/IChangeAppointmentStatus";
 import { IReschedulePayload } from "../../models/request/IRescheduleAppointment";
+import { ISaveHeartDiseaseResult } from "../../models/request/ISaveHeartDiseaseResult";
 
 export class AppService {
     public static async login(
@@ -107,5 +108,9 @@ export class AppService {
 
     public static async rescheduleAppointment(id: string, payload: IReschedulePayload): Promise<AxiosResponse<void>> {
         return $api.put(`/rescheduleAppointment/${id}`, payload);
+    }
+
+    public static async saveHeartDiseaseResult(payload: ISaveHeartDiseaseResult): Promise<AxiosResponse<void>> {
+        return $api.post(`/saveHeartDiseasePrediction`, payload);
     }
 }
