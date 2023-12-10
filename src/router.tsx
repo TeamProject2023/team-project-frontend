@@ -11,6 +11,7 @@ import { AuthLayout } from "./layouts/AuthLayout/AuthLayout";
 import { DashboardPage } from "./pages/DashboardPage/DashboardPage";
 import { PredictorPage } from "./pages/Predictor/PredictorPage";
 import { HistoryPage } from "./pages/HistoryPage/HistoryPage";
+import { ContactPage } from "./pages/ContactPage/contactPage";
 
 export const router = createBrowserRouter([
     {
@@ -68,7 +69,13 @@ export const router = createBrowserRouter([
         errorElement: <NotFound />,
     },
     {
+        path: Routes.Contact,
+        element: <ContactPage />,
+        errorElement: <NotFound />,
+    },
+    {
         path: "*",
         element: <NotFound />,
     },
+    
 ]);
