@@ -1,0 +1,208 @@
+.page-faq {
+    .section-faq {
+        .section__inner {
+            padding: 10rem 0;
+        }
+
+        .section__subtitle {
+            color: $color-primary;
+            font-size: 1.6rem;
+            font-weight: 700;
+
+            margin-bottom: 1rem;
+        }
+
+        .section__title {
+            font-size: 4.2rem;
+            font-weight: 700;
+            color: $color-black;
+            font-family: $font-inter;
+
+            margin-bottom: 4rem;
+        }
+
+        .section__content {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 7rem;
+        }
+
+        .col {
+            flex-grow: 1;
+            flex-shrink: 0;
+        }
+
+        .col-left {
+            position: relative;
+
+            flex: 0 0 42%;
+        }
+
+        .col-right {
+            position: relative;
+            flex: 1 0 45%;
+            .col__inner {
+                padding: 2rem 0;
+            }
+        }
+
+        .img-set {
+            position: relative;
+            height: 45rem;
+        }
+
+        .circle {
+            position: absolute;
+            top: 10%;
+            left: 15%;
+
+            width: 45rem;
+            height: 45rem;
+            background-color: #fff;
+            border: 4rem solid #bfd5e7a1;
+            border-radius: 100%;
+
+            animation: float 1500ms infinite ease-in-out;
+        }
+
+        .img {
+            position: absolute;
+            display: block;
+            object-fit: cover;
+            width: auto;
+
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .img-top {
+            top: 0;
+            right: 0;
+            height: 80%;
+        }
+
+        .img-bottom {
+            left: 0;
+            bottom: 0;
+            height: 60%;
+        }
+    }
+}
+
+@keyframes float {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    50% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: $bp-l) {
+    .page-faq {
+        .section-faq {
+            .section__title {
+                font-size: 3.5rem;
+            }
+            .section__content {
+                gap: 4rem;
+            }
+            .circle {
+                width: 35rem;
+                height: 35rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .page-faq {
+        .section-faq {
+            .section__content {
+                flex-direction: column;
+                width: 100%;
+                max-width: 75rem;
+
+                margin: 0 auto;
+            }
+
+            .section__inner {
+                padding: 7rem 0;
+            }
+
+            .col-left {
+                height: 53rem;
+                flex: 0 0 auto;
+            }
+
+            .circle {
+                top: 0%;
+            }
+
+            .img-set {
+                width: 100%;
+                height: 100%;
+            }
+
+            .img-bottom {
+                height: 80%;
+            }
+            .img-top {
+                height: 80%;
+            }
+            .col-right {
+                flex: 0 0 auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $bp-s) {
+    .page-faq {
+        .section-faq {
+            .section__content {
+                max-width: 42rem;
+            }
+
+            .section__inner {
+                padding: 5rem 0;
+            }
+
+            .section__title {
+                font-size: 2.4rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .col-left {
+                height: 45rem;
+            }
+
+            .circle {
+                height: 22rem;
+                width: 22rem;
+                border-width: 2rem;
+            }
+
+            .img {
+                max-width: 100%;
+                height: auto;
+            }
+            .img-bottom {
+                max-width: 70%;
+                max-height: 70%;
+            }
+            .img-top {
+                max-height: 70%;
+                max-width: 80%;
+            }
+        }
+    }
+}

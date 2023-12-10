@@ -43,4 +43,8 @@ export const navLinks = [
         title: "Our Team",
         link: Routes.Team,
     },
+    {
+        title: "FAQ",
+        link: Routes.Faq,
+    },
 ];
