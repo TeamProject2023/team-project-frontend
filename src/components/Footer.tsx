@@ -115,17 +115,17 @@ const footerLinks: Record<string, IFooterMenu> = {
                 link: "/",
             },
             {
-                id: 0,
+                id: 1,
                 title: "About Us",
                 link: "/",
             },
             {
-                id: 0,
+                id: 2,
                 title: "Our Services",
                 link: "/",
             },
             {
-                id: 0,
+                id: 3,
                 title: "Our Team",
                 link: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/Me-and-the-boys-feature-image-1.jpg",
             },
@@ -166,7 +166,7 @@ const footerLinks: Record<string, IFooterMenu> = {
                 link: "mailto:support@medai.com",
             },
             {
-                id: 1,
+                id: 2,
                 title: "Phone",
                 subtitle: "+48123456789",
                 icon: "icon-call",

@@ -2,8 +2,9 @@
     color: $color-primary;
 }
 
-.link-underline {
+a.link-underline {
     position: relative;
+    color: $color-primary;
     &:after {
         position: absolute;
         bottom: 0;

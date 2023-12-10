@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 import { Burger } from "../../../components/ui/Burger";
 import {
     DropDown,
@@ -13,7 +14,7 @@ import { AppService } from "../../../services/app/app.service";
 import { LocalStorageRefreshToken } from "../../../utils/constants.util";
 import { appStore } from "../../../store";
 
-export const AccountHeader: FC = () => {
+export const AccountHeader: FC = observer(() => {
     const navigate = useNavigate();
     const { isLoading, makeRequest } = useFetch<ILogoutResponse>();
     const handleLogout = async () => {
@@ -35,12 +36,11 @@ export const AccountHeader: FC = () => {
             {isLoading && <Loader />}
             <div className="account-header">
                 <div className="account-header__inner">
-                    {/* <Logo /> */}
                     <div className="user-actions">
                         <DropDown>
                             <DropDownBox>
                                 <h3 className="account-greetings">
-                                    Hello, FirstName LastName
+                                    {appStore.user ? `Hello, ${appStore.user.firstName}` : "Hello"}
                                 </h3>
                             </DropDownBox>
                             <div className="dropdown-menu">
@@ -66,4 +66,4 @@ export const AccountHeader: FC = () => {
             </div>
         </>
     );
-};
+});

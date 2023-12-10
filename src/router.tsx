@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
                             },
                             {
                                 path: Routes.AITool,
-                                element: <BookingPage />,
+                                element: <></>,
                             },
                         ],
                     },

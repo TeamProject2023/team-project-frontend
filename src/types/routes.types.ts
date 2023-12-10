@@ -7,4 +7,6 @@ export enum Routes {
     Book = "/book-an-appointment",
     AITool = "/ai-tool",
     History = "/history",
+    About = "about",
+    Services = "services",
 }

@@ -8,4 +8,5 @@ export interface IAppointment {
     date: string;
     time: string;
     status: string;
+    field: string;
 }

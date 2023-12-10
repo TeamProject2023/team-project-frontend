@@ -20,6 +20,9 @@ import { ICheckSlotsPayload } from "../../models/request/ICheckSlotsPayload";
 import { ICreateAppointment } from "../../models/request/ICreateAppointment";
 import { IPredictHeartDiseasePayload } from "../../models/request/IPredictHeartDiseasePayload";
 import { IPredictHeartDiseaseResponse } from "../../models/response/IPredictHeartDiseaseResponse";
+import { IGetUserData } from "../../models/response/IGetUSerData";
+import { IChangeAppointmentStatus } from "../../models/request/IChangeAppointmentStatus";
+import { IReschedulePayload } from "../../models/request/IRescheduleAppointment";
 
 export class AppService {
     public static async login(
@@ -87,5 +90,17 @@ export class AppService {
 
     public static async createAppointment(payload: ICreateAppointment): Promise<AxiosResponse<void>> {
         return $api.post("/createAppointment", payload);
+    }
+
+    public static async getUserData(): Promise<AxiosResponse<IGetUserData>> {
+        return $api.get("/getUserData");
+    }
+
+    public static async changeAppointmentStatus(id: string, payload: IChangeAppointmentStatus): Promise<AxiosResponse<void>> {
+        return $api.put(`/changeStatus/${id}`, payload);
+    }
+
+    public static async rescheduleAppointment(id: string, payload: IReschedulePayload): Promise<AxiosResponse<void>> {
+        return $api.put(`/rescheduleAppointment/${id}`, payload);
     }
 }
