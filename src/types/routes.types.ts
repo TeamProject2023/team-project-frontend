@@ -9,4 +9,6 @@ export enum Routes {
     History = "/history",
     About = "about",
     Services = "services",
+    Team = "/team",
+    Faq = "/faq",
 }
