@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Socials } from "./Socials";
 import { assets } from "../utils/assets.utils";
+import { Routes } from "../types/routes.types";
 
 export const Footer: FC = () => {
     return (
@@ -112,22 +113,12 @@ const footerLinks: Record<string, IFooterMenu> = {
             {
                 id: 0,
                 title: "Home",
-                link: "/",
-            },
-            {
-                id: 1,
-                title: "About Us",
-                link: "/",
-            },
-            {
-                id: 2,
-                title: "Our Services",
-                link: "/",
+                link: Routes.Main,
             },
             {
                 id: 3,
                 title: "Our Team",
-                link: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/Me-and-the-boys-feature-image-1.jpg",
+                link: Routes.Team,
             },
         ],
     },
@@ -136,14 +127,9 @@ const footerLinks: Record<string, IFooterMenu> = {
         title: "Important",
         links: [
             {
-                id: 0,
-                title: "AI Predictor",
-                link: "/predictor",
-            },
-            {
                 id: 1,
                 title: "FAQ",
-                link: "/",
+                link: Routes.Faq,
             },
         ],
     },
