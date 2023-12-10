@@ -4,6 +4,7 @@ import { AppService } from "../../../services/app/app.service";
 import { IUpcomingAppointment } from "../../../models/response/IUpcomingAppointment";
 import { ReschedulePopup } from "./ReschedulePopup";
 import { CloseOutlined, CalendarOutlined } from '@ant-design/icons'
+import { Loader } from "../../../components/Loader";
 
 const useIsMobile = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 450);
@@ -56,6 +57,7 @@ export const UpcommingAppointment: FC = () => {
 
     return (
         <div className="appointmentBox">
+            {!appointmentData && <Loader/> }
             <div
                 className="appointmentBox__column-1"
             >
