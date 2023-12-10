@@ -11,4 +11,5 @@ export enum Routes {
     Services = "services",
     Team = "/team",
     Faq = "/faq",
+    NotFound = "/404",
 }

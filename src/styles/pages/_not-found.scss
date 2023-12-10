@@ -1,0 +1,80 @@
+.page-not-found {
+    .main {
+        flex-grow: 1;
+        display: flex;
+    }
+
+    .section-not-found {
+        display: flex;
+        flex-grow: 1;
+
+        .section__inner {
+            padding: 4rem 0;
+            display: flex;
+            flex-grow: 1;
+
+            align-items: center;
+            justify-content: center;
+        }
+        .section__title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: $color-black;
+            font-family: $font-inter;
+
+            margin-bottom: 8px;
+        }
+        .section__text {
+            margin-bottom: 2rem;
+            width: 52rem;
+
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.8;
+            color: rgb(102, 102, 102);
+            text-align: center;
+        }
+        .img-box {
+            width: 36.7rem;
+        }
+        .img {
+            width: 100%;
+            height: auto;
+        }
+        .btn-back {
+            width: max-content;
+        }
+    }
+}
+
+@media screen and (max-width: $bp-m) {
+    .page-not-found {
+        .section-not-found {
+            .section__title {
+                font-size: 2.8rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $bp-s) {
+    .page-not-found {
+        .section-not-found {
+            .img-box {
+                width: 28rem;
+            }
+            .section__title {
+                font-size: 2.5rem;
+            }
+
+            .section__text {
+                font-size: 1.4rem;
+                width: 30rem;
+            }
+
+            .btn-back {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
