@@ -1,5 +1,5 @@
 import { FC } from "react";
-import UpcommingAppointment from "./components/UpcommingAppointment";
+import { UpcommingAppointment } from "./components/UpcommingAppointment";
 
 export const DashboardPage: FC = () => {
     return (
