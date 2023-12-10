@@ -59,17 +59,13 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
 
     useEffect(() => {
         const possibleSpecialty = getSpecialtyByDisease(selectedDiseases, diseaseToSpecialty);
-        console.log(possibleSpecialty);
-        setSelectedDoctor(processDetermineDoctor(possibleSpecialty, doctorList));
+        // setSelectedDoctor(processDetermineDoctor(possibleSpecialty, doctorList));
     }, [selectedDiseases]);
     useEffect(() => {
         const PossibleDiseases = getDiseasesBySymptoms(symptomsToDisease, selectedSymptoms);
         const diseaseSymptoms = new Set(PossibleDiseases.flatMap(disease => disease.symptoms));
         setSelectedDiseases(PossibleDiseases);
         setPossibleSymptoms([...diseaseSymptoms]);
-
-        console.log("PossibleDiseases: ", [...PossibleDiseases]);
-        // console.log("diseaseSymptoms: ", [...diseaseSymptoms]);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedSymptoms]);
     return (
@@ -123,7 +119,6 @@ const getDiseasesBySymptoms = (symptomsToDisease: ISymptomToDisease[], selectedS
     const result = symptomsToDisease.filter(disease =>
         selectedSymptoms.every(symptom => disease.symptoms.includes(symptom)),
     );
-    console.log("result: ", [...result]);
     return result;
 };
 

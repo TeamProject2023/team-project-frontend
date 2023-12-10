@@ -34,10 +34,10 @@ export const SignUpForm: FC = () => {
     } = useForm<ISignUpFormValues>({
         resolver: yupResolver(signupFormSchema),
     });
-    const onSubmit = handleSubmit(async ({ email, password }) => {
+    const onSubmit = handleSubmit(async ({ email, password, firstName, lastName, phone }) => {
         try {
             setIsLoading(true);
-            await signup(() => AppService.register({ email, password }));
+            await signup(() => AppService.register({ email, password, firstName, lastName, phone }));
             const loginResponse = await login(() =>
                 AppService.login({ email, password }),
             );

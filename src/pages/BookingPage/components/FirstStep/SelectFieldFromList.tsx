@@ -11,7 +11,6 @@ interface Props {
 
 export const SelectFieldFromList: FC<Props> = ({ fields, toggleSelectWay, setFormField, value }) => {
     const handleChange = (field: string) => {
-        console.log(field);
         setFormField("field", field);
     };
     return (

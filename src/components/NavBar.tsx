@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
 import { Routes } from "../types/routes.types";
+import { smoothScroll } from "../utils/smoothScroll";
 
 export const NavBar: FC = () => {
     return (
@@ -12,12 +12,15 @@ export const NavBar: FC = () => {
                             key={link}
                             className="list__item nav__item"
                         >
-                            <Link
-                                to={link}
-                                className="nav__link"
+                            <a
+                                href={`#${link}`}
+                                className="btn nav__link"
+                                onClick={(e) => {
+                                    smoothScroll(e);
+                                }}
                             >
                                 {title}
-                            </Link>
+                            </a>
                         </li>
                     ))}
                 </ul>
@@ -28,11 +31,11 @@ export const NavBar: FC = () => {
 
 export const navLinks = [
     {
-        title: "Predictor",
-        link: Routes.Predictor,
+        title: "About Us",
+        link: Routes.About,
     },
     {
-        title: "My Account",
-        link: Routes.Dashboard,
+        title: "Our Services",
+        link: Routes.Services,
     },
 ];

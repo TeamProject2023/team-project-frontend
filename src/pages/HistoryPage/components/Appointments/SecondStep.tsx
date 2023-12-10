@@ -1,26 +1,28 @@
 import { FC, useEffect, useState } from "react";
 import dayjs from "dayjs";
 import cn from "classnames";
-import { IAppointmentFormData } from "../../../../types/ui.types";
+import { RescheduleFormData } from "../../../../types/ui.types";
 import { useFetch } from "../../../../hooks/useFetch";
 import { ICheckSlotsResponse } from "../../../../models/response/ICheckSlotsResponse";
 import { AppService } from "../../../../services/app/app.service";
 import { Spinner } from "../../../../components/Spinner";
+import { IAppointment } from "../../../../models/response/IGetAppointmentsResponse";
 
 interface Props {
-    formData: IAppointmentFormData;
+    record: IAppointment;
+    formData: RescheduleFormData;
     value: string | null;
-    setFormField: (key: keyof IAppointmentFormData, value: string) => void;
+    setFormField: (key: keyof RescheduleFormData, value: string) => void;
 }
 
-export const FourthStep: FC<Props> = ({ formData, value, setFormField }) => {
+export const SecondStep: FC<Props> = ({ formData, value, setFormField, record }) => {
     const [slots, setSlots] = useState<string[]>([]);
     const { makeRequest, isLoading } = useFetch<ICheckSlotsResponse>();
     useEffect(() => {
         const fetchFields = async () => {
             try {
-                if (formData.date && formData.field && formData.type) {
-                    const payload = { date: formData.date, field: formData.field, type: formData.type };
+                if (formData.newDate && record.field && record.appointmentType) {
+                    const payload = { date: formData.newDate, field: record.field, type: record.appointmentType };
                     const response = await makeRequest(() => {
                         return AppService.checkSlots(payload);
                     });
@@ -32,8 +34,8 @@ export const FourthStep: FC<Props> = ({ formData, value, setFormField }) => {
         };
         fetchFields();
     }, []);
-    const formattedDate = formData.date ?
-        dayjs(+formData.date).format("DD MMMM YYYY").toString()
+    const formattedDate = formData.newDate ?
+        dayjs(+formData.newDate).format("DD MMMM YYYY").toString()
         : null;
     return (
         <>
@@ -64,7 +66,7 @@ export const FourthStep: FC<Props> = ({ formData, value, setFormField }) => {
                                                         <div
                                                             role="button"
                                                             className={cn("slot", { active: slot === value })}
-                                                            onClick={() => setFormField("time", slot)}
+                                                            onClick={() => setFormField("newTime", slot)}
                                                         >
                                                             <div className="slot__inner">
                                                                 {slot}

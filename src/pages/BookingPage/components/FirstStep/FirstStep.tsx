@@ -31,7 +31,6 @@ export const FirstStep: FC<Props> = ({ setFormField, value }) => {
     }, []);
 
     const toggleSelectWay = () => {
-        console.log(selectWay);
         setSelectWay((prev) => prev === ISelectFieldWay.BySymptoms ? ISelectFieldWay.FromList : ISelectFieldWay.BySymptoms);
     };
 
@@ -46,12 +45,12 @@ export const FirstStep: FC<Props> = ({ setFormField, value }) => {
                             toggleSelectWay={toggleSelectWay}
                             setFormField={setFormField}
                         />
-                    ) :
+                    ) : (
                         <SelectFieldBySymptoms
                             toggleSelectWay={toggleSelectWay}
                             setFormField={setFormField}
                         />
-            }
+                    )}
         </>
     );
 };

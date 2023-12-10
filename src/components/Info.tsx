@@ -36,50 +36,50 @@ export const Info = () => {
     }, []);
 
     return (
-        
+
         <div className="info">
             <div className="container">
-            <div className="swiper-container info__container">
-                <div className="swiper-wrapper info__wrapper">
-                    <div className="swiper-slide info__slide">
-                        <img src={photo} alt="slide" className="info__slide-img"/>
-                        <div className="info__slide-content">
-                            <img src={photo} alt="icon" className="info__slide-icon" />
-                            <div className="info__slide-title">nbkldfgnblkdf</div>
-                            <div className="info__slide-text">dbrhljkdsnbjdfsnjgbdsjlknfjskb fgsjbnjdfgsb ;jdgf bjf b</div>
-                            <div className="info__slide-btn">Explore more</div>
+                <div className="swiper-container info__container">
+                    <div className="swiper-wrapper info__wrapper">
+                        <div className="swiper-slide info__slide">
+                            <img src={photo} alt="slide" className="info__slide-img" />
+                            <div className="info__slide-content">
+                                <img src={photo} alt="icon" className="info__slide-icon" />
+                                <div className="info__slide-title">nbkldfgnblkdf</div>
+                                <div className="info__slide-text">dbrhljkdsnbjdfsnjgbdsjlknfjskb fgsjbnjdfgsb ;jdgf bjf b</div>
+                                <div className="info__slide-btn">Explore more</div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="swiper-slide info__slide">
-                        <img src={photo} alt="slide" className="info__slide-img"/>
-                        <div className="info__slide-content">
-                            <img src={photo} alt="icon" className="info__slide-icon" />
-                            <div className="info__slide-title">nbkldfgnblkdf</div>
-                            <div className="info__slide-text">dbrhljkdsnbjdfsnjgbdsjlknfjskb fgsjbnjdfgsb ;jdgf bjf b</div>
-                            <div className="info__slide-btn">Explore more</div>
+                        <div className="swiper-slide info__slide">
+                            <img src={photo} alt="slide" className="info__slide-img" />
+                            <div className="info__slide-content">
+                                <img src={photo} alt="icon" className="info__slide-icon" />
+                                <div className="info__slide-title">nbkldfgnblkdf</div>
+                                <div className="info__slide-text">dbrhljkdsnbjdfsnjgbdsjlknfjskb fgsjbnjdfgsb ;jdgf bjf b</div>
+                                <div className="info__slide-btn">Explore more</div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="swiper-slide info__slide">
-                        <img src={photo} alt="slide" className="info__slide-img"/>
-                        <div className="info__slide-content">
-                            <img src={photo} alt="icon" className="info__slide-icon" />
-                            <div className="info__slide-title">nbkldfgnblkdf</div>
-                            <div className="info__slide-text">dbrhljkdsnbjdfsnjgbdsjlknfjskb fgsjbnjdfgsb ;jdgf bjf b</div>
-                            <div className="info__slide-btn">Explore more</div>
+                        <div className="swiper-slide info__slide">
+                            <img src={photo} alt="slide" className="info__slide-img" />
+                            <div className="info__slide-content">
+                                <img src={photo} alt="icon" className="info__slide-icon" />
+                                <div className="info__slide-title">nbkldfgnblkdf</div>
+                                <div className="info__slide-text">dbrhljkdsnbjdfsnjgbdsjlknfjskb fgsjbnjdfgsb ;jdgf bjf b</div>
+                                <div className="info__slide-btn">Explore more</div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="swiper-slide info__slide">
-                        <img src={photo} alt="slide" className="info__slide-img"/>
-                        <div className="info__slide-content">
-                            <img src={photo} alt="icon" className="info__slide-icon" />
-                            <div className="info__slide-title">nbkldfgnblkdf</div>
-                            <div className="info__slide-text">dbrhljkdsnbjdfsnjgbdsjlknfjskb fgsjbnjdfgsb ;jdgf bjf b</div>
-                            <div className="info__slide-btn">Explore more</div>
+                        <div className="swiper-slide info__slide">
+                            <img src={photo} alt="slide" className="info__slide-img" />
+                            <div className="info__slide-content">
+                                <img src={photo} alt="icon" className="info__slide-icon" />
+                                <div className="info__slide-title">nbkldfgnblkdf</div>
+                                <div className="info__slide-text">dbrhljkdsnbjdfsnjgbdsjlknfjskb fgsjbnjdfgsb ;jdgf bjf b</div>
+                                <div className="info__slide-btn">Explore more</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 };

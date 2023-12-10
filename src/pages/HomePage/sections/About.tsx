@@ -3,14 +3,11 @@ import { FC } from "react";
 import photo from "../../../assets/images/about-img-1.jpeg";
 import done from "../../../assets/images/icons/dayn.svg";
 import expert from "../../../assets/images/doctor-2.jpg";
+import { Routes } from "../../../types/routes.types";
 
-interface AboutProps {
-    // Define props here if needed
-}
-
-export const About: FC<AboutProps> = () => {
+export const About: FC = () => {
     return (
-        <div className="about">
+        <div className="about" id={Routes.About}>
             <div className="container">
                 <div className="about__container">
                     <div className="about__imgs">

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { IRefreshResponse } from "../models/response/IRefreshTokenResponse";
 import { AppService } from "../services/app/app.service";
-import { appStore } from "../store";
 import { LocalStorageRefreshToken } from "../utils/constants.util";
 import { useFetch } from "./useFetch";
 
@@ -25,8 +24,6 @@ export const useCheckAuth = (): UseCheckAuthResponse => {
                     LocalStorageRefreshToken,
                 );
                 if (!refreshToken) {
-                    appStore.setToken("");
-                    appStore.setIsAuth(false);
                     setIsLoading(false);
                     return;
                 }

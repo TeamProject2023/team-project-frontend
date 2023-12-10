@@ -66,6 +66,18 @@
                 transition: all 0.2s ease-out;
             }
 
+            .link__icon-box {
+                height: 2rem;
+                width: 2rem;
+                svg {
+                    height: 100%;
+                    width: 100%;
+                    display: block;
+                    object-fit: contain;
+                }
+            }
+
+
             .link__title {
                 color: inherit;
                 font-size: 1.4rem;
@@ -73,18 +85,8 @@
             }
 
             &:hover {
-                .link__icon {
-                    color: $color-primary;
-                }
-            }
-        }
+                .link__icon-box {
 
-        &__item_highlighted {
-            // color: $color-red;
-            &:hover {
-                // color: $color-red;
-                .link__icon-svg {
-                    // fill: $color-red;
                 }
             }
         }
@@ -95,6 +97,7 @@
             visibility: visible;
             opacity: 1;
             transform: translateY(0);
+            min-width: 18rem;
         }
         .btn-arrow {
             transform: rotate(-135deg);
