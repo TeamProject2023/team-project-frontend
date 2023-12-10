@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import { NotFound } from "./pages/NotFound";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { PrivateOutlet } from "./layouts/PrivateOutlet/PrivateOutlet";
@@ -73,11 +73,15 @@ export const router = createBrowserRouter([
                     },
                 ],
             },
+            {
+                path: Routes.NotFound,
+                element: <NotFound />,
+            },
         ],
     },
 
     {
         path: "*",
-        element: <NotFound />,
+        element: <Navigate to={Routes.NotFound} />,
     },
 ]);
