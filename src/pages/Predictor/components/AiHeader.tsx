@@ -1,6 +1,6 @@
 import { useEffect, useState, FC } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import type { Container, Engine } from "@tsparticles/engine";
+import type { Engine } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 
 const AiHeader: FC = () => {
@@ -15,15 +15,10 @@ const AiHeader: FC = () => {
         });
     }, []);
 
-    const particlesLoaded = (container: Container| undefined): Promise<void> => {
-        return new Promise<void>(() => {})
-    };
-
     return (
         <div className="headerBox">
             { init && <Particles
             id="tsparticles"
-            particlesLoaded={particlesLoaded}
             options={{
                 background: {
                     color: {

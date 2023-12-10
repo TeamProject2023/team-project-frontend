@@ -1,9 +1,7 @@
 import { Button, Form, Input, Select, Row, Col } from 'antd';
 import { FC, useState } from 'react';
 import { AppService } from "../../../services/app/app.service";
-import { IPredictHeartDiseaseResponse } from "../../../models/response/IPredictHeartDiseaseResponse";
 import { Spinner } from '../../../components/Spinner';
-import { ISaveHeartDiseaseResult } from '../../../models/request/ISaveHeartDiseaseResult';
 
 const emptyInputData = {
     gender: "",
