@@ -12,6 +12,7 @@ const emptyInputData = {
 }
 
 const HeartDiseasePredictor: FC = () => {
+    const [form] = Form.useForm();
     const [result, setResult] = useState<IPredictHeartDiseaseResponse | null>();
     const [isProcessing, setIsProcessing] = useState(false);
     const [isSaving, setIsSaving] = useState(false);
@@ -44,6 +45,7 @@ const HeartDiseasePredictor: FC = () => {
         if (res.status === 200) {
             setSaveStatus(200)
             setInputData(emptyInputData)
+            form.resetFields();
             setInputDataSaved(emptyInputData)
         }
         
@@ -68,7 +70,8 @@ const HeartDiseasePredictor: FC = () => {
         <div className='predictor'>
             <div className='col-input'>
                 <Form
-                name="basic"
+                form={form}
+                name="HeartDisease"
                 layout='vertical'
                 initialValues={{ remember: true }}
                 onFinish={handleSubmit}
@@ -150,4 +153,4 @@ const HeartDiseasePredictor: FC = () => {
     )
 }
 
-export default HeartDiseasePredictor
+export default HeartDiseasePredictor;

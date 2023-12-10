@@ -25,6 +25,7 @@ import { IGetUserData } from "../../models/response/IGetUSerData";
 import { IChangeAppointmentStatus } from "../../models/request/IChangeAppointmentStatus";
 import { IReschedulePayload } from "../../models/request/IRescheduleAppointment";
 import { ISaveHeartDiseaseResult } from "../../models/request/ISaveHeartDiseaseResult";
+import { IPredictBrainStrokePayload } from "../../models/request/IPredictBrainStrokePayload";
 
 export class AppService {
     public static async login(
@@ -56,6 +57,11 @@ export class AppService {
     public static async predictHeartDisease(
         payload: IPredictHeartDiseasePayload): Promise<AxiosResponse<IPredictHeartDiseaseResponse>> {
         return $api.post("/predictHeartDisease", payload);
+    }
+
+    public static async predictBrainStroke(
+        payload: IPredictBrainStrokePayload): Promise<AxiosResponse<number>> {
+        return $api.post("/predictBrainStroke", payload);
     }
 
     public static async getAppointments(): Promise<AxiosResponse<IGetAppointmentsResponse>> {
@@ -112,5 +118,8 @@ export class AppService {
 
     public static async saveHeartDiseaseResult(payload: ISaveHeartDiseaseResult): Promise<AxiosResponse<void>> {
         return $api.post(`/saveHeartDiseasePrediction`, payload);
+    }
+    public static async saveBrainStrokeResult(payload: ISaveBrainStrokeResult): Promise<AxiosResponse<void>> {
+        return $api.post(`/saveBrainStrokePrediction`, payload);
     }
 }

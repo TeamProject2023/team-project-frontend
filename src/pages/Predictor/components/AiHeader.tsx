@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, FC } from "react";
+import { useEffect, useState, FC } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container, Engine } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
@@ -16,8 +16,7 @@ const AiHeader: FC = () => {
     }, []);
 
     const particlesLoaded = (container: Container| undefined): Promise<void> => {
-        console.log(container);
-        return new Promise<void>((resolve, reject) => {})
+        return new Promise<void>(() => {})
     };
 
     return (
