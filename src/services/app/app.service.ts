@@ -20,6 +20,9 @@ import { ICheckSlotsPayload } from "../../models/request/ICheckSlotsPayload";
 import { ICreateAppointment } from "../../models/request/ICreateAppointment";
 import { IPredictHeartDiseasePayload } from "../../models/request/IPredictHeartDiseasePayload";
 import { IPredictHeartDiseaseResponse } from "../../models/response/IPredictHeartDiseaseResponse";
+import { IUpcomingAppointment } from "../../models/response/IUpcomingAppointment";
+import { IChangeAppointmentStatusPayload } from "../../models/request/IChangeAppointmentStatusPayload";
+import { IRescheduleAppointmentPayload } from "../../models/request/IRescheduleAppointmentPayload";
 
 export class AppService {
     public static async login(
@@ -48,6 +51,17 @@ export class AppService {
         });
     }
 
+    public static async changeAppointmentStatus(payload: IChangeAppointmentStatusPayload): Promise<AxiosResponse<IUpcomingAppointment>> {
+        return $api.put(`/changeStatus/${payload.appointmentId}`, { newStatus: payload.newStatus });
+    }
+    
+    public static async rescheduleAppointment(payload: IRescheduleAppointmentPayload): Promise<AxiosResponse<IUpcomingAppointment>> {
+        return $api.put(`/rescheduleAppointment/${payload.appointmentId}`, {
+             newDate: payload.newDate,
+             newTime: payload.newTime
+            });
+    }
+
     public static async predictHeartDisease(
         payload: IPredictHeartDiseasePayload): Promise<AxiosResponse<IPredictHeartDiseaseResponse>> {
         return $api.post("/predictHeartDisease", payload);
@@ -64,7 +78,11 @@ export class AppService {
     public static async getTypes(): Promise<AxiosResponse<IGetTypesResponse>> {
         return $api.get<IGetTypesResponse>("/getAppointmentTypes");
     }
-
+    
+    public static async getUpcomingAppointment(): Promise<AxiosResponse<IUpcomingAppointment>> {
+        return $api.get("/upcomingAppointment");
+    }
+    
     public static async getSymptoms(): Promise<AxiosResponse<IGetSymptomsResponse>> {
         return $api.get("/getSymptoms");
     }
@@ -88,4 +106,5 @@ export class AppService {
     public static async createAppointment(payload: ICreateAppointment): Promise<AxiosResponse<void>> {
         return $api.post("/createAppointment", payload);
     }
+
 }
