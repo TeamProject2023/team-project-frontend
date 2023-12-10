@@ -2,12 +2,8 @@ import { Button, Form, Input } from 'antd';
 import { FC, useState } from 'react';
 import { AppService } from "../../../services/app/app.service";
 import { IPredictHeartDiseaseResponse } from "../../../models/response/IPredictHeartDiseaseResponse";
-import { Loader } from '../../../components/Loader';
 import { Spinner } from '../../../components/Spinner';
 import { ISaveHeartDiseaseResult } from '../../../models/request/ISaveHeartDiseaseResult';
-
-type HeartDiseasePredictorProps = {
-}
 
 const emptyInputData = {
     age: "",

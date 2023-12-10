@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const AiHeader = () => {
+const AiHeader: FC = () => {
     return (
         <div className="headerBox">
             <h1 className="title">
