@@ -9,9 +9,8 @@ export const DashboardPage: FC = () => {
                 <div className="section__content">
                     <div className="card">
                         <div className="card__inner">
-                        <UpcommingAppointment/>
+                            <UpcommingAppointment />
                         </div>
-                        
                     </div>
                 </div>
             </div>

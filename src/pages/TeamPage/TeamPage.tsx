@@ -41,7 +41,7 @@ export const TeamPage: FC = () => {
                                                 </div>
                                             </div>
                                         </li>
-                                    )
+                                    );
                                 })}
                             </ul>
                         </div>

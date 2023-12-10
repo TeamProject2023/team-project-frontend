@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Routes } from "../types/routes.types";
 import { Link } from "react-router-dom";
+import { Routes } from "../types/routes.types";
 
 export const NavBar: FC = () => {
     return (
