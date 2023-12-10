@@ -9,17 +9,29 @@ import { AccountLayout } from "./layouts/AccountLayout";
 import { BookingPage } from "./pages/BookingPage/BookingPage";
 import { AuthLayout } from "./layouts/AuthLayout/AuthLayout";
 import { DashboardPage } from "./pages/DashboardPage/DashboardPage";
-import { PredictorPage } from "./pages/Predictor/PredictorPage";
 import { HistoryPage } from "./pages/HistoryPage/HistoryPage";
+import { TeamPage } from "./pages/TeamPage/TeamPage";
+import { BaseLayout } from "./layouts/BaseLayout";
 
 export const router = createBrowserRouter([
     {
         path: Routes.Main,
+        element: <BaseLayout />,
         errorElement: <NotFound />,
         children: [
             {
                 index: true,
                 element: <HomePage />,
+            },
+            {
+                path: Routes.Team,
+                element: <TeamPage />,
+                errorElement: <NotFound />,
+            },
+            {
+                path: Routes.Faq,
+                element: <TeamPage />,
+                errorElement: <NotFound />,
             },
             {
                 element: <AuthLayout />,
@@ -62,11 +74,7 @@ export const router = createBrowserRouter([
             },
         ],
     },
-    {
-        path: "/predictor",
-        element: <PredictorPage />,
-        errorElement: <NotFound />,
-    },
+
     {
         path: "*",
         element: <NotFound />,
