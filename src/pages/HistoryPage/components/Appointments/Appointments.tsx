@@ -12,6 +12,8 @@ import { RescheduleFormData } from "../../../../types/ui.types";
 import { FirstStep } from "./FirstStep";
 import { SecondStep } from "./SecondStep";
 import { appStore } from "../../../../store";
+import { CloseOutlined, CalendarOutlined } from '@ant-design/icons'
+
 
 export const Appointments: FC = observer(() => {
     const { makeRequest, isLoading } = useFetch<IGetAppointmentsResponse>();
@@ -105,8 +107,8 @@ const ActionCell: FC<ActionProps> = observer(({ record }) => {
                 <div className="user-actions__inner">
                     {record.status !== "Canceled" && (
                         <>
-                            <button className="btn btn-reschedule" onClick={handleReschedule}>Reschedule</button>
-                            <button className="btn btn-cancel" onClick={handleCancel}>Cancel</button>
+                            <CalendarOutlined className="btn btn-reschedule" onClick={handleReschedule} />
+                            <CloseOutlined onClick={handleCancel} className="btn btn-cancel"/>
                         </>
                     )}
                 </div>

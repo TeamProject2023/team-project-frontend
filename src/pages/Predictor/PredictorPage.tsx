@@ -30,8 +30,7 @@ export const PredictorPage: FC = () => {
 
     return (
         <>
-            <Header />
-            <main className="predictor">
+            <main className="section dash">
                 <div className="predictor__container">
                     <form
                         action="#"
@@ -75,17 +74,7 @@ export const PredictorPage: FC = () => {
                         send
                     </button>
                 </div>
-                <div className={`predictor__answer ${result ? "_active" : ""}`}>
-                    {
-                        `Negative chance: ${result?.negativeChance.toString().split(".")[1]?.slice(0, 2)}% Positive chance: ${result?.positiveChance.toString().split(".")[1]?.slice(0, 2)}%`
-                    }
-                </div>
             </main>
-            <div
-                className={`predictor__bg ${result ? "_active" : ""}`}
-                onClick={() => setResult(null)}
-            />
-            <Footer />
         </>
     );
 };

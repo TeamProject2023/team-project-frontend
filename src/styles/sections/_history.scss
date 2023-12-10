@@ -22,23 +22,23 @@
     .btn-cancel {
         border-radius: 8px;
         color: rgb(255, 255, 255);
-        font-size: 1.8rem;
         padding: 1rem 0;
-
+        height: 32px;
+        width: 32px;
         transition: 0.3 all ease-in;
     }
     .btn-reschedule {
-        background-color: rgb(52, 209, 191);
+        background-color: #0496ff;
 
         &:hover {
-            background-color: darken(rgb(52, 209, 191), 20%);
+            background-color: darken(#0496ff, 20%);
         }
     }
     
     .btn-cancel {
-        background-color: rgb(255, 113, 91);
+        background-color: #ff715b;
         &:hover {
-            background-color: darken(rgb(255, 113, 91), 20%);
+            background-color: darken(#ff715b, 20%);
         }
     }
 }
