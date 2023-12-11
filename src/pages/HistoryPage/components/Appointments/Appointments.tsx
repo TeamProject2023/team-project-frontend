@@ -79,7 +79,6 @@ const ActionCell: FC<ActionProps> = observer(({ record }) => {
     };
 
     const handleModalCancel = () => {
-        console.log("Clicked cancel button");
         setOpen(false);
     };
     const handleCancel = async () => {

@@ -12,7 +12,6 @@ export const UpcommingAppointment: FC = () => {
     const fetchAppointmentData = async () => {
         const response = await AppService.getUpcomingAppointment();
         setAppointmentData(response.data);
-        console.log(response.data);
     };
 
     useEffect(() => {

@@ -18,13 +18,11 @@ export const BaseLayout: FC = observer(() => {
     }, [isAuth, token]);
 
     useEffect(() => {
-        console.log("useEffect 2");
         const fetchUser = async () => {
             try {
                 const response = await makeRequest(() => {
                     return AppService.getUserData();
                 });
-                console.log(response);
                 appStore.setUser(response);
             } catch (error) {
                 console.error(error);
