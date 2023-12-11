@@ -4,7 +4,6 @@ import { AppService } from "../../../services/app/app.service";
 import { IUpcomingAppointment } from "../../../models/response/IUpcomingAppointment";
 import { ReschedulePopup } from "./ReschedulePopup";
 import { CloseOutlined, CalendarOutlined } from '@ant-design/icons'
-import { appStore } from "../../../store";
 
 type UpcommingAppointmentProps = {
     setHasAppointment: (value: boolean) => void;

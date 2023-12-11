@@ -1,4 +1,4 @@
-import { FC, useEffect, useCallback, useState } from "react";
+import { FC, useState } from "react";
 import { UpcommingAppointment } from "./components/UpcommingAppointment";
 import { Loader } from "../../components/Loader";
 import NoUpcomingAppointment from "./components/NoUpcomingAppointment";
