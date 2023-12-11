@@ -67,6 +67,8 @@ export const FaqPage: FC = () => {
 };
 
 const faqList = [
-    { id: 0, question: "question", answer: "Lorem ipsum dolor sit amet consec tetur adipisicing elit. Quisquam sit laborum est aliquam. Dicta fuga soluta eius exercitationem porro modi. Exercitationem eveniet aliquam repudiandae non, sequi mollitia at iusto" },
-    { id: 1, question: "question 1", answer: "Lorem ipsum dolor sit amet consec tetur adipisicing elit. Quisquam sit laborum est aliquam. Dicta fuga soluta eius exercitationem porro modi. Exercitationem eveniet aliquam repudiandae non, sequi mollitia at iusto" },
+    { id: 0, question: "How does the AI predictor work?", answer: "Analyzes health data for precise predictions, aiding proactive care." },
+    { id: 1, question: "Is my information secure?", answer: "Yes, we prioritize strict data security measures for confidentiality." },
+    { id: 2, question: "Can I access real-time updates?", answer: "Absolutely, our system provides continuous, up-to-date health insights." },
+    { id: 3, question: "How accurate are the predictions?", answer: "Our AI-driven model ensures high accuracy in health risk assessments." },
 ];
