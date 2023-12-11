@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
 import { UpcommingAppointment } from "./components/UpcommingAppointment";
 import { Loader } from "../../components/Loader";
-import NoUpcomingAppointment from "./components/NoUpcomingAppointment";
+import { NoUpcomingAppointment } from "./components/NoUpcomingAppointment";
+
 export const DashboardPage: FC = () => {
     const [hasAppointment, setHasAppointment] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
@@ -16,8 +17,8 @@ export const DashboardPage: FC = () => {
                             {isLoading && <Loader />}
                             {
                                 hasAppointment ?
-                                <UpcommingAppointment setHasAppointment={setHasAppointment} setIsLoading={setIsLoading} /> :
-                                <NoUpcomingAppointment/>
+                                    <UpcommingAppointment setHasAppointment={setHasAppointment} setIsLoading={setIsLoading} /> :
+                                    <NoUpcomingAppointment />
                             }
                         </div>
                     </div>

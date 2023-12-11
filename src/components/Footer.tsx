@@ -67,8 +67,6 @@ const FooterMenu: FC<FooterMenuProps> = ({ menu }) => {
                         <Link
                             to={link}
                             className="item__link"
-                            target="_blank"
-                            rel="noopener noreferrer"
                         >
                             <span className="link__inner">
                                 {icon && (

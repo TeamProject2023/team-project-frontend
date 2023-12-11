@@ -24,7 +24,6 @@ export const PrivateOutlet: FC = observer(() => {
                 const response = await makeRequest(() => {
                     return AppService.getUserData();
                 });
-                console.log(response);
                 appStore.setUser(response);
             } catch (error) {
                 console.error(error);

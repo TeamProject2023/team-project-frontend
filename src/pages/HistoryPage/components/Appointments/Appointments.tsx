@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { Button, Modal, Steps, Table, message } from "antd";
 import type { ColumnsType } from "antd/es/table";
+import { CloseOutlined, CalendarOutlined } from "@ant-design/icons";
 import { useFetch } from "../../../../hooks/useFetch";
 import { IAppointment, IGetAppointmentsResponse } from "../../../../models/response/IGetAppointmentsResponse";
 import { AppService } from "../../../../services/app/app.service";
@@ -12,8 +13,6 @@ import { RescheduleFormData } from "../../../../types/ui.types";
 import { FirstStep } from "./FirstStep";
 import { SecondStep } from "./SecondStep";
 import { appStore } from "../../../../store";
-import { CloseOutlined, CalendarOutlined } from '@ant-design/icons'
-
 
 export const Appointments: FC = observer(() => {
     const { makeRequest, isLoading } = useFetch<IGetAppointmentsResponse>();
@@ -81,7 +80,6 @@ const ActionCell: FC<ActionProps> = observer(({ record }) => {
     };
 
     const handleModalCancel = () => {
-        console.log("Clicked cancel button");
         setOpen(false);
     };
     const handleCancel = async () => {
@@ -108,7 +106,7 @@ const ActionCell: FC<ActionProps> = observer(({ record }) => {
                     {record.status !== "Canceled" && (
                         <>
                             <CalendarOutlined className="btn btn-reschedule" onClick={handleReschedule} />
-                            <CloseOutlined onClick={handleCancel} className="btn btn-cancel"/>
+                            <CloseOutlined onClick={handleCancel} className="btn btn-cancel" />
                         </>
                     )}
                 </div>

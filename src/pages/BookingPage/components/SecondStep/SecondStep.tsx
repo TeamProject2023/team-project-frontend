@@ -29,7 +29,6 @@ export const SecondStep: FC<Props> = ({ value, setFormField }) => {
     }, []);
 
     const handleChange = (type: string) => {
-        console.log(type);
         setFormField("type", type);
     };
 
