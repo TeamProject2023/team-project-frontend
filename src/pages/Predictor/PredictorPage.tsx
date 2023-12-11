@@ -3,6 +3,7 @@ import { Tabs } from "antd";
 import type { TabsProps } from "antd";
 import AiHeader from "./components/AiHeader";
 import HeartDiseasePredictor from "./components/HeartDisease";
+import BrainStrokePredictor from "./components/BrainStroke";
 
 
 export const PredictorPage: FC = () => {
@@ -42,6 +43,6 @@ const items: TabsProps["items"] = [
     {
         key: "2",
         label: "Brain stroke",
-        children: <AiHeader />,
+        children: <BrainStrokePredictor />,
     },
 ];

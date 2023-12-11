@@ -5,6 +5,11 @@ import { IUpcomingAppointment } from "../../../models/response/IUpcomingAppointm
 import { ReschedulePopup } from "./ReschedulePopup";
 import { CloseOutlined, CalendarOutlined } from '@ant-design/icons'
 
+type UpcommingAppointmentProps = {
+    setHasAppointment: (value: boolean) => void;
+    setIsLoading: (value: boolean) => void;
+}
+
 const useIsMobile = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 450);
 
@@ -22,20 +27,29 @@ const useIsMobile = () => {
     return isMobile;
 };
 
-export const UpcommingAppointment: FC = () => {
+export const UpcommingAppointment: FC<UpcommingAppointmentProps> = ({setHasAppointment, setIsLoading}) => {
     const isMobile = useIsMobile();
     const [appointmentData, setAppointmentData] = useState<IUpcomingAppointment | null >(null);
     const [showCancelPopup, setShowCancelPopup] = useState(false);
     const [showReschedulePopup, setShowReschedulePopup] = useState(false);
-
     const fetchAppointmentData = async () => {
+        setIsLoading(true);
         const response = await AppService.getUpcomingAppointment();
-        setAppointmentData(response.data);
-        console.log(response.data);
+        setAppointmentData(response.data)
+        setHasAppointment(!!response.data)
+        setIsLoading(false);
     };
 
+    const updateAppointmentData = async () => {
+        const response = await AppService.getUpcomingAppointment();
+        setAppointmentData(response.data)
+        setHasAppointment(!!response.data)
+    }
+
     useEffect(() => {
-        fetchAppointmentData();
+        if (!appointmentData) 
+        fetchAppointmentData()
+        else updateAppointmentData()
     }, [showReschedulePopup, showCancelPopup]);
 
     const toggleCancelPopup = () => {
