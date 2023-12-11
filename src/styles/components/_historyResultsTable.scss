@@ -1,0 +1,28 @@
+.row{
+    padding: 0 30px;
+    display: flex;
+    .col-1,.col-2 {
+        display: flex;
+        flex-direction: column;
+        
+        p {
+            color: #1677fe;
+        }
+        .data{
+            display: flex;
+            flex-direction: row;
+            .key{
+    
+            }
+            .value{
+    
+            }
+        }
+    }
+    .col-1{
+        flex-basis: 80%;
+    }
+    .col-2{
+        flex-basis: 20%;
+    }
+}

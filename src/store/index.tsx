@@ -1,17 +1,20 @@
 import { makeAutoObservable } from "mobx";
 import { IUser } from "../models/response/IGetUSerData";
 import { IAppointment } from "../models/response/IGetAppointmentsResponse";
+import { IPredictionHistory } from "../models/response/IPredictionResults";
 
 class AppStore {
     public token: string;
     public isAuth: boolean;
     public user: IUser | null;
     public appointments: IAppointment[];
+    public results: IPredictionHistory;
     public constructor() {
         this.token = "";
         this.isAuth = false;
         this.user = null;
         this.appointments = [];
+        this.results = [];
         makeAutoObservable(this);
     }
 
@@ -29,6 +32,10 @@ class AppStore {
 
     public setAppointments(value: IAppointment[]): void {
         this.appointments = value;
+    }
+
+    public setResults(value: IPredictionHistory): void {
+        this.results = value;
     }
 }
 

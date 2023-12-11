@@ -24,7 +24,7 @@ export const Appointments: FC = observer(() => {
                 const response = await makeRequest(() => {
                     return AppService.getAppointments();
                 });
-                appStore.setAppointments(response);
+                appStore.setAppointments(response.reverse());
             } catch (error) {
                 appStore.setAppointments([]);
                 console.error(error);

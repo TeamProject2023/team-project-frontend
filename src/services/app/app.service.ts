@@ -26,6 +26,7 @@ import { IChangeAppointmentStatus } from "../../models/request/IChangeAppointmen
 import { IReschedulePayload } from "../../models/request/IRescheduleAppointment";
 import { ISaveHeartDiseaseResult } from "../../models/request/ISaveHeartDiseaseResult";
 import { IPredictBrainStrokePayload } from "../../models/request/IPredictBrainStrokePayload";
+import { IPredictionHistory } from "../../models/response/IPredictionResults";
 
 export class AppService {
     public static async login(
@@ -119,7 +120,12 @@ export class AppService {
     public static async saveHeartDiseaseResult(payload: ISaveHeartDiseaseResult): Promise<AxiosResponse<void>> {
         return $api.post(`/saveHeartDiseasePrediction`, payload);
     }
+
     public static async saveBrainStrokeResult(payload: ISaveBrainStrokeResult): Promise<AxiosResponse<void>> {
         return $api.post(`/saveBrainStrokePrediction`, payload);
+    }
+
+    public static async getSavedPredictions(): Promise<AxiosResponse<IPredictionHistory>> {
+        return $api.get("/getPatientPredictionHistory");
     }
 }
