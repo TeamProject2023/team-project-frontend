@@ -32,8 +32,8 @@ export const Hero: FC = () => {
                                             <img src={Headphones} alt="Headphones" className="feature__img" />
                                         </div>
                                         <div className="feature__inner">
-                                            <h3 className="feature__title">24/7 Support</h3>
-                                            <p className="feature__text">There are many variations of passages are valid.</p>
+                                            <h3 className="feature__title">Round-the-Clock Assistance</h3>
+                                            <p className="feature__text">Unwavering Support Available Every Hour, Every Day</p>
                                         </div>
                                     </div>
                                     <div className="feature">
@@ -41,8 +41,8 @@ export const Hero: FC = () => {
                                             <img src={Doctor} alt="Doctor" className="feature__img" />
                                         </div>
                                         <div className="feature__inner">
-                                            <h3 className="feature__title">Qualified Doctors</h3>
-                                            <p className="feature__text">There are many variations of passages are valid.</p>
+                                            <h3 className="feature__title">Expertise in Healing</h3>
+                                            <p className="feature__text">Proficient and Compassionate Medical Practitioners Worldwide</p>
                                         </div>
                                     </div>
                                 </div>

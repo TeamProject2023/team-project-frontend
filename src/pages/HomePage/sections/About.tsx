@@ -38,12 +38,12 @@ export const About: FC = () => {
                     >
                         <div className="about__suptitle">About Our Program</div>
                         <div className="about__title">Take Care Of Your Health With Our Health Package</div>
-                        <div className="about__subtitle">There are many variations of passages of Lorem Ipsum amets avoilble but majority have suffered alteration in some form, by injected humour or randomise words which don`t sure amet consec tetur adicing.</div>
+                        <div className="about__subtitle">Welcome to our advanced AI predictor, your health companion. Seamlessly predicting potential diseases, our program empowers proactive well-being.</div>
                         <div className="about__points">
                             <div className="about__nakshtalt">
-                                <div className="about__point"><img src={done} alt="point" />Provide More Potential Health</div>
-                                <div className="about__point"><img src={done} alt="point" />Operational Research Transformation</div>
-                                <div className="about__point"><img src={done} alt="point" />Mental health Solution</div>
+                                <div className="about__point"><img src={done} alt="point" />Precision Health Predictions Unleashed</div>
+                                <div className="about__point"><img src={done} alt="point" />Operational Research Excellence Amplified</div>
+                                <div className="about__point"><img src={done} alt="point" />Seamless Disease Chance Projections</div>
                             </div>
                             <div className="about__video"><img src={AboutImg3} alt="video" /></div>
                         </div>

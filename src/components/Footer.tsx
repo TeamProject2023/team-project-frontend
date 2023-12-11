@@ -67,6 +67,9 @@ const FooterMenu: FC<FooterMenuProps> = ({ menu }) => {
                         <Link
                             to={link}
                             className="item__link"
+                            onClick={() => {
+                                window.scrollTo({ top: 0 });
+                            }}
                         >
                             <span className="link__inner">
                                 {icon && (

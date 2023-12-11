@@ -61,10 +61,10 @@ export const InfoItem: FC<InfoItemProps> = ({ item }) => {
 };
 
 const slides = [
-    { id: 0, image: Img1, title: "Patient Onboarding", subtitle: "It is a long established fact that reader will content of page when looks layout." },
-    { id: 1, image: Img2, title: "Patient Onboarding", subtitle: "It is a long established fact that reader will content of page when looks layout." },
-    { id: 2, image: Img3, title: "Patient Onboarding", subtitle: "It is a long established fact that reader will content of page when looks layout." },
-    { id: 3, image: Img0, title: "Patient Onboarding", subtitle: "It is a long established fact that reader will content of page when looks layout." },
+    { id: 0, image: Img1, title: "Personalized Health Assessments", subtitle: "Tailored insights for individual well-being, guiding personalized health management plans." },
+    { id: 1, image: Img2, title: "Operational Research Integration", subtitle: "Optimizing strategies through advanced data analytics for precise and efficient care." },
+    { id: 2, image: Img3, title: "AI-Driven Disease Predictions", subtitle: "Cutting-edge technology foresees potential health risks, enabling proactive preventive measures." },
+    { id: 3, image: Img0, title: "Continuous Well-being Monitoring", subtitle: "Real-time tracking and analysis to ensure ongoing health optimization and support." },
 ];
 
 const swiperVariants: Variants = {
