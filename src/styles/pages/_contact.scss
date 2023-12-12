@@ -1,6 +1,10 @@
 .page-contact
 {
     
+    .container
+    {
+        flex-direction: column;
+    }
     .contact-map
     {
         width: 100%;
