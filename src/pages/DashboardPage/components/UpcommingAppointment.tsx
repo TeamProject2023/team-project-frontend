@@ -64,7 +64,7 @@ export const UpcommingAppointment: FC<UpcommingAppointmentProps> = ({ setHasAppo
 
     const handleCancelAppointment = async () => {
         if (appointmentData) {
-            AppService.changeAppointmentStatus(appointmentData?._id, { newStatus: "Cancelled" });
+            AppService.changeAppointmentStatus(appointmentData?._id, { newStatus: "Canceled" });
             setShowCancelPopup(false);
             fetchAppointmentData();
         }

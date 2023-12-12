@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { FC, useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";
-import { Button, Modal, Steps, Table, message } from "antd";
+import { Button, Modal, Steps, Table, Tag, message } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import { CloseOutlined, CalendarOutlined } from "@ant-design/icons";
 import { useFetch } from "../../../../hooks/useFetch";
@@ -60,7 +60,13 @@ const columns: ColumnsType<IAppointment> = [
     {
         title: "Status",
         dataIndex: "status",
-        render: (text) => <>{text}</>,
+        render: (text) => <Tag 
+        color={
+            text === "Completed" ? 'green' : 
+            text === "Scheduled" ? 'blue' :
+            'red'
+        }
+        >{text}</Tag>,
     },
     {
         title: "Action",
@@ -103,7 +109,7 @@ const ActionCell: FC<ActionProps> = observer(({ record }) => {
 
             <div className="user-actions">
                 <div className="user-actions__inner">
-                    {record.status !== "Canceled" && (
+                    {record.status !== "Canceled" && record.status !== "Completed" && (
                         <>
                             <CalendarOutlined className="btn btn-reschedule" onClick={handleReschedule} />
                             <CloseOutlined onClick={handleCancel} className="btn btn-cancel" />
