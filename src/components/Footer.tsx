@@ -20,10 +20,7 @@ export const Footer: FC = () => {
                                     />
                                 </div>
                                 <p className="footer__text">
-                                    Lorem ipsum dolor sit amet consc tetur
-                                    adicing elit. Dolor emque dicta molest enim
-                                    beatae ame consequ atur tempo pretium auctor
-                                    nam.
+                                    Empowering health decisions through cutting-edge AI prediction. Get insights on potential diseases with our online clinic&apos;s advanced predictor tool.
                                 </p>
                                 <div className="social-box">
                                     <Socials />
