@@ -1,8 +1,10 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import gif from "../../../assets/images/hero-img-1.jpg";
 import Headphones from "../../../assets/images/vectors/headphones.svg";
 import Doctor from "../../../assets/images/vectors/doctor.svg";
 import Dots from "../../../assets/images/shared/dots.png";
+import { Routes } from "../../../types/routes.types";
 
 export const Hero: FC = () => {
     return (
@@ -19,7 +21,7 @@ export const Hero: FC = () => {
                             <p className="section__subtitle">
                                 95% accuracy of our AI model
                             </p>
-                            <button className="btn btn-primary btn-try">Try now</button>
+                            <Link to={Routes.AITool} className="btn btn-primary btn-try">Try now</Link>
                         </div>
                         <div className="col-left">
                             <div className="hero-img-box">
