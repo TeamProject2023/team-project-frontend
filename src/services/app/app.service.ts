@@ -20,6 +20,13 @@ import { ICheckSlotsPayload } from "../../models/request/ICheckSlotsPayload";
 import { ICreateAppointment } from "../../models/request/ICreateAppointment";
 import { IPredictHeartDiseasePayload } from "../../models/request/IPredictHeartDiseasePayload";
 import { IPredictHeartDiseaseResponse } from "../../models/response/IPredictHeartDiseaseResponse";
+import { IUpcomingAppointment } from "../../models/response/IUpcomingAppointment";
+import { IGetUserData } from "../../models/response/IGetUSerData";
+import { IChangeAppointmentStatus } from "../../models/request/IChangeAppointmentStatus";
+import { IReschedulePayload } from "../../models/request/IRescheduleAppointment";
+import { ISaveHeartDiseaseResult } from "../../models/request/ISaveHeartDiseaseResult";
+import { IPredictBrainStrokePayload } from "../../models/request/IPredictBrainStrokePayload";
+import { IPredictionHistory } from "../../models/response/IPredictionResults";
 
 export class AppService {
     public static async login(
@@ -53,6 +60,11 @@ export class AppService {
         return $api.post("/predictHeartDisease", payload);
     }
 
+    public static async predictBrainStroke(
+        payload: IPredictBrainStrokePayload): Promise<AxiosResponse<number>> {
+        return $api.post("/predictBrainStroke", payload);
+    }
+
     public static async getAppointments(): Promise<AxiosResponse<IGetAppointmentsResponse>> {
         return $api.get<IGetAppointmentsResponse>("/getAppointments");
     }
@@ -63,6 +75,10 @@ export class AppService {
 
     public static async getTypes(): Promise<AxiosResponse<IGetTypesResponse>> {
         return $api.get<IGetTypesResponse>("/getAppointmentTypes");
+    }
+
+    public static async getUpcomingAppointment(): Promise<AxiosResponse<IUpcomingAppointment>> {
+        return $api.get("/upcomingAppointment");
     }
 
     public static async getSymptoms(): Promise<AxiosResponse<IGetSymptomsResponse>> {
@@ -87,5 +103,29 @@ export class AppService {
 
     public static async createAppointment(payload: ICreateAppointment): Promise<AxiosResponse<void>> {
         return $api.post("/createAppointment", payload);
+    }
+
+    public static async getUserData(): Promise<AxiosResponse<IGetUserData>> {
+        return $api.get("/getUserData");
+    }
+
+    public static async changeAppointmentStatus(id: string, payload: IChangeAppointmentStatus): Promise<AxiosResponse<void>> {
+        return $api.put(`/changeStatus/${id}`, payload);
+    }
+
+    public static async rescheduleAppointment(id: string, payload: IReschedulePayload): Promise<AxiosResponse<void>> {
+        return $api.put(`/rescheduleAppointment/${id}`, payload);
+    }
+
+    public static async saveHeartDiseaseResult(payload: ISaveHeartDiseaseResult): Promise<AxiosResponse<void>> {
+        return $api.post(`/saveHeartDiseasePrediction`, payload);
+    }
+
+    public static async saveBrainStrokeResult(payload: ISaveBrainStrokeResult): Promise<AxiosResponse<void>> {
+        return $api.post(`/saveBrainStrokePrediction`, payload);
+    }
+
+    public static async getSavedPredictions(): Promise<AxiosResponse<IPredictionHistory>> {
+        return $api.get("/getPatientPredictionHistory");
     }
 }

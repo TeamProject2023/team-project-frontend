@@ -1,8 +1,10 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import gif from "../../../assets/images/hero-img-1.jpg";
 import Headphones from "../../../assets/images/vectors/headphones.svg";
 import Doctor from "../../../assets/images/vectors/doctor.svg";
 import Dots from "../../../assets/images/shared/dots.png";
+import { Routes } from "../../../types/routes.types";
 
 export const Hero: FC = () => {
     return (
@@ -19,7 +21,7 @@ export const Hero: FC = () => {
                             <p className="section__subtitle">
                                 95% accuracy of our AI model
                             </p>
-                            <button className="btn btn-primary btn-try">Try now</button>
+                            <Link to={Routes.AITool} className="btn btn-primary btn-try">Try now</Link>
                         </div>
                         <div className="col-left">
                             <div className="hero-img-box">
@@ -32,8 +34,8 @@ export const Hero: FC = () => {
                                             <img src={Headphones} alt="Headphones" className="feature__img" />
                                         </div>
                                         <div className="feature__inner">
-                                            <h3 className="feature__title">24/7 Support</h3>
-                                            <p className="feature__text">There are many variations of passages are valid.</p>
+                                            <h3 className="feature__title">Round-the-Clock Assistance</h3>
+                                            <p className="feature__text">Unwavering Support Available Every Hour, Every Day</p>
                                         </div>
                                     </div>
                                     <div className="feature">
@@ -41,8 +43,8 @@ export const Hero: FC = () => {
                                             <img src={Doctor} alt="Doctor" className="feature__img" />
                                         </div>
                                         <div className="feature__inner">
-                                            <h3 className="feature__title">Qualified Doctors</h3>
-                                            <p className="feature__text">There are many variations of passages are valid.</p>
+                                            <h3 className="feature__title">Expertise in Healing</h3>
+                                            <p className="feature__text">Proficient and Compassionate Medical Practitioners Worldwide</p>
                                         </div>
                                     </div>
                                 </div>

@@ -14,7 +14,7 @@ export const NavBar: FC = () => {
                         >
                             <Link
                                 to={link}
-                                className="nav__link"
+                                className="btn nav__link"
                             >
                                 {title}
                             </Link>
@@ -28,11 +28,19 @@ export const NavBar: FC = () => {
 
 export const navLinks = [
     {
-        title: "Predictor",
-        link: Routes.Predictor,
+        title: "Home",
+        link: Routes.Main,
     },
     {
-        title: "My Account",
-        link: Routes.Dashboard,
+        title: "Our Team",
+        link: Routes.Team,
+    },
+    {
+        title: "FAQ",
+        link: Routes.Faq,
+    },
+    {
+        title: "Contact Us",
+        link: Routes.Contact,
     },
 ];

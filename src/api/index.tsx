@@ -11,7 +11,6 @@ export const $api = axios.create({ baseURL });
 $api.interceptors.request.use(
     (config) => {
         config.headers.Authorization = `Bearer ${appStore.token}`;
-        console.log(`Interceptor request - ${config.method} - Request - ${config.url}`);
         return config;
     },
     (error) => {
@@ -28,7 +27,6 @@ $api.interceptors.response.use(
     },
     async (error) => {
         const originalRequest = error.config;
-        console.log("interceptors error response: ", error);
         if (
             error.response.status &&
             error.response.status === 401 &&

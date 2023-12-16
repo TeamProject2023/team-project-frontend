@@ -19,3 +19,8 @@ export interface IAppointmentFormData {
     date: string | null;
     time: string | null;
 }
+
+export type RescheduleFormData = {
+    newDate: string;
+    newTime: string;
+};

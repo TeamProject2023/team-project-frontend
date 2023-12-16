@@ -35,7 +35,6 @@ export const FourthStep: FC<Props> = ({ formData, value, setFormField }) => {
     const formattedDate = formData.date ?
         dayjs(+formData.date).format("DD MMMM YYYY").toString()
         : null;
-    console.log(slots);
     return (
         <>
             {

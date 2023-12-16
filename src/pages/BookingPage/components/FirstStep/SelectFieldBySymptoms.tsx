@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from "react";
 import { Select } from "antd";
 import { AxiosResponse } from "axios";
 import { AppService } from "../../../../services/app/app.service";
-import { IDoctor, IGetDoctorsResponse } from "../../../../models/response/IGetDoctors";
+import { IGetDoctorsResponse } from "../../../../models/response/IGetDoctors";
 import { IGetSymptomsResponse, ISymptom } from "../../../../models/response/IGetSymptomsResponse";
 import {
     IDiseaseToSpecialty,
@@ -22,11 +22,11 @@ interface Props {
 export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField }) => {
     const [symptomsToDisease, setSymptomsToDisease] = useState<ISymptomToDisease[]>([]);
     const [diseaseToSpecialty, setDiseaseToSpecialty] = useState<IDiseaseToSpecialty[]>([]);
-    const [doctorList, setDoctorList] = useState<IDoctor[]>([]);
     const [possibleSymptoms, setPossibleSymptoms] = useState<ISymptom[]>([]);
+    const [possibleSpecialty, setPossibleSpecialty] = useState<string[]>([]);
+    const [selectedSpecialty, setSelectedSpecialty] = useState<string>();
     const [selectedSymptoms, setSelectedSymptoms] = useState<ISymptom[]>([]);
     const [selectedDiseases, setSelectedDiseases] = useState<ISymptomToDisease[]>([]);
-    const [selectedDoctor, setSelectedDoctor] = useState<IDoctor[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const fetchData = async () => {
@@ -44,7 +44,6 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
                 ] = [pendingSymptoms, pendingDoctor, pendingSymptomsToDisease, pendingDiseaseToSpecialty];
                 const responses = await Promise.all(pendingData);
                 setPossibleSymptoms(responses[0].data);
-                setDoctorList(responses[1].data);
                 setSymptomsToDisease(responses[2].data);
                 setDiseaseToSpecialty(responses[3].data);
             } catch (error) {
@@ -58,35 +57,24 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
     }, []);
 
     useEffect(() => {
-        const possibleSpecialty = getSpecialtyByDisease(selectedDiseases, diseaseToSpecialty);
-        console.log(possibleSpecialty);
-        setSelectedDoctor(processDetermineDoctor(possibleSpecialty, doctorList));
+        const possibleSpecialties = getSpecialtyByDisease(selectedDiseases, diseaseToSpecialty);
+        setPossibleSpecialty(possibleSpecialties);
     }, [selectedDiseases]);
     useEffect(() => {
         const PossibleDiseases = getDiseasesBySymptoms(symptomsToDisease, selectedSymptoms);
         const diseaseSymptoms = new Set(PossibleDiseases.flatMap(disease => disease.symptoms));
         setSelectedDiseases(PossibleDiseases);
         setPossibleSymptoms([...diseaseSymptoms]);
-
-        console.log("PossibleDiseases: ", [...PossibleDiseases]);
-        // console.log("diseaseSymptoms: ", [...diseaseSymptoms]);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedSymptoms]);
+    const handleChange = (field: string) => {
+        setFormField("field", field);
+    };
     return (
         <>
             {isLoading ? <Spinner /> : (
                 <div className="step-card">
                     <div className="input-box">
-                        <span>
-                            {
-                                selectedDoctor.map(doctor => (
-                                    <button key={doctor.email}>
-                                        {doctor.firstName}
-                                    </button>
-                                ))
-                            }
-                        </span>
-
                         <h3 className="label">Select symptoms</h3>
                         <Select
                             mode="multiple"
@@ -94,10 +82,7 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
                             style={{ width: "100%" }}
                             placeholder="Please select"
                             value={selectedSymptoms}
-                            onChange={(options) => {
-                                setSelectedSymptoms(options);
-                                // filterDiseases();
-                            }}
+                            onChange={setSelectedSymptoms}
                             options={possibleSymptoms.map((item) => ({ label: item, value: item }))}
                         />
                     </div>
@@ -113,6 +98,20 @@ export const SelectFieldBySymptoms: FC<Props> = ({ toggleSelectWay, setFormField
                         </span>{" "}
                         to choose the field from the list.
                     </p>
+                    <div className="input-box">
+                        <h3 className="label">Select field</h3>
+                        <Select
+                            allowClear={true}
+                            style={{ width: "100%" }}
+                            placeholder="Please select"
+                            value={selectedSpecialty}
+                            onChange={(option) => {
+                                setSelectedSpecialty(option);
+                                handleChange(option);
+                            }}
+                            options={possibleSpecialty.map((item) => ({ label: item, value: item }))}
+                        />
+                    </div>
                 </div>
             )}
         </>
@@ -123,7 +122,6 @@ const getDiseasesBySymptoms = (symptomsToDisease: ISymptomToDisease[], selectedS
     const result = symptomsToDisease.filter(disease =>
         selectedSymptoms.every(symptom => disease.symptoms.includes(symptom)),
     );
-    console.log("result: ", [...result]);
     return result;
 };
 
@@ -132,8 +130,4 @@ const getSpecialtyByDisease = (diseases: ISymptomToDisease[], specialties: IDise
     return specialties.filter(specialty =>
         specialty.diseases.some(disease => selectedDiseaseNames.includes(disease)),
     ).map(specialty => specialty.specialty);
-};
-
-const processDetermineDoctor = (specialties: string[], doctorList: IDoctor[]) => {
-    return doctorList.filter(doctor => specialties.includes(doctor.specialty));
 };

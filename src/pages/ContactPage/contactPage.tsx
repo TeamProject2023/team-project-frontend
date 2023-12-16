@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import HeroImg from "../../assets/images/Contact/br-1.jpg";
+import { Hero } from "../../components/Hero";
 
 export const ContactPage: FC = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -11,6 +13,7 @@ export const ContactPage: FC = () => {
     return (
         <div className="page page-contact">
             <Header />
+            <Hero title="Contact Us" image={HeroImg} />
             <section className="section section-contact">
                 <div className="container">
                     <div className="row ">
@@ -68,7 +71,7 @@ export const ContactPage: FC = () => {
                                 </div>
                             </form>
                             <div className="map-box">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1234.2919371849516!2d19.48604080175229!3d51.7772141034548!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bcb3c7baa9079%3A0x7bc825b22303574d!2sFaculty%20of%20Mathematics%20and%20Computer%20Science%2C%20University%20of%20Lodz!5e0!3m2!1sen!2spl!4v1702373656085!5m2!1sen!2spl" width="600" height="450" style={{border: "0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1234.2919371849516!2d19.48604080175229!3d51.7772141034548!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bcb3c7baa9079%3A0x7bc825b22303574d!2sFaculty%20of%20Mathematics%20and%20Computer%20Science%2C%20University%20of%20Lodz!5e0!3m2!1sen!2spl!4v1702373656085!5m2!1sen!2spl" width="600" height="450" style={{ border: "0", maxWidth: "100%" }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
                             </div>
                         </div>
 
@@ -76,9 +79,6 @@ export const ContactPage: FC = () => {
                 </div>
             </section>
             <Footer />
-
         </div>
     );
 };
-
-export default ContactPage;

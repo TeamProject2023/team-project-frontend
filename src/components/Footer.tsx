@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Socials } from "./Socials";
 import { assets } from "../utils/assets.utils";
+import { Routes } from "../types/routes.types";
 
 export const Footer: FC = () => {
     return (
@@ -19,10 +20,7 @@ export const Footer: FC = () => {
                                     />
                                 </div>
                                 <p className="footer__text">
-                                    Lorem ipsum dolor sit amet consc tetur
-                                    adicing elit. Dolor emque dicta molest enim
-                                    beatae ame consequ atur tempo pretium auctor
-                                    nam.
+                                    Empowering health decisions through cutting-edge AI prediction. Get insights on potential diseases with our online clinic&apos;s advanced predictor tool.
                                 </p>
                                 <div className="social-box">
                                     <Socials />
@@ -66,8 +64,9 @@ const FooterMenu: FC<FooterMenuProps> = ({ menu }) => {
                         <Link
                             to={link}
                             className="item__link"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            onClick={() => {
+                                window.scrollTo({ top: 0 });
+                            }}
                         >
                             <span className="link__inner">
                                 {icon && (
@@ -112,22 +111,12 @@ const footerLinks: Record<string, IFooterMenu> = {
             {
                 id: 0,
                 title: "Home",
-                link: "/",
+                link: Routes.Main,
             },
             {
-                id: 0,
-                title: "About Us",
-                link: "/",
-            },
-            {
-                id: 0,
-                title: "Our Services",
-                link: "/",
-            },
-            {
-                id: 0,
+                id: 3,
                 title: "Our Team",
-                link: "https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/05/Me-and-the-boys-feature-image-1.jpg",
+                link: Routes.Team,
             },
         ],
     },
@@ -136,14 +125,9 @@ const footerLinks: Record<string, IFooterMenu> = {
         title: "Important",
         links: [
             {
-                id: 0,
-                title: "AI Predictor",
-                link: "/predictor",
-            },
-            {
                 id: 1,
                 title: "FAQ",
-                link: "/",
+                link: Routes.Faq,
             },
         ],
     },
@@ -166,7 +150,7 @@ const footerLinks: Record<string, IFooterMenu> = {
                 link: "mailto:support@medai.com",
             },
             {
-                id: 1,
+                id: 2,
                 title: "Phone",
                 subtitle: "+48123456789",
                 icon: "icon-call",

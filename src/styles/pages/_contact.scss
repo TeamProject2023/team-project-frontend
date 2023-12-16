@@ -8,6 +8,15 @@
     }
     .row {
         display: flex;
+        width: 100%;
+        gap: 2rem;
+        justify-content: space-between;
+
+        margin-bottom: 2rem;
+        padding: 0;
+        & > * {
+            flex: 0 0 28%;
+        }
     }
     .section-contact {
         display: flex;
@@ -63,7 +72,7 @@
     }
 
     .map-box {
-        flex: 0 0 40%;
+        flex: 0 0 47%;
     }
 
     .contact-form {
@@ -110,6 +119,29 @@
                     background-color: #0056b3;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .page-contact {
+        .row {
+            flex-wrap: wrap;
+
+            & > * {
+                flex: 0 0 40%;
+            }
+        }
+        .contact-form-box {
+            flex-direction: column;
+
+            & > * {
+                flex: 0 0 100%;
+            }
+        }
+
+        iframe {
+            width: 100%;
         }
     }
 }
