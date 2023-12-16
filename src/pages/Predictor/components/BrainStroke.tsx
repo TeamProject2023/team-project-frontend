@@ -2,6 +2,7 @@ import { Button, Form, Input, Select, Row, Col } from "antd";
 import { FC, useState } from "react";
 import { AppService } from "../../../services/app/app.service";
 import { Spinner } from "../../../components/Spinner";
+import { ISaveBrainStrokeResult } from "../../../models/request/ISaveBrainStrokeResult";
 
 const emptyInputData = {
     gender: "",

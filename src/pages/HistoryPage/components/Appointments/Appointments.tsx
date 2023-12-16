@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { FC, useEffect, useState } from "react";
 import { observer } from "mobx-react-lite";

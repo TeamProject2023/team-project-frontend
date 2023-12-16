@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable react/no-unstable-nested-components */
 import { FC, useEffect } from "react";
 import { Table, Space, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";

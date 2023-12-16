@@ -27,6 +27,7 @@ import { IReschedulePayload } from "../../models/request/IRescheduleAppointment"
 import { ISaveHeartDiseaseResult } from "../../models/request/ISaveHeartDiseaseResult";
 import { IPredictBrainStrokePayload } from "../../models/request/IPredictBrainStrokePayload";
 import { IPredictionHistory } from "../../models/response/IPredictionResults";
+import { ISaveBrainStrokeResult } from "../../models/request/ISaveBrainStrokeResult";
 
 export class AppService {
     public static async login(
