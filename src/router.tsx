@@ -69,7 +69,7 @@ export const router = createBrowserRouter([
                             },
                             {
                                 path: Routes.AITool,
-                                element: <PredictorPage/>,
+                                element: <PredictorPage />,
                             },
                         ],
                     },
@@ -91,5 +91,5 @@ export const router = createBrowserRouter([
         path: "*",
         element: <Navigate to={Routes.NotFound} />,
     },
-    
+
 ]);

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/indent */
 import { FC } from "react";
 import { Variants, motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";

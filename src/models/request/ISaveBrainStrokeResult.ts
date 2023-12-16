@@ -1,4 +1,4 @@
-interface ISaveBrainStrokeResult {
+export interface ISaveBrainStrokeResult {
     positiveChance: string;
     gender: string;
     age: string;
@@ -10,4 +10,4 @@ interface ISaveBrainStrokeResult {
     avg_glucose_level: string;
     bmi: string;
     smoking_status: string;
-  }
+}

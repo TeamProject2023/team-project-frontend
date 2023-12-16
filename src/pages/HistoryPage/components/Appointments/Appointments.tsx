@@ -60,13 +60,18 @@ const columns: ColumnsType<IAppointment> = [
     {
         title: "Status",
         dataIndex: "status",
-        render: (text) => <Tag 
-        color={
-            text === "Completed" ? 'green' : 
-            text === "Scheduled" ? 'blue' :
-            'red'
+        render: (text) => (
+            <Tag
+                color={
+            text === "Completed" ?
+                "green" :
+                text === "Scheduled" ?
+                    "blue" :
+                    "red"
         }
-        >{text}</Tag>,
+            >{text}
+            </Tag>
+        ),
     },
     {
         title: "Action",

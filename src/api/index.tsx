@@ -3,7 +3,6 @@ import axios from "axios";
 import { IRefreshResponse } from "../models/response/IRefreshTokenResponse";
 import { appStore } from "../store";
 
-// export const baseURL = "10.239.0.82:4500";
 export const baseURL = import.meta.env.VITE_API_URL as string;
 
 export const $api = axios.create({ baseURL });

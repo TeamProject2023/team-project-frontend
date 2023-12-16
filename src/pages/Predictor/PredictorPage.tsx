@@ -1,14 +1,12 @@
 import { FC, useState } from "react";
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
-import AiHeader from "./components/AiHeader";
-import HeartDiseasePredictor from "./components/HeartDisease";
-import BrainStrokePredictor from "./components/BrainStroke";
-
+import { AiHeader } from "./components/AiHeader";
+import { HeartDiseasePredictor } from "./components/HeartDisease";
+import { BrainStrokePredictor } from "./components/BrainStroke";
 
 export const PredictorPage: FC = () => {
     const [tabKey, setTabKey] = useState("1");
-
 
     return (
         <>
@@ -19,17 +17,16 @@ export const PredictorPage: FC = () => {
                     <div className="section__content">
                         <div className="card">
                             <div className="card__inner">
-                                
+
                                 <AiHeader />
                                 <Tabs activeKey={tabKey} defaultActiveKey="1" items={items} onChange={(value) => setTabKey(value)} />
-                                
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-             
         </>
     );
 };

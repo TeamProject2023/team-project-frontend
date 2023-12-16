@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { FC } from "react";
 import { Variants, motion } from "framer-motion";
 import photo from "../../../assets/images/about-img-1.jpeg";

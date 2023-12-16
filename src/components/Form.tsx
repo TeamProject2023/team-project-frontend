@@ -20,7 +20,7 @@ export const CustomForm: React.FC = () => {
         "default",
     );
 
-    const onFormLayoutChange = ({ size }: { size: SizeType }) => {
+    const onFormLayoutChange = ({ size }: { size: SizeType; }) => {
         setComponentSize(size);
     };
 

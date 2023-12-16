@@ -40,9 +40,10 @@ class AppStore {
     public setResults(value: IPredictionHistory): void {
         this.results = value;
     }
-    public setUpcomingAppointment(value: IUpcomingAppointment | null ): void {
+
+    public setUpcomingAppointment(value: IUpcomingAppointment | null): void {
         this.upcomingAppointment = value;
-    } 
+    }
 }
 
 export const appStore = new AppStore();

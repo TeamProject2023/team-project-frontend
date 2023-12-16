@@ -1,4 +1,4 @@
 export interface IChangeAppointmentStatusPayload {
-    appointmentId: string,
-    newStatus: string,
+    appointmentId: string;
+    newStatus: string;
 }

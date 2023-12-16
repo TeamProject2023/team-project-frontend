@@ -10,6 +10,6 @@ export interface IPredictionData {
     time: string;
     inputData: IPredictBrainStrokePayload | IPredictHeartDiseasePayload;
     result: IPredictHeartDiseaseResponse | string;
-};
+}
 
-export type IPredictionHistory = IPredictionData[]
+export type IPredictionHistory = IPredictionData[];
