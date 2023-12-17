@@ -13,7 +13,6 @@ import { AppService } from "../../../services/app/app.service";
 import { appStore } from "../../../store";
 import { ILoginResponse } from "../../../models/response/ILoginResponse";
 import { LocalStorageRefreshToken } from "../../../utils/constants.util";
-import { CustomError } from "../../../services/error/error.service";
 import { Loader } from "../../../components/Loader";
 import { FormInput } from "./components/FormInput";
 import { FormPhoneInput } from "./components/FormPhoneInput";
@@ -49,14 +48,8 @@ export const SignUpForm: FC = () => {
             );
             navigate(Routes.Dashboard);
         } catch (error) {
-            let customError;
-            if (error instanceof CustomError) {
-                customError = error;
-            } else {
-                customError = new CustomError(error);
-            }
             setError("root", {
-                message: `Error! ${customError.message}. You haven't been registered. Please try again`,
+                message: `Error! You haven't been registered. Please try again`,
             });
         } finally {
             setIsLoading(false);

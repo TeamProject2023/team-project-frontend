@@ -1,6 +1,5 @@
 import { AxiosResponse } from "axios";
 import { useState, useCallback } from "react";
-import { CustomError } from "../services/error/error.service";
 
 export function useFetch<TResponse>(initLoading?: boolean): {
     makeRequest: (
@@ -18,7 +17,7 @@ export function useFetch<TResponse>(initLoading?: boolean): {
             const response = await request();
             return response.data;
         } catch (error) {
-            throw new CustomError(error);
+            throw new Error();
         } finally {
             setIsLoading(false);
         }
