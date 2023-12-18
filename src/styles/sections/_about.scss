@@ -1,0 +1,35 @@
+@import "../components/adaptive.scss";
+
+$blue: #248fea;
+
+
+
+
+@media (max-width: 991.98px) {
+  .section-about {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    &__imgs {
+      @include adaptive-value('min-height', 500, 300, 1);
+    }
+    &__img {
+      @include adaptive-value('width', 450, 200, 1);
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .section-about {
+    &__points {
+      flex-direction: column;
+      gap: 20px;
+    }
+    &__video {
+      & img {
+      }
+    }
+  }
+}

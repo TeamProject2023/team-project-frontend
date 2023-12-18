@@ -1,0 +1,202 @@
+.appointmentBox {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 10px 25px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #f1f5f8;
+    box-shadow: rgba(20, 46, 110, 0.1) 0px 1px 8px;
+    color: rgb(65, 77, 85);
+    .no-appointment-wrapper{
+        height: 100%;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        .no-appointment{
+            //padding: 35px 10px;
+            border-bottom: 1px solid #2490eb;
+            color: #007fda;
+            
+        }
+    }
+    .appointmentData {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+
+        .appointmentType {
+            font-size: 18px;
+        }
+
+        .appointmentDate {
+            display: flex;
+            color: #0496ff;
+            flex-grow: 0.05;
+            @include adaptive-value("font-size", 24, 18, 1);
+            font-weight: 300;
+        }
+
+        .appointmentTime {
+            display: flex;
+            @include adaptive-value("font-size", 24, 18, 1);
+            font-weight: 300;
+            
+        }
+        .divider {
+            width: clamp(120px, 20%,200px );
+            border-color: #2490eb;
+            margin: 5px 0;
+        }
+    }
+
+    .appointmentBox__column-1 {
+        flex-basis: 75%;
+        display: flex;
+        flex-direction: column;
+        height: 120px;
+        justify-content: space-between ;
+    }
+
+    .appointmentBox__column-2 {
+        flex-basis: 25%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 120px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .buttonContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        gap: 10px;
+        flex-direction: column !important;
+        
+        .cancelButton {
+            height: 32px;
+            width: 120px;
+            background-color: #ff715b;
+            border-radius: 8px;
+            border: none;
+            color: #ffffff;
+            transition: 0.3s ease-in-out;
+        }
+    
+        .cancelButton:hover{
+            cursor: pointer;
+            background-color: #f1563e;
+        }
+    
+        .rescheduleButton {
+            height: 32px;
+            width: 120px;
+            background-color: #0496ff;
+            color: #ffffff;
+            border-radius: 8px;
+            border: none;
+            transition: 0.3s ease-in-out;
+        }
+    
+        .rescheduleButton:hover{
+            cursor: pointer;
+            background-color: #007fda;
+        }
+        
+            .popup {
+                position: absolute;
+                top: 50%;
+                left: 0%; 
+                transform: translateX(-50%);
+                background-color: white;
+                padding: 10px;
+                border-radius: 8px;
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+                z-index: 100;
+                
+                p {
+                    margin: 0;
+                    padding: 5px;
+                }
+        
+                button {
+                    margin-top: 10px;
+                }
+            }
+
+            .fullscreen-popup {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100vw;
+                height: 100vh;
+                backdrop-filter: blur(5px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            
+                .popup-content {
+                    background-color: white;
+                    padding: 20px;
+                    width: 350px;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            
+                    .popup-buttons{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
+                    
+                    .status{
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 200px;
+                    }
+                }
+            }
+            
+        }
+    
+
+    
+}
+
+@media screen and (max-width: 500px) {
+    .appointmentBox {
+
+        .appointmentBox__column-2 {
+            flex-basis: 15%;
+            align-items: flex-end;
+        }
+    
+
+        .buttonContainer {
+            justify-content: center;
+            align-items: center;
+            .cancelButton, .rescheduleButton {
+                height: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 32px;
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+    }
+}

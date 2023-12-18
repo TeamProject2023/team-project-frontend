@@ -1,0 +1,199 @@
+.section-history {
+    .ant-tabs {
+        height: 100%;
+    }
+    .ant-tabs-content-holder {
+        height: 100%;
+        & div {
+            height: 100%;
+        }
+    }
+
+    .ant-spin-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user-actions__inner {
+        display: flex;
+        gap: 1rem;
+    }
+    .btn-reschedule,
+    .btn-cancel {
+        border-radius: 8px;
+        color: rgb(255, 255, 255);
+        padding: 1rem 0;
+        height: 32px;
+        width: 32px;
+        transition: 0.3 all ease-in;
+    }
+    .btn-reschedule {
+        background-color: #0496ff;
+
+        &:hover {
+            background-color: darken(#0496ff, 20%);
+        }
+    }
+    
+    .btn-cancel {
+        background-color: #ff715b;
+        &:hover {
+            background-color: darken(#ff715b, 20%);
+        }
+    }
+    .table-box{
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.09);
+    }
+}
+
+.modal-reschedule {
+    .user-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2.4rem;
+    }
+    .step-content {
+        flex-grow: 1;
+    }
+    .step-content__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        padding: 2rem 0;
+    }
+    .step-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 40rem;
+
+        text-align: center;
+    }
+    .input-box {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 0.8rem;
+    }
+    .label {
+        color: rgb(65, 77, 85);
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
+    .info {
+        font-size: 1.2rem;
+        line-height: 120%;
+    }
+    .ant-select {
+        width: 30rem;
+        text-align: start;
+    }
+    .link {
+        color: $color-primary;
+        cursor: pointer;
+    }
+
+    .calendar-box {
+        width: 80%;
+        max-width: 45rem;
+
+        .ant-picker-calendar-mode-switch {
+            display: flex;
+        }
+    }
+
+    .step-card-slots {
+        height: 100%;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .input-box {
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100%;
+
+            .selected-date {
+                height: 6rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                color: rgb(65, 77, 85);
+                font-size: 1.4rem;
+
+                background-color: rgb(241, 245, 248);
+                border-radius: 8px;
+            }
+
+            .slots-info {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .list-slots {
+        overflow-y: auto;
+        width: 100%;
+        max-height: 30rem;
+
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        margin: 2rem 0;
+    }
+
+    .slot {
+        height: 4rem;
+
+        background-color: #f5fafd;
+        font-size: 1.4rem;
+
+        border-radius: 8px;
+
+        cursor: pointer;
+
+        transition: all 0.3s ease-in;
+
+        .slot__inner {
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &:hover,
+        &.active {
+            background-color: #c7e3f5;
+        }
+    }
+
+    .book-success {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        font-size: 2.4rem;
+    }
+}

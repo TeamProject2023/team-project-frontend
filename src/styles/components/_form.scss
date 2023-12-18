@@ -1,0 +1,72 @@
+.form {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    &__header {
+        padding: 0.4rem 0;
+    }
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    .input-box {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .label {
+        font-family: $font-roboto;
+        font-size: 1.6rem;
+        color: $color-gray;
+        text-transform: capitalize;
+    }
+
+    .input {
+        width: 100%;
+        background: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 1rem 1.5rem;
+        border-radius: 5px;
+
+        font-family: $font-roboto;
+        font-size: 1.6rem;
+        color: $color-black;
+    }
+
+    ::placeholder {
+        font-family: $font-roboto;
+        font-size: 1.6rem;
+        color: $color-gray-light;
+        text-transform: none;
+    }
+
+    .input-error,
+    .form-error {
+        font-family: $font-roboto;
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: $color-red;
+        line-height: 120%;
+    }
+
+    &__info {
+        font-size: 1.4rem;
+        margin: 0 auto;
+    }
+}

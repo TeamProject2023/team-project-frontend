@@ -1,0 +1,51 @@
+@import "./vars";
+@import "./typography";
+@import "./base";
+@import "./mixins";
+
+/* UI */
+@import "./components/ui/button";
+@import "./components/ui/link";
+@import "./components/ui/dropdown";
+@import "./components/ui/modal";
+@import "./components/ui/spinner";
+@import "./components/ui/accordion";
+
+/* COMPONENTS */
+@import "./components/logo";
+@import "./components/loader";
+@import "./components/socials";
+@import "./components/card";
+@import "./components/sidebar";
+@import "./components/form";
+@import "./components/header";
+@import "./components/navbar";
+@import "./components/footer";
+@import "./components/predictor";
+@import "./components/info";
+@import "./components/hero";
+@import "./components/aiHeader";
+@import "./components/historyResultsTable";
+
+/* SECTIONS */
+@import "./sections/base";
+@import "./sections/history";
+@import "./sections/book";
+@import "./sections/about";
+@import "./sections/upcomingAppointment";
+
+/* LAYOUTS */
+@import "./layouts/base";
+@import "./layouts/authLayout";
+@import "./layouts/baseLayout";
+@import "./layouts/accountLayout";
+
+/* PAGES */
+@import "./pages/base";
+@import "./pages/auth";
+@import "./pages/login";
+@import "./pages/home";
+@import "./pages/contact";
+@import "./pages/team";
+@import "./pages/faq";
+@import "./pages/not-found";

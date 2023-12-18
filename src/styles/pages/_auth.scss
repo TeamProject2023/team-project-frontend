@@ -1,0 +1,19 @@
+.page-auth {
+    .section__inner {
+        align-items: center;
+        justify-content: center;
+    }
+    .card {
+        width: 100%;
+        max-width: 45rem;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: $bp-s) {
+    .page-auth {
+        .card {
+            max-width: 100%;
+        }
+    }
+}

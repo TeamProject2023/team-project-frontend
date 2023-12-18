@@ -1,0 +1,49 @@
+@import "adaptive";
+
+.promo {
+    position: relative;
+    z-index: 2; /* Ensure it's above the separator */
+    margin-top: -20px;
+    background-color: transparent;
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    &__segment {
+        display: flex;
+        gap: 10px;
+        max-width: 350px;
+        background-color: white;
+        border-radius: 15px; /* Add rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add bottom shadow */
+        padding: 20px; /* Adjust padding as per design */
+        min-width: 250px;
+        transition: all 0.3s linear;
+
+        img {
+            width: 70px; /* Adjust icon size */
+            height: 70px; /* Adjust icon size */
+        }
+        &:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add bottom shadow */
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #000;
+    }
+    &__title {
+        @include adaptive-value("font-size", 24, 20, 1);
+        font-weight: bold;
+    }
+    &__subtitle {
+        @include adaptive-value("font-size", 20, 16, 1);
+    }
+}

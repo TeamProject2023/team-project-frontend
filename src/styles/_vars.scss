@@ -1,0 +1,54 @@
+/* COLORS */
+$color-white: #ffffff;
+$color-black: #111111;
+$color-selection-text: $color-black;
+$color-selection-bg: $color-white;
+$color-blue: #2490eb;
+$color-blue-dark: #414d55;
+$color-blue-light: #bbcdd9;
+$color-blue-extra-light: #f1f5f8;
+$color-gray: rgb(65, 77, 85);
+$color-gray-light: #b6b6b6;
+$color-red: #e31c25;
+
+$color-primary: $color-blue;
+
+$btn-primary-color: $color-white;
+$btn-primary-bg: $color-primary;
+$btn-primary-border: transparent;
+
+$btn-primary-color-hover: $color-white;
+$btn-primary-bg-hover: #2490eb;
+$btn-primary-border-hover: transparent;
+
+$btn-primary-color-active: #666666;
+$btn-primary-bg-active: transparent;
+$btn-primary-border-active: #666666;
+
+/* SIZES */
+$container-max-width: 132rem;
+
+$header-height-xl: 8.5rem;
+$header-height-l: 8.5rem;
+$header-height-m: 7.6rem;
+$header-height-s: 7.6rem;
+
+$account-header-height-xl: 8rem;
+$account-header-height-l: 8rem;
+$account-header-height-m: 8rem;
+$account-header-height-s: 6.8rem;
+
+/* BREAKPOINTS */
+$bp-xl: 2039px;
+$bp-l: 1919px;
+$bp-m: 1439px;
+$bp-ms: 1023px;
+$bp-s: 767px;
+
+/* FONTS */
+$font-roboto: "Roboto", sans-serif;
+$font-inter: "Inter", sans-serif;
+$font-icomoon: "Icomoon", sans-serif;
+
+/* FONTS */
+$font-primary: $font-roboto;

@@ -1,0 +1,25 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        gap: 2rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        line-height: 120%;
+        color: $color-blue-dark;
+        text-transform: capitalize;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+}
